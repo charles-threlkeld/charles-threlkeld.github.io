@@ -1,5 +1,10 @@
 #lang racket/base
-(require racket/date txexpr pollen/setup pollen/decode pollen/misc/tutorial)
+(require racket/date
+         txexpr
+         pollen/setup
+         pollen/decode
+         pollen/misc/tutorial
+         racket/list)
 (provide (all-defined-out))
 
 (module setup racket/base
@@ -93,7 +98,8 @@
                                   "}{"
                                   ,@elements
                                   "} \\\\"))]
-    [else (txexpr 'strong empty elements)]))
+    [else (let ([email-to (string-append "mailto:" (first elements))])
+            (txexpr 'a `((href ,email-to)) elements))]))
 
 (define (website . elements)
   (case (current-poly-target)
@@ -103,7 +109,7 @@
                                   ,@elements
                                   "} \\\\\n"
                                   "\\end{tabular}}}\\\\[10pt]"))]
-    [else (txexpr 'em empty elements)]))
+    [else (txexpr 'a `((href ,@elements)) elements)]))
 
 (define (edu-dates . elements)
   (case (current-poly-target)
