@@ -5,19 +5,36 @@
 ◊(define color "grey")
 ◊(define multiplier 1.3)
 
-@font-face{
-    font-family: "Charter-Regular";
-    src: url('charter_regular-webfont.ttf');
+@font-face {
+    font-family: "Charter";
+    src: url('fonts/charter_regular-webfont.woff') format('woff'),
+    url('fonts/charter_regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-@font-face{
-    font-family: "Charter-Bold";
-    src: url('charter_bold-webfont.ttf');
+@font-face {
+    font-family: "Charter";
+    src: url('fonts/charter_bold-webfont.woff') format('woff'),
+    url('fonts/charter_bold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
 
-@font-face{
-    font-family: "Charter-Italic";
-    src: url('charter_italic-webfont.ttf');
+@font-face {
+    font-family: "Charter";
+    src: url('fonts/charter_italic-webfont.woff') format('woff'),
+    url('fonts/charter_italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Charter";
+    src: url('fonts/charter_bold_italic-webfont.woff') format('woff'),
+    url('fonts/charter_bold_italic-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
 }
 
 body {
@@ -26,15 +43,7 @@ body {
     padding: ◊|inner|em;
     font-size: ◊|multiplier|em;
     line-height: ◊|multiplier|;
-    font-family: "Charter-Regular";
-}
-
-em {
-    font-family: "Charter-Italic";
-}
-
-b {
-    font-family: "Charter-Bold";
+    font-family: "Charter";
 }
 
 h1 {
