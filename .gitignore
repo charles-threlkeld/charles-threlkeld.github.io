@@ -1,0 +1,9 @@
+*~
+#*#
+*.swp
+*.aux
+*.out
+*.log
+*.tex
+compiled
+cv_3*
