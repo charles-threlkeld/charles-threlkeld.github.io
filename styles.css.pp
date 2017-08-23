@@ -46,8 +46,28 @@ body {
     font-family: "Charter";
 }
 
+sup {
+    font-size: 0.4em;
+}
+
+titl {
+    font-style: italic;
+}
+
 h1 {
     font-size: ◊|multiplier|em;
+}
+
+h3 {
+    color: #701112;
+}
+
+h4 {
+    color: #701112;
+}
+
+item-name {
+    font-weight: bold;
 }
 
 #prev, #next {

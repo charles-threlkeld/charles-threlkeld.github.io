@@ -4,6 +4,8 @@
 
 \usepackage{marvosym}
 \usepackage{ifsym}
+\usepackage{tabularx}
+\usepackage{textcomp}
 
 \usepackage[usenames,dvipsnames]{xcolor}
 
@@ -40,6 +42,4 @@
 ◊(local-require racket/list)
   ◊(apply string-append (filter string? (flatten doc)))
 
-  \end{minipage}
-  
 \end{document}
