@@ -13,7 +13,8 @@
 (define (root . elements)
   (txexpr 'root empty (decode-elements elements
                                        #:txexpr-elements-proc decode-paragraphs
-                                       #:string-proc (compose1 smart-quotes smart-dashes))))
+                                       #:string-proc (compose1 smart-quotes smart-dashes)
+                                       #:exclude-tags '(tbody style script))))
 
 (define latex
   (case (current-poly-target)
