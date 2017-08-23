@@ -44,7 +44,26 @@ body {
     font-size: ◊|multiplier|em;
     line-height: ◊|multiplier|;
     font-family: "Charter";
+    max-width: 50em;
+    color: #555;
 }
+
+td {
+    font-size: ◊|multiplier|em;
+    font-family: "Charter";
+    color: #555;
+    font-weight: normal;
+    text-align: left;
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    margin: 20px auto;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
 
 sup {
     font-size: 0.4em;
@@ -54,11 +73,15 @@ titl {
     font-style: italic;
 }
 
-h1 {
-    font-size: ◊|multiplier|em;
+education {
+    background-color: #eee;
 }
 
-h3 {
+h1, strong {
+    color: #333;
+}
+
+h2 {
     color: #701112;
 }
 
@@ -66,8 +89,14 @@ h4 {
     color: #701112;
 }
 
+li {
+    margin-bottom: 0.2em;
+    padding-bottom: 0.2em;
+}
+
 item-name {
     font-weight: bold;
+    color: #333;
 }
 
 #prev, #next {

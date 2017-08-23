@@ -1,6 +1,5 @@
 #lang racket/base
-(require racket/date
-         txexpr
+(require txexpr
          pollen/setup
          pollen/decode
          pollen/misc/tutorial
@@ -9,7 +8,7 @@
 
 (module setup racket/base
   (provide (all-defined-out))
-  (define poly-targets '(html tex)))
+  (define poly-targets '(html tex pdf)))
 
 (define (root . elements)
   (txexpr 'root empty (decode-elements elements
@@ -18,28 +17,26 @@
 
 (define latex
   (case (current-poly-target)
-    [(tex) "\\LaTeX"]
+    [(tex pdf) "\\LaTeX"]
     [else "LaTeX"]))
 
 (define (author . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\par{\\centering{\\sffamily\\Huge "
+    [(tex pdf) (apply string-append `("\\par{\\centering{\\sffamily\\Huge "
                                   ,@elements
                                   "}\\\\"))]
-    [else (txexpr 'h2 empty elements)]))
+    [else (txexpr 'h1 empty elements)]))
 
 (define (doc-type . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("{\\color{headings}\\fontspec[Variant = 2]{Charter}"
+    [(tex pdf) (apply string-append `("{\\color{headings}\\fontspec[Variant = 2]{Charter}"
                                   ,@elements
                                   "}\\\\[15pt]\\par}"))]
     [else (txexpr 'h4 empty elements)]))
 
 (define (contact . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\begin{minipage}[t]{0.5\\textwidth}\n"
-                                  "\\vspace{0pt}\n\n"
-                                  "\\colorbox{shade}{\\textcolor{text1}{\n"
+    [(tex pdf) (apply string-append `("\\colorbox{shade}{\\textcolor{text1}{\n"
                                   "\\begin{tabular}{c|p{7cm}}\n"
                                   ,@elements
                                   "\\end{tabular}}}\\\\[10pt]"))]
@@ -47,7 +44,7 @@
      
 (define (address . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\raisebox{-4pt}{\\textifsymbol{18}} & "
+    [(tex pdf) (apply string-append `("\\raisebox{-4pt}{\\textifsymbol{18}} & "
                                   ,@elements
                                   " \\\\"))]
     [else ""]))
@@ -55,7 +52,7 @@
 
 (define (telephone . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\raisebox{-3pt}{\\Mobilefone} & "
+    [(tex pdf) (apply string-append `("\\raisebox{-3pt}{\\Mobilefone} & "
                                   ,@elements
                                   " \\\\"))]
     [else ""]))
@@ -63,7 +60,7 @@
 
 (define (email . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\raisebox{-1pt}{\\Letter} & \\href{mailto:"
+    [(tex pdf) (apply string-append `("\\raisebox{-1pt}{\\Letter} & \\href{mailto:"
                                   ,@elements
                                   "}{"
                                   ,@elements
@@ -73,7 +70,7 @@
 
 (define (website . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\Keyboard & \\href{"
+    [(tex pdf) (apply string-append `("\\Keyboard & \\href{"
                                   ,@elements
                                   "}{"
                                   ,@elements
@@ -82,136 +79,152 @@
 
 (define (education . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\section{Education}\n"
+    [(tex pdf) (apply string-append `("\\section{Education}\n"
                                   "\\begin{tabular}{rl}\n"
                                   ,@elements
                                   "\\end{tabular}\\\\[10pt]\n"))]
     [else (txexpr 'education empty
-                  (cons (txexpr 'h3 empty '("Education")) elements))]))
+                  (cons (txexpr 'h2 empty '("Education")) elements))]))
                                   
 (define (edu-dates . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `(""
+    [(tex pdf) (apply string-append `(""
                                   ,@elements))]
-    [else (txexpr 'strong empty elements)]))
+    [else (txexpr 'edu-dates empty elements)]))
 
 (define (edu-pursuit . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `(" & \\textbf{"
+    [(tex pdf) (apply string-append `(" & \\textbf{"
                                   ,@elements
                                   "} \\\\"))]
-    [else (txexpr 'em empty
+    [else (txexpr 'edu-pursuit empty
                   (cons (txexpr 'br empty '()) elements))]))
 
 (define (edu-focus . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `(" & \\textsc{"
+    [(tex pdf) (apply string-append `(" & \\textsc{"
                                   ,@elements
                                   "} \\\\"))]
     [else (txexpr 'strong empty elements)]))
 
 (define (edu-name . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `(" & \\textit{"
+    [(tex pdf) (apply string-append `(" & \\textit{"
                                   ,@elements
                                   "}\\\\\n"))]
     [else (txexpr 'em empty elements)]))
 
 (define (computer-skills . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\section{Computer Skills}"
+    [(tex pdf) (apply string-append `("\\section{Computer Skills}"
                                   "\\begin{tabularx}{\\textwidth}{rX}\n"
                                   ,@elements
                                   "\\end{tabularx}\\\\[10pt]\n"))]
     [else (txexpr 'computer-skills empty
-                  (cons (txexpr 'h3 empty `("Computer Skills")) elements))]))
+                  (cons '(h2 "Computer Skills")
+                        `((table (tbody ,@elements)))))]))
 
 (define (basic-skills . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("Basic Knowledge & "
+    [(tex pdf) (apply string-append `("Basic Knowledge & "
                                   ,@elements
                                   "\\\\\n"))]
-    [else (txexpr 'basic-skills empty
-                  (cons (txexpr 'skill-level empty '("Basic: ")) elements))]))
+    [else (txexpr 'tr '((id "basic-skills"))
+                  (cons '(td "Basic: ")
+                        `((td ,@elements))))]))
 
 (define (intermediate-skills . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("Intermediate Knowledge & "
+    [(tex pdf) (apply string-append `("Intermediate Knowledge & "
                                   ,@elements
                                   "\\\\\n"))]
-    [else (txexpr 'basic-skills empty
-                  (cons (txexpr 'skill-level empty '("Intermediate: ")) elements))]))
+    [else (txexpr 'tr '((id "intermediate-skills"))
+                  (cons '(td "Intermediate: ")
+                        `((td ,@elements))))]))
 
 (define (advanced-skills . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("Advanced Knowledge & "
+    [(tex pdf) (apply string-append `("Advanced Knowledge & "
                                   ,@elements
                                   "\\\\\n"))]
-    [else (txexpr 'basic-skills empty
-                  (cons (txexpr 'skill-level empty '("Advanced: ")) elements))]))
+    [else (txexpr 'tr '((id "advanced-skills"))
+                  (cons '(td "Advanced: ")
+                        `((td ,@elements))))]))
 
 (define (projects . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\section{Projects}\n"
+    [(tex pdf) (apply string-append `("\\section{Projects}\n"
                                   "\\begin{itemize}\n"
                                   ,@elements
-                                  "\\end{itemize}\n"
-                                  "\\end{minipage}\n"))]
+                                  "\\end{itemize}\n"))]
     [else (txexpr 'projects empty
-                  (cons (txexpr 'h3 empty `("Projects")) elements))]))
+                  (cons (txexpr 'h2 empty `("Projects")) elements))]))
 
 (define (work-experience . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\begin{minipage}[t]{0.44\\textwidth}\n"
-                                  "\\vspace{0pt}\n"
-                                  "\\section{Work Experience}\n"
-                                  ,@elements
-                                  "\\end{minipage}\n"))]
+    [(tex pdf) (apply string-append `("\\section{Work Experience}\n"
+                                  ,@elements))]
     [else (txexpr 'work-experience empty
-                  (cons (txexpr 'h3 empty `("Work Experience")) elements))]))
+                  (cons (txexpr 'h2 empty `("Work Experience")) elements))]))
 
 (define (job-dates . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("{\\raggedleft\\textsc{" ,@elements "}\\par}"))]
-    [else (txexpr 'em empty elements)]))
+    [(tex pdf) (apply string-append `("{\\raggedleft\\textsc{" ,@elements "}\\par}"))]
+    [else (txexpr 'job-dates empty elements)]))
 
 (define (job-title . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("{\\raggedright\\large " ,@elements "\\\\"))]
+    [(tex pdf) (apply string-append `("{\\raggedright\\large " ,@elements "\\\\"))]
     [else (txexpr 'strong empty elements)]))
 
 (define (company . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\textit{" ,@elements "}\\\\[5pt]}"))]
+    [(tex pdf) (apply string-append `("\\textit{" ,@elements "}\\\\[5pt]}"))]
     [else (txexpr 'em empty elements)]))
 
 (define (job-desc . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\normalsize{\\begin{itemize}\n"
+    [(tex pdf) (apply string-append `("\\normalsize{\\begin{itemize}\n"
                                   ,@elements
                                   "\\end{itemize}}\n"))]
     [else (txexpr 'ul empty elements)]))
 
 (define (title . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\textit{" ,@elements "}"))]
+    [(tex pdf) (apply string-append `("\\textit{" ,@elements "}"))]
     [else (txexpr 'titl empty elements)]))
 
 (define (item . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\item "
+    [(tex pdf) (apply string-append `("\\item "
                                   ,@elements
                                   "\n"))]
     [else (txexpr 'li empty elements)]))
 
 (define (item-name . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("\\textbf{"
+    [(tex pdf) (apply string-append `("\\textbf{"
                                   ,@elements
                                   "}"))]
     [else (txexpr 'item-name empty elements)]))
 
 (define tm
   (case (current-poly-target)
-    [(tex) "\\texttrademark "]
+    [(tex pdf) "\\texttrademark  "]
     [else (txexpr 'sup empty '("TM"))]))
+
+(define begin-first-column
+  (case (current-poly-target)
+    [(tex pdf) "\\begin{minipage}[t]{0.5\\textwidth}\n\\vspace{0pt}\n\n"]
+    [else ""]))
+
+(define end-column
+  (case (current-poly-target)
+    [(tex pdf) "\\end{minipage}\n"]
+    [else ""]))
+
+(define begin-second-column
+  (case (current-poly-target)
+    [(tex pdf) "\\begin{minipage}[t]{0.44\\textwidth}\n\\vspace{0pt}\n\n"]
+    [else ""]))
+                                  

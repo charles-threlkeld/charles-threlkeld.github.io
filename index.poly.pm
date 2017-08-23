@@ -3,6 +3,8 @@
 ◊author{Charles Threlkeld}
 ◊doc-type{Résumé}
 
+◊begin-first-column
+
 ◊contact{
   ◊address{2134 N Winchester Ave, Chicago, IL 60614}
   ◊telephone{+1 812.431.8049}
@@ -11,6 +13,10 @@
 }
 
 ◊education{
+  ◊edu-dates{2017-Present}◊edu-pursuit{Certifications}
+  ◊edu-focus{Computer Science}
+  ◊edu-name{Open Source Society}
+
   ◊edu-dates{2011–2012}◊edu-pursuit{Non-degree seeking}
   ◊edu-focus{Life Sciences}
   ◊edu-name{Roosevelt University}
@@ -37,6 +43,9 @@
   ◊item{◊item-name{◊title{John Company}}: Model the board game ◊title{John Company} (forthcoming by ◊title{Sierra Madre Games}) in order to help the designer and developer more fully understand how changes to the random event probabilities affect the game state throughout the game.}
 }
 
+◊end-column
+◊begin-second-column
+
 ◊work-experience{
   ◊job-dates{Oct 2010 - Apr 2017}
   ◊job-title{Risk Analyst}
@@ -53,3 +62,5 @@
 	    ◊item{◊item-name{Data Verification}: Cleaned and confirmed data gathered from the research lab before it went to data analysts.}
   }
 }
+
+◊end-column
