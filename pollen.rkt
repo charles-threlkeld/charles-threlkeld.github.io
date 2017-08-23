@@ -194,7 +194,7 @@
 
 (define (title . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("{\\it " ,@elements "}"))]
+    [(tex) (apply string-append `("\\textit{" ,@elements "}"))]
     [else (txexpr 'titl empty elements)]))
 
 (define (item . elements)
@@ -206,7 +206,7 @@
 
 (define (item-name . elements)
   (case (current-poly-target)
-    [(tex) (apply string-append `("{\\bf "
+    [(tex) (apply string-append `("\\textbf{"
                                   ,@elements
                                   "}"))]
     [else (txexpr 'item-name empty elements)]))
