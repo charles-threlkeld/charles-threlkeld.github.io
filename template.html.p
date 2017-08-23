@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>◊(select 'h1 doc)</title>
+    <title>Charles Threlkeld</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
