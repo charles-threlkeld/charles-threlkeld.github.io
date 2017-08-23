@@ -41,7 +41,7 @@
                                   "\\begin{tabular}{c|p{7cm}}\n"
                                   ,@elements
                                   "\\end{tabular}}}\\\\[10pt]"))]
-    [else (txexpr 'contact empty elements)]))
+    [else (txexpr 'div '((id "contact")) elements)]))
      
 (define (address . elements)
   (case (current-poly-target)
@@ -84,21 +84,21 @@
                                   "\\begin{tabular}{rl}\n"
                                   ,@elements
                                   "\\end{tabular}\\\\[10pt]\n"))]
-    [else (txexpr 'education empty
+    [else (txexpr 'div '((id "education"))
                   (cons (txexpr 'h2 empty '("Education")) elements))]))
                                   
 (define (edu-dates . elements)
   (case (current-poly-target)
     [(tex pdf) (apply string-append `(""
                                   ,@elements))]
-    [else (txexpr 'edu-dates empty elements)]))
+    [else (txexpr 'span '((class "edu-dates")) elements)]))
 
 (define (edu-pursuit . elements)
   (case (current-poly-target)
     [(tex pdf) (apply string-append `(" & \\textbf{"
                                   ,@elements
                                   "} \\\\"))]
-    [else (txexpr 'edu-pursuit empty
+    [else (txexpr 'span '((class "edu-pursuit"))
                   (cons (txexpr 'br empty '()) elements))]))
 
 (define (edu-focus . elements)
@@ -106,14 +106,14 @@
     [(tex pdf) (apply string-append `(" & \\textsc{"
                                   ,@elements
                                   "} \\\\"))]
-    [else (txexpr 'strong empty elements)]))
+    [else (txexpr 'span '((class "edu-focus")) elements)]))
 
 (define (edu-name . elements)
   (case (current-poly-target)
     [(tex pdf) (apply string-append `(" & \\textit{"
                                   ,@elements
                                   "}\\\\\n"))]
-    [else (txexpr 'em empty elements)]))
+    [else (txexpr 'span '((class "edu-name")) elements)]))
 
 (define (computer-skills . elements)
   (case (current-poly-target)
@@ -121,7 +121,7 @@
                                   "\\begin{tabularx}{\\textwidth}{rX}\n"
                                   ,@elements
                                   "\\end{tabularx}\\\\[10pt]\n"))]
-    [else (txexpr 'computer-skills empty
+    [else (txexpr 'div '((id "computer-skills"))
                   (cons '(h2 "Computer Skills")
                         `((table (tbody ,@elements)))))]))
 
@@ -158,30 +158,30 @@
                                   "\\begin{itemize}\n"
                                   ,@elements
                                   "\\end{itemize}\n"))]
-    [else (txexpr 'projects empty
+    [else (txexpr 'div '((id "projects"))
                   (cons (txexpr 'h2 empty `("Projects")) elements))]))
 
 (define (work-experience . elements)
   (case (current-poly-target)
     [(tex pdf) (apply string-append `("\\section{Work Experience}\n"
                                   ,@elements))]
-    [else (txexpr 'work-experience empty
+    [else (txexpr 'div '((id "work-experience"))
                   (cons (txexpr 'h2 empty `("Work Experience")) elements))]))
 
 (define (job-dates . elements)
   (case (current-poly-target)
     [(tex pdf) (apply string-append `("{\\raggedleft\\textsc{" ,@elements "}\\par}"))]
-    [else (txexpr 'job-dates empty elements)]))
+    [else (txexpr 'div '((class "job-dates")) elements)]))
 
 (define (job-title . elements)
   (case (current-poly-target)
     [(tex pdf) (apply string-append `("{\\raggedright\\large " ,@elements "\\\\"))]
-    [else (txexpr 'strong empty elements)]))
+    [else (txexpr 'div '((class "job-title")) elements)]))
 
 (define (company . elements)
   (case (current-poly-target)
     [(tex pdf) (apply string-append `("\\textit{" ,@elements "}\\\\[5pt]}"))]
-    [else (txexpr 'em empty elements)]))
+    [else (txexpr 'div '((class "company")) elements)]))
 
 (define (job-desc . elements)
   (case (current-poly-target)
@@ -193,7 +193,7 @@
 (define (title . elements)
   (case (current-poly-target)
     [(tex pdf) (apply string-append `("\\textit{" ,@elements "}"))]
-    [else (txexpr 'titl empty elements)]))
+    [else (txexpr 'span '((class "title")) elements)]))
 
 (define (item . elements)
   (case (current-poly-target)
@@ -207,7 +207,7 @@
     [(tex pdf) (apply string-append `("\\textbf{"
                                   ,@elements
                                   "}"))]
-    [else (txexpr 'item-name empty elements)]))
+    [else (txexpr 'span '((class "item-name")) elements)]))
 
 (define tm
   (case (current-poly-target)

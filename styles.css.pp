@@ -46,6 +46,7 @@ body {
     font-family: "Charter";
     max-width: 50em;
     color: #555;
+    background-color: #fcfce6;
 }
 
 td {
@@ -64,50 +65,36 @@ table {
     border-collapse: collapse;
 }
 
-
 sup {
     font-size: 0.4em;
 }
 
-titl {
+.title, .edu-name, .company {
     font-style: italic;
+}
+
+.edu-focus, .job-title, .item-name {
+    font-weight: bold;
+    color: #333;
 }
 
 education {
     background-color: #eee;
 }
 
-h1, strong {
+h1 {
     color: #333;
 }
 
-h2 {
+h2, h4 {
     color: #701112;
 }
 
-h4 {
-    color: #701112;
+h2 {
+    background-color: f5fcfc;
 }
 
 li {
     margin-bottom: 0.2em;
     padding-bottom: 0.2em;
-}
-
-item-name {
-    font-weight: bold;
-    color: #333;
-}
-
-#prev, #next {
-    position: fixed;
-    top: ◊|(/ edge 2)|em;
-}
-
-#prev {
-    left: ◊|edge|em;
-}
-
-#next {
-    right: ◊|edge|em;
 }
