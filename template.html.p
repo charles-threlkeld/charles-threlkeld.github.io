@@ -6,6 +6,6 @@
   </head>
   <body>
     ◊(->html doc)
-    <par>Click <a href="index.tex">here</a> to get this document as a pdf.</par>
+    <par>Click <a href="index.pdf">here</a> to get this document as a pdf.</par>
   </body>
 </html>
