@@ -73,13 +73,9 @@ sup {
     font-style: italic;
 }
 
-.edu-focus, .job-title, .item-name {
+.edu-focus, .job-title, .item-name, .hobby-name {
     font-weight: bold;
     color: #333;
-}
-
-education {
-    background-color: #eee;
 }
 
 h1 {
@@ -88,10 +84,6 @@ h1 {
 
 h2, h4 {
     color: #701112;
-}
-
-h2 {
-    background-color: f5fcfc;
 }
 
 li {

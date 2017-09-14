@@ -209,9 +209,32 @@
                                   "}"))]
     [else (txexpr 'span '((class "item-name")) elements)]))
 
+(define (hobbies . elements)
+  (case (current-poly-target)
+    [(tex pdf) (apply string-append `("\\section{Hobbies}\n"
+                                      "\\begin{itemize}\n"
+                                      ,@elements
+                                      "\\end{itemize}\n"))]
+    [else (txexpr 'div '((id "hobbies"))
+                  (cons (txexpr 'h2 empty `("Hobbies")) elements))]))
+
+(define (hobby-name . elements)
+  (case (current-poly-target)
+    [(tex pdf) (apply string-append `("\\textbf{"
+                                      ,@elements
+                                      "}"))]
+    [else (txexpr 'span '((class "hobby-name")) elements)]))
+
+(define (hobby-description . elements)
+  (case (current-poly-target)
+    [(tex pdf) (apply string-append `("\\item "
+                                      ,@elements
+                                      "\n"))]
+    [else (txexpr 'li empty elements)]))
+
 (define tm
   (case (current-poly-target)
-    [(tex pdf) "\\texttrademark  "]
+    [(tex pdf) "\\texttrademark\\space  "]
     [else (txexpr 'sup empty '("TM"))]))
 
 (define begin-first-column
@@ -226,6 +249,6 @@
 
 (define begin-second-column
   (case (current-poly-target)
-    [(tex pdf) "\\begin{minipage}[t]{0.44\\textwidth}\n\\vspace{0pt}\n\n"]
+    [(tex pdf) "\\qquad\\begin{minipage}[t]{0.38\\textwidth}\n\\vspace{0pt}\n\n"]
     [else ""]))
                                   

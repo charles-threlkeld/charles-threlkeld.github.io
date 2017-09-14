@@ -63,4 +63,9 @@
   }
 }
 
+◊hobbies{
+  ◊hobby-description{◊hobby-name{Triathlon}: Competed in distances up to and including full ironman distance. Volunteer with Dare2Tri assisting competing paratriathletes.}
+  ◊hobby-description{◊hobby-name{Cycling}: Competed in cyclocross and road racing. Long distance self-supported touring. Commuting.}
+  ◊hobby-description{◊hobby-name{Games}: Developed board games. Organized and hosted playtime for local players.}
+}
 ◊end-column
