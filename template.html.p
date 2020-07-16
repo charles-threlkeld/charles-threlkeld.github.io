@@ -6,6 +6,7 @@
   </head>
   <body>
     ◊(->html doc)
-    <par>Click <a href="index.pdf">here</a> to get this document as a pdf.</par>
+    <p>Click <a href="index.pdf">here</a> to get this document as a pdf.</p>
+    <p>Click <a href="https://github.com/charles-threlkeld/charles-threlkeld.github.io">here</a> to see the source code for this resumé.</p>
   </body>
 </html>

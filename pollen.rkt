@@ -218,12 +218,19 @@
     [else (txexpr 'div '((id "hobbies"))
                   (cons (txexpr 'h2 empty `("Hobbies")) elements))]))
 
+(define (long-form-only . elements)
+  (case (current-poly-target)
+    [(html) (txexpr 'span '((class "long-form-only")) elements)]
+    [else ""]))
+
 (define (hobby-name . elements)
   (case (current-poly-target)
     [(tex pdf) (apply string-append `("\\textbf{"
                                       ,@elements
                                       "}"))]
     [else (txexpr 'span '((class "hobby-name")) elements)]))
+
+
 
 (define (hobby-description . elements)
   (case (current-poly-target)
