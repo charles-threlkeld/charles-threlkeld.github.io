@@ -64,6 +64,12 @@
             ◊item{◊item-name{Computation Theory, Spring 2020}: with Professor Alexa Sharp}
   }
 
+  ◊long-form-only{
+  ◊job-dates{Sep 2020 - Present}
+  ◊job-title{Emerging Scholars Program PhD Coordinator}
+  ◊company{Tufts University}
+  ◊job-desc{◊item{Manage recruitment and administration of the Emerging Scholars Program. Foster interest in the field of Computer Science for first-year students.}
+
   ◊job-dates{Oct 2010 - Apr 2017}
   ◊job-title{Risk Analyst}
   ◊company{Rosenthal Collins Group, LLC}
