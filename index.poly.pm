@@ -50,19 +50,21 @@
 ◊begin-second-column
 
 ◊work-experience{
+  ◊all-forms{
   ◊job-dates{June 2018 - Present}
   ◊job-title{Research Assistant}
   ◊company{Tufts University}
   ◊job-desc{◊item{◊item-name{Human Interaction Lab, Present}: See the Conversation Grammar and ALAN projects above.}
-            ◊item{◊item-name{Human Robot Interaction Lab, 2018-2019}: Designed and implemented a robotic dialogue system that merged representation of spoken action with physical action, allowing the robot to reflect on its affordances in the world in a unified way.}}
+            ◊item{◊item-name{Human Robot Interaction Lab, 2018-2019}: Designed and implemented a robotic dialogue system that merged representation of spoken action with physical action, allowing the robot to reflect on its affordances in the world in a unified way.}}}
 
+  ◊all-forms{
   ◊job-dates{Jan 2018 - May 2020}
   ◊job-title{Teaching Assistant}
   ◊company{Tufts University}
   ◊job-desc{◊item{◊item-name{Computational Models in Cognitive Science, Fall 2020}: Co-teacher with JP de Ruiter}
             ◊item{◊item-name{Discrete Mathematics, Spring 2018}: with Professor Laney Strange.}
             ◊item{◊item-name{Computation Theory, Spring 2020}: with Professor Alexa Sharp}
-  }
+  }}
 
   ◊long-form-only{
   ◊job-dates{Sep 2020 - Present}
@@ -70,13 +72,14 @@
   ◊company{Tufts University}
   ◊job-desc{◊item{Manage recruitment and administration of the Emerging Scholars Program. Foster interest in the field of Computer Science for first-year students.}}}
 
+  ◊all-forms{
   ◊job-dates{Oct 2010 - Apr 2017}
   ◊job-title{Risk Analyst}
   ◊company{Rosenthal Collins Group, LLC}
   ◊job-desc{◊item{◊item-name{Data Scraping}: Located, downloaded, cleaned, and processed raw data into useable formats for broker, client, and personal use.}
             ◊item{◊item-name{Exploratory Data Analysis}: Applied statistical techniques to datasets to find correlations or anomalies.}
 	    ◊item{◊item-name{Analysis Reporting}: Compiled findings of data analysis into essays, charts, and graphs in order to disseminate the findings to coworkers and clients in an easily interpretable way.}
-  }
+  }}
 
 ◊long-form-only{
   ◊job-dates{May 2009 - December 2009}

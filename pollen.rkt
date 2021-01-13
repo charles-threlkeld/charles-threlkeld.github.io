@@ -218,6 +218,11 @@
     [else (txexpr 'div '((id "hobbies"))
                   (cons (txexpr 'h2 empty `("Hobbies")) elements))]))
 
+(define (all-forms . elements)
+  (case (current-poly-target)
+    [(html) (txexpr 'span '((class "all-forms")) elements)]
+    [else elements]))
+
 (define (long-form-only . elements)
   (case (current-poly-target)
     [(html) (txexpr 'span '((class "long-form-only")) elements)]
