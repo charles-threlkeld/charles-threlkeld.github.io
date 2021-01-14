@@ -220,8 +220,8 @@
 
 (define (all-forms . elements)
   (case (current-poly-target)
-    [(html) (txexpr 'span '((class "all-forms")) elements)]
-    [else elements]))
+    [(tex pdf) (apply string-append `(,@elements))]
+    [else (txexpr 'span '((class "all-forms")) elements)]))
 
 (define (long-form-only . elements)
   (case (current-poly-target)
@@ -263,4 +263,3 @@
   (case (current-poly-target)
     [(tex pdf) "\\qquad\\begin{minipage}[t]{0.38\\textwidth}\n\\vspace{0pt}\n\n"]
     [else ""]))
-                                  

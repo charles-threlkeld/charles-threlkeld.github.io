@@ -11,8 +11,8 @@
 
 \usepackage{fontspec,xltxtra,xunicode}
 \defaultfontfeatures{Mapping=tex-text}
-\setromanfont[Mapping=tex-text]{Charter}
-\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Charter}
+\setromanfont[Mapping=tex-text]{IBM Plex Serif}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{IBM Plex Serif}
 
 \usepackage{hyperref}
 \definecolor{linkcolor}{HTML}{506266}
