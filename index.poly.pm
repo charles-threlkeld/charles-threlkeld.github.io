@@ -61,7 +61,8 @@
   ◊job-dates{Jan 2018 - May 2020}
   ◊job-title{Teaching Assistant}
   ◊company{Tufts University}
-  ◊job-desc{◊item{◊item-name{Computational Models in Cognitive Science, Fall 2020}: Co-teacher with JP de Ruiter}
+  ◊job-desc{◊item{◊item-name{Explainable Artificial Intelligence, Spring 2021}: with Daniel Kasenberg}
+  	    ◊item{◊item-name{Computational Models in Cognitive Science, Fall 2020}: Co-teacher with Professor JP de Ruiter}
             ◊item{◊item-name{Discrete Mathematics, Spring 2018}: with Professor Laney Strange.}
             ◊item{◊item-name{Computation Theory, Spring 2020}: with Professor Alexa Sharp}
   }}

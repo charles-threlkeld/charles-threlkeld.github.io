@@ -263,3 +263,24 @@
   (case (current-poly-target)
     [(tex pdf) "\\qquad\\begin{minipage}[t]{0.38\\textwidth}\n\\vspace{0pt}\n\n"]
     [else ""]))
+
+(define (inline-math . elements)
+  (apply string-append `("\\(" ,@elements "\\)")))
+
+(define (ownline-math . elements)
+  (apply string-append `("$$" ,@elements "$$")))
+
+(define (emphasize . elements)
+  (case (current-poly-target)
+    [(tex pdf) (apply string-append `("\\textit{" ,@elements "}"))]
+    [else (apply string-append `("<em>" ,@elements "</em>"))]))
+
+(define (tree . elements)
+  (case (current-poly-target)
+    [(tex pdf) (apply string-append `("\\Tree " ,@elements "\n"))]
+    [else (apply string-append `("$$\\Tree " ,@elements " $$"))]))
+
+(define (quotation . elements)
+  (case (current-poly-target)
+    [(tex pdf) (apply string-append `("``" ,@elements "''"))]
+    [else (apply string-append `("<q>" ,@elements "</q>"))]))

@@ -2,6 +2,8 @@
 
 \usepackage[hmargin=1.25cm, vmargin=1.5cm]{geometry}
 
+\usepackage{tree-dvips}
+\usepackage{qtree}
 \usepackage{marvosym}
 \usepackage{ifsym}
 \usepackage{tabularx}
