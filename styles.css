@@ -83,3 +83,31 @@ li {
     margin-bottom: 0.2em;
     padding-bottom: 0.2em;
 }
+
+
+
+span.phase {
+	text-align: center;
+	color: red;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+td.achieved {
+	background: lightgreen
+}
+
+td.failed {
+	background: pink
+}
+
+td.upcoming {
+	background: lightblue
+}
+
+table {
+	background: lightyellow;
+	margin-left: auto;
+	margin-right: auto;
+}
+				  
