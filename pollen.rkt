@@ -270,6 +270,11 @@
 (define (ownline-math . elements)
   (apply string-append `("$$" ,@elements "$$")))
 
+(define (date . elements)
+  (case (current-poly-target)
+    [(text pdf) `("\\textit{" ,@elements "}")]
+    [else (apply string-append `("<em>" ,@elements "</em>"))]))
+
 (define (emphasize . elements)
   (case (current-poly-target)
     [(tex pdf) (apply string-append `("\\textit{" ,@elements "}"))]
