@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-13 Tue 12:40 -->
+<!-- 2022-12-13 Tue 12:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -196,125 +196,22 @@
 </head>
 <body>
 <div id="content" class="content">
-<div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
-<ul>
-<li><a href="#org5790f9c">1. Introduction</a></li>
-<li><a href="#org2baabe4">2. Defining Speech Acts</a>
-<ul>
-<li><a href="#org54a49d7">2.1. Philosophical Usage</a></li>
-<li><a href="#org30661d4">2.2. Linguistic Usage</a></li>
-<li><a href="#org5af25ce">2.3. Psychological Usage</a></li>
-<li><a href="#orgef089ac">2.4. Computational Usage</a></li>
-<li><a href="#org068ee03">2.5. Goals of this work</a></li>
+<p>
+In this and following chapters, we will use several terms that are used in different ways in different parts of the literature. Therefore, we outline definitions here for:
+</p>
+<ul class="org-ul">
+<li>Speech Act</li>
+<li>Direct Speech Act</li>
+<li>Indirect Speech Act</li>
+<li>Pragmatic Completion</li>
+<li>Turn Construction Unit</li>
+<li>Turn</li>
+<li>Conversational Context</li>
 </ul>
-</li>
-<li><a href="#org3ba1e3e">3. Descriptive Work</a>
-<ul>
-<li><a href="#orgd7c6aed">3.1. Definitions of Terms</a></li>
-<li><a href="#org21bfe21">3.2. Indirect Speech Act Frequency</a></li>
-<li><a href="#org02c7952">3.3. Indirect Speech Acts and FTOs in Conversation</a></li>
-<li><a href="#org37e81fc">3.4. Turn Lengths</a></li>
-<li><a href="#org99a9fa7">3.5. TRP Durations</a></li>
-</ul>
-</li>
-<li><a href="#orga9c3701">4. Choosing Data,  Parameters, and Models</a>
-<ul>
-<li><a href="#org9ac7270">4.1. Data</a></li>
-<li><a href="#org7854ecb">4.2. Parameters</a></li>
-<li><a href="#orgbe9d545">4.3. Models</a></li>
-<li><a href="#org334e820">4.4. Metrics</a></li>
-</ul>
-</li>
-<li><a href="#org54182af">5. Models and Iterations</a>
-<ul>
-<li><a href="#org65806a5">5.1. Iterations</a></li>
-<li><a href="#org9ac83c4">5.2. Interpretation</a></li>
-</ul>
-</li>
-<li><a href="#org768d623">6. Conclusion and Future Work</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org5790f9c" class="outline-2">
-<h2 id="org5790f9c"><span class="section-number-2">1.</span> <a href="./introduction.html">Introduction</a></h2>
-</div>
-<div id="outline-container-org2baabe4" class="outline-2">
-<h2 id="org2baabe4"><span class="section-number-2">2.</span> <a href="./definitions.html">Defining Speech Acts</a></h2>
-<div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-org54a49d7" class="outline-3">
-<h3 id="org54a49d7"><span class="section-number-3">2.1.</span> <a href="./philosophy">Philosophical Usage</a></h3>
-</div>
-<div id="outline-container-org30661d4" class="outline-3">
-<h3 id="org30661d4"><span class="section-number-3">2.2.</span> <a href="./linguistics.html">Linguistic Usage</a></h3>
-</div>
-<div id="outline-container-org5af25ce" class="outline-3">
-<h3 id="org5af25ce"><span class="section-number-3">2.3.</span> <a href="./psychology.html">Psychological Usage</a></h3>
-</div>
-<div id="outline-container-orgef089ac" class="outline-3">
-<h3 id="orgef089ac"><span class="section-number-3">2.4.</span> <a href="./compute.html">Computational Usage</a></h3>
-</div>
-<div id="outline-container-org068ee03" class="outline-3">
-<h3 id="org068ee03"><span class="section-number-3">2.5.</span> <a href="./goals.html">Goals of this work</a></h3>
-</div>
-</div>
-<div id="outline-container-org3ba1e3e" class="outline-2">
-<h2 id="org3ba1e3e"><span class="section-number-2">3.</span> <a href="./previous.html">Descriptive Work</a></h2>
-<div class="outline-text-2" id="text-3">
-</div>
-<div id="outline-container-orgd7c6aed" class="outline-3">
-<h3 id="orgd7c6aed"><span class="section-number-3">3.1.</span> <a href="./terms.html">Definitions of Terms</a></h3>
-</div>
-<div id="outline-container-org21bfe21" class="outline-3">
-<h3 id="org21bfe21"><span class="section-number-3">3.2.</span> <a href="./isas.html">Indirect Speech Act Frequency</a></h3>
-</div>
-<div id="outline-container-org02c7952" class="outline-3">
-<h3 id="org02c7952"><span class="section-number-3">3.3.</span> <a href="./isa-ftos.html">Indirect Speech Acts and FTOs in Conversation</a></h3>
-</div>
-<div id="outline-container-org37e81fc" class="outline-3">
-<h3 id="org37e81fc"><span class="section-number-3">3.4.</span> <a href="./turn-lengths.html">Turn Lengths</a></h3>
-</div>
-<div id="outline-container-org99a9fa7" class="outline-3">
-<h3 id="org99a9fa7"><span class="section-number-3">3.5.</span> <a href="./trps.html">TRP Durations</a></h3>
-</div>
-</div>
-<div id="outline-container-orga9c3701" class="outline-2">
-<h2 id="orga9c3701"><span class="section-number-2">4.</span> <a href="./parameters.html">Choosing Data,  Parameters, and Models</a></h2>
-<div class="outline-text-2" id="text-4">
-</div>
-<div id="outline-container-org9ac7270" class="outline-3">
-<h3 id="org9ac7270"><span class="section-number-3">4.1.</span> <a href="./data.html">Data</a></h3>
-</div>
-<div id="outline-container-org7854ecb" class="outline-3">
-<h3 id="org7854ecb"><span class="section-number-3">4.2.</span> <a href="./model-parameters.html">Parameters</a></h3>
-</div>
-<div id="outline-container-orgbe9d545" class="outline-3">
-<h3 id="orgbe9d545"><span class="section-number-3">4.3.</span> <a href="./cluster-models.html">Models</a></h3>
-</div>
-<div id="outline-container-org334e820" class="outline-3">
-<h3 id="org334e820"><span class="section-number-3">4.4.</span> <a href="./metrics.html">Metrics</a></h3>
-</div>
-</div>
-<div id="outline-container-org54182af" class="outline-2">
-<h2 id="org54182af"><span class="section-number-2">5.</span> <a href="./clusters.html">Models and Iterations</a></h2>
-<div class="outline-text-2" id="text-5">
-</div>
-<div id="outline-container-org65806a5" class="outline-3">
-<h3 id="org65806a5"><span class="section-number-3">5.1.</span> <a href="./iterations.html">Iterations</a></h3>
-</div>
-<div id="outline-container-org9ac83c4" class="outline-3">
-<h3 id="org9ac83c4"><span class="section-number-3">5.2.</span> <a href="./interpretation.html">Interpretation</a></h3>
-</div>
-</div>
-<div id="outline-container-org768d623" class="outline-2">
-<h2 id="org768d623"><span class="section-number-2">6.</span> <a href="./conclusion.html">Conclusion and Future Work</a></h2>
-</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Chas Threlkeld</p>
-<p class="date">Created: 2022-12-13 Tue 12:40</p>
+<p class="date">Created: 2022-12-13 Tue 12:36</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
