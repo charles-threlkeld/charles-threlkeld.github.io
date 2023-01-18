@@ -11,10 +11,10 @@
 
 \usepackage[usenames,dvipsnames]{xcolor}
 
-\usepackage{fontspec,xltxtra,xunicode}
-\defaultfontfeatures{Mapping=tex-text}
-\setromanfont[Mapping=tex-text]{IBM Plex Serif}
-\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{IBM Plex Serif}
+%\usepackage{fontspec,xltxtra,xunicode}
+%\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont[Mapping=tex-text]{IBM Plex Serif}
+%\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{IBM Plex Serif}
 
 \usepackage{hyperref}
 \definecolor{linkcolor}{HTML}{506266}

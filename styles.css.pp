@@ -69,7 +69,7 @@ sup {
     font-size: 0.4em;
 }
 
-.title, .edu-name, .company {
+.title, .edu-name, .company, .dissertation, .paper-title {
     font-style: italic;
 }
 

@@ -4,7 +4,7 @@
 ◊(define latex-source ◊string-append{
 \documentclass[10pt]{article}
 
-\usepackage[hmargin=1.25cm, vmargin=1.5cm]{geometry}
+\usepackage[hmargin=2.5cm, vmargin=2.5cm]{geometry}
 
 \usepackage{marvosym}
 \usepackage{ifsym}
@@ -15,8 +15,6 @@
 
 \usepackage{fontspec,xltxtra,xunicode}
 \defaultfontfeatures{Mapping=tex-text}
-\setromanfont[Mapping=tex-text]{Charter}
-\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Charter}
 
 \usepackage{hyperref}
 \definecolor{linkcolor}{HTML}{506266}

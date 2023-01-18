@@ -8,7 +8,7 @@
   </head>
   <body>
     ◊(->html doc)
-    <p>Click <a href="index.pdf">here</a> to get this document as a pdf.</p>
-    <p>Click <a href="https://github.com/charles-threlkeld/charles-threlkeld.github.io">here</a> to see the source code for this resumé.</p>
+    <p>Click <a href="cv.pdf">here</a> to get this document as a pdf.</p>
+    <p>Click <a href="https://github.com/charles-threlkeld/charles-threlkeld.github.io">here</a> to see the source code for this document.</p>
   </body>
 </html>
