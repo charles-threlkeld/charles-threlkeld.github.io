@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-01-18 Wed 13:01 -->
+<!-- 2023-02-01 Wed 12:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -217,10 +217,29 @@
 </head>
 <body>
 <div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4bac35c">1. The Origins of Speech Act Theory</a></li>
+<li><a href="#org0d1d061">2. Conversational Organization</a></li>
+<li><a href="#org9f77ffd">3. Computability of Conversational Organization</a>
+<ul>
+<li><a href="#org6292109">3.1. Definitions of terms</a></li>
+<li><a href="#org6697f07">3.2. Finite State Machine</a></li>
+<li><a href="#org6ba8540">3.3. </a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <p>
 What problem do Speech Acts solve?
 </p>
 
+<div id="outline-container-org4bac35c" class="outline-2">
+<h2 id="org4bac35c"><span class="section-number-2">1.</span> The Origins of Speech Act Theory</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 In the early 20th century, philosophers of language (working from Wittgenstein's <i>Tractatus Logicio-Philisophicus</i>) posited that language is the vehicle we use to make claims on the world. The important part of language is that it creates propositions, which are either true or false regarding the way the world is. Wittgenstein thought that if a sentence is neither true or false, then it is nonsense, and cannot be used in philosophical reasoning. Wittgenstein's purpose in making this distinction is to delineate what can or cannot be done with philosophy. Working in this framework, many previously important philosophical debates are immediately categorized as nonsense. What is the purpose of life? What is justice? These types of questions have no truth or falsehood in the world, and so debate on them can be thrown in the nonsense bin. Wittgenstein's <i>Tractatus</i> has been roundly rejected on a few different points by many philosophers over the years (including Wittgenstein himself), but it helps us set the stage for the entrance of Speech Act Theory.
 </p>
@@ -258,11 +277,11 @@ I introduce the perlocutionary force for two reasons. First, the happiness or un
 </p>
 
 <p>
-A note on perlocutions &#x2014; above our examples show that perlocutions often pair with illocutions, but this is not necessarily so. For example, there is no illocution for surprise, upset or humiliate <sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>. So Austin's framework allows intentions of illocution, sequence organization in normative responses, and also abnormal responses when unexpected perlocutions result from our actions.
+A note on perlocutions &#x2014; above our examples show that perlocutions often pair with illocutions, but this is not necessarily so. For example, there is no illocution for surprise, upset or humiliate <sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>. So Austin's framework allows intentions of illocution, sequence organization in normative responses, and also abnormal responses when unexpected perlocutions result from our actions. Note that Austin offers only a brief aside about the possibility of conversational organization and normative responses. We will bracket this point for now, to be taken up later in this chapter.
 </p>
 
 <p>
-I have been speaking in general terms about speech acts, and attempting to label them in obvious ways for the examples so far. A formalized theory of speech acts must enumerate the set of acts that any utterance may perform. This is the crux of the work in Chapters 4 and 5 of this paper, and the remainder of this chapter discusses different approaches to this topic, as well as setting the stage for the author's own approach.
+I have been speaking in general terms about speech acts, and attempting to label them in obvious ways for the examples so far. A formalized theory of speech acts must enumerate the set of acts that any utterance may perform. This is the crux of the work in Chapters 4 and 5 of this paper, and the remainder of this chapter discusses different approaches to this topic, as well as setting the stage for and explicating the author's own approach.
 </p>
 
 <p>
@@ -284,10 +303,267 @@ Is it possible to label speech acts? Criticism of explicit speech act labeling n
 <p>
 I offer three arguments against these criticisms. The first is that classification does not imply identity. By classifying an utterance with a label, I do not make the claim that this is the only, best, ideal, or even a common way of performing the speech act label, only that it seems to be an instance of it. Promises can be made without uttering `I promise` just as threats can be made without specifying consequences (`or else&#x2026;'). Secondly, the lexicalization of speech acts suggests that there is a category well-known to English speakers for categorizing utterances in certain ways. If we weren't performing actions, such as `replying' or `denying,' how could we use these words in every day speech and be well understood? The final defense comes from Searle, who says that if our tests do not produce the results from regular use of language, the tests are wrong, not the language. Searle offers the phrase `eye doctor that is not an oculist.' This describes an eye doctor and not an oculist. This shows that the extensions of each can be different, breaking a property we expect of synonyms. Searle argues that if this property breaks, this is a fault in our test for synonyms rather than in synonymy itself. Likewise, it is my position that the same speech act can be performed with different utterances, and if our tests regarding speech acts fail, it is a problem with our tests, not with our ability to label.
 </p>
+</div>
+</div>
+
+<div id="outline-container-org0d1d061" class="outline-2">
+<h2 id="org0d1d061"><span class="section-number-2">2.</span> Conversational Organization</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Now let us turn the bracketed question from above: how do speech acts relate to conversational organization. As noted above, Austin offers a brief aside, noting that (TODO: cite page 116) ``many illocutionary acts invite by convention a response or sequel.'' His intention here is to distinguish between a perlocutionary <i>goal</i> and a perlocutionary <i>effect</i>, noting that evidence of the effect can often be found in the response.
+</p>
 
 <p>
-Speech act theory is an exceptionally broad topic. It has been used in philosophy, linguistics, psychology, and computer science to very different ends and with very different means. In order to get at the aspects of speech act theory that we are particularly interested in for this paper, we will discuss some background in each of these areas, as well as some nay-saying about the efficacy of this approach to language.
+We now turn from the field of philosophy to the field of conversation analysis (CA<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>) to expand the topic of conversational organization. First, a definition of conversational organization. From Schegloff (2007) (TODO: cite page 19) <sup><a id="fnr.5" class="footref" href="#fn.5" role="doc-backlink">5</a></sup>: ``any sorts of general patterns or structures which [people] use to co-produce and track an orderly stretch of talk and other conduct in which some course of action gets initiated, worked through and brought to closure'' constitutes sequence organization.
 </p>
+
+<p>
+In Austinian terms, performing a speech act to conclusion would be a single sequence of conversation, and in fact, this is Schegloff's (and CA's) jumping off point. CA posits that the first pair part (FPP) and second pair part (SPP) of <i>adjacency pairs</i> are the fundamental building blocks of conversational sequences (TODO cite Chapter 2). Examples of adjacency pairs are greeting-greeting, question-answer, or offer-accept/decline (cite p 13). The insight is that during certain parts of conversations, the issue at point includes an introduction of an issue by one speaker (the first pair part) and its resolution by the other speaker (the second pair part).
+</p>
+
+<p>
+Crucially, Schegloff notes that:
+</p>
+<blockquote>
+<p>
+Instead of starting out from the outcome action (e.g., What would make a something a promise?), we start from an observation about how some bit of talk was done and ask: What could someone be doing by talking in this way? What does that bit of talk appear designed to do? What is the action that it is a practice for? We try to ground our answer to this sort of question by showing that it is <i>that</i> action which <i>co-participants in the interaction</i> took to be what was getting done, as revealed in/by the response they make to it. [&#x2026;] So, the first observation is that we start <i>not from the names of types of action</i>, not from <i>classes</i> of action, but from singular bits of data, each in its embedding context, and seek out what &#x2014; in that instance &#x2014; the speaker appeared to be doing, and what in the talk and other conduct underwrote or conveyed that that was what was being done. [&#x2026;] Second, proceeding in this way can lead us to discover actions that have no vernacular name, that speech act theory could not ordinarily undertake to analyze.<sup><a id="fnr.6" class="footref" href="#fn.6" role="doc-backlink">6</a></sup>
+</p>
+</blockquote>
+
+<p>
+Here, we have an approached markedly different from that of Austin. When Austin notes that the number of speech acts maps on to the words we have for describing them, he is explicitly taking the position that the object of inquiry is describable through known language. Schegloff, by contract, uses description (like question-answer) but notes that the description is meant to be a stand-in for classes of organization rather than a definition that obtains.
+</p>
+
+<p>
+With this as the basis of inquiry, Conversation Analysis never offers any list of adjacency pairs. There cannot be a closed set of <i>things we do</i> because the set is simply a convenience for discussion and inquiry, not a list of actions to choose from. Further, the adjacency pair is considered the <i>minimal unit</i>, and more elaborate sequences extend this minimal unit. Let us turn to several extensions in order of their presence within a sequence: pre-expansions, insert expansions, and post-expansions. Then, I will briefly describe preference organization. I will then briefly discuss sequences of sequences. Finally, I will show how the organization of conversation along these lines relates to its computability.
+</p>
+
+<p>
+A <i>pre-sequence</i> is a sequence of conversation that is clearly leading up to an adjacency pair<sup><a id="fnr.7" class="footref" href="#fn.7" role="doc-backlink">7</a></sup>.
+</p>
+
+<p>
+(TODO Cite p 30)
+(TODO: monospace block)
+</p>
+<blockquote>
+<p>
+(4.01) JG 3:1 (Nelson is the caller; Clara is called to the phone)
+1  Cla:           Hello
+2  Nel:           Hi
+3  Cla:           Hi
+4  Nel: F<sub>pre</sub>-&gt; Whatcha doin'.
+5  Cla: S<sub>pre</sub>-&gt; Not much.p
+6  Nel: F<sub>b</sub>-&gt;     Y'wanna drink?
+7  Cla: S<sub>b</sub>-&gt;     Yeah.
+8  Nel:           Okay
+</p>
+</blockquote>
+
+<p>
+In this segment, the base adjacency pair is an invitation-accept on lines 6 and 7. Lines 4 and 5 constitute a pre-invitation. Nelson is building up to invite Clara for a drink, prefacing it with an inquiry about what she is doing now.
+</p>
+
+<p>
+Pre-sequences may be more elaborate with <i>pre-pre-sequences</i>:
+</p>
+
+<p>
+(TODO Cite p 30)
+(TODO: monospace block)
+</p>
+<blockquote>
+<p>
+(4.18) ST (Schegloff, 1980:112)
+1  Fre: F<sub>pre</sub>-&gt; Oh by the way((sniff))I have a bi:g favor to ask ya.
+2  Lau: S<sub>pre</sub>-&gt; Sure, go'head.
+3  Fre: F<sub>pre</sub>-&gt; 'Member the blouse you made a couple weeks ago?
+4  Lau: S<sub>pre</sub>-&gt; Ya.
+5  Fre: F<sub>b</sub>-&gt;     Well I want to wear it this weekend to Vegas but my mom's
+                  buttonholer is broken
+6  Lau: S<sub>b</sub>-&gt;     Fred I told ya when I made the blouse I'd do the buttonholes.           
+</p>
+</blockquote>
+
+<p>
+Here, lines 1 and 2 introduce the issue of asking for a favor. Lines 3 and 4 form a pre-sequence to introduce the topic of the dress, and not until line 5 do we get the substance of the favor and on line 6 its acceptance. For an example and discussion of multiple pre-expansions, see pages 53&#x2013;57.
+</p>
+
+<p>
+An <i>insert-expansion</i> comes between a first pair part and second pair part of a base adjacency pair.
+</p>
+
+<blockquote>
+<p>
+(6.01) SBL 2,1,8 (Schegloff et al., 1977:368)
+1  Bet: F<sub>b</sub>-&gt;     Was last night the first time you met Missiz Kelly?
+2                 (1.0)
+3  Mar: F<sub>ins</sub>-&gt; Met whom?
+4  Bet: S<sub>ins</sub>-&gt; Missiz Kelly.
+5  Mar: S<sub>b</sub>-&gt;     Yes.
+</p>
+</blockquote>
+
+<p>
+Here, the insert-sequence is a <i>repair</i> sequence. The listener fails to hear who the speaker is talking about, and so must ask for a repetition of the name. The question is then not answered until line 5. Repair is a common type of insert-sequence, as proper resolution of the topic may not be possible without resolving some ambiguity of miscommunication.
+</p>
+
+<p>
+A <i>post-expansion</i> falls after the base adjacency pair. As an example, in the above conversation where Nelson is asking Clara for a drink, Nelson responds to Clara's acceptance with an ``okay.'' This extends the previous issue, expanding on Clara's acceptance. An assessment or acknowledgement are common types of post-expansions. These types of expansions are a bit odd since they are not composed of their own adjacency pairs, like pre-sequences and insert-sequences. Other post-expansions might be adjacency pairs on their own, though, such as a counter-offer or a post-mortem.
+</p>
+
+<blockquote>
+<p>
+(7.40) Schegloff et al., 1977:368
+1  Sta:            That's all. But you know what happened that night
+2       F<sub>b</sub>-&gt;      we went to camp. Forget it. She wouldn't behave for
+3                  anything
+4  Ala: F<sub>ins</sub>-&gt;  W-when.
+5  Sta: S<sub>ins</sub>-&gt;  When we went to camp.
+6  Ala: S<sub>b</sub>-&gt;      She behaved okay.
+7  Sta: F<sub>post</sub>-&gt; She did?
+8  Ala: S<sub>post</sub>-&gt; Yeah. She could've been a lot worse
+</p>
+</blockquote>
+
+<p>
+Here we see the supposition from Stan that `she' was not well behaved (line 2). However, Alan's response on line 6 does not accept this fact. In lines 7 and 8, we see a post-expansion where Stan re-evaluates his supposition based on Alan's testimony.
+</p>
+
+<p>
+According to CA, conversations are generally organized into adjacency pairs of two. A first pair part (of some type: pre-sequence, base-pair, insert-sequence, post-sequence) and an associated second pair part, each composed of a turn by different speakers. All of these adjacency pairs map on well to the Austinian terms of perlocutionary goals and effects. We see that in conversation, a first pair part generally has some objective and that objective is acknowledged in some way in the second pair part.
+</p>
+
+<p>
+CA goes on to describe how second pair parts are chosen and formed based on certain <i>preferences</i> within conversation. Note that preference has a narrow meaning within CA. A speaker inviting a listener to an event may have a preference for their attending or not attending, and the listener may also have a preference one way or the other. However, these feelings to the substance of the issue are not under discussion when discussing preferences in conversational organization. Instead, we are looking at the way that turns reflect on one another.
+</p>
+
+<p>
+To extend the example of an invitation, a speaker may <i>tilt</i> the invitation one way or another. ``Would you like to join us?'' and ``You wouldn't want to join us, would you?'' set up differing preferences for acceptance and rejection of the invitation. In the first, the preferred action is to accept the invitation and in the second it is to reject. We notice that often performing the preferred action is a minimal turn (e.g., ``sure'' or ``no thank you''), but a <i>dispreferred</i> turn will be accompanied by some expansion (e.g., ``I'd love to but I have to be somewhere'' or ``I do need to sit down for just a few minutes'').
+</p>
+
+<p>
+TODO Sequences of Sequences
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9f77ffd" class="outline-2">
+<h2 id="org9f77ffd"><span class="section-number-2">3.</span> Computability of Conversational Organization</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Let us turn to the computability of conversational organization. I will follow the template of Chomsky (1957) in which the author offers formalized definitions of sentences of a language and outlines the constraints for a grammar to compute sentences that are inside or outside of the language. My goal here is to similarly formalize sequences of utterances within a language that may or may not compose a conversation according to the conversational organization that we have outlined above. This will give us a sense of the difficulty of the problem that we are looking to solve.
+</p>
+</div>
+
+<div id="outline-container-org6292109" class="outline-3">
+<h3 id="org6292109"><span class="section-number-3">3.1.</span> Definitions of terms</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+First a few definitions. Let \(L\) be a language. $L is a set composed of possible conversations in that language. For any conversation \(C\), it is defined as a fully-ordered, finite set of sequences $\{S<sub>1\ldots</sub>{S<sub>n</sub>}\} for a conversation of length \(n\). Each sequence \(S\) is minimally composed of a first pair part \(f_b\) and a second pair part \(s_b\). A conversational grammar \(G\) decides whether a conversation \(C\) is admissible in language \(L\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6697f07" class="outline-3">
+<h3 id="org6697f07"><span class="section-number-3">3.2.</span> Finite State Machine</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+First consider the Type-3 grammar or regular grammar of the Chomsky hierarchy. This type of grammar can be decide a regular language and only admits either left-regular or right-regular introduction rules.
+</p>
+
+
+
+<p>
+At first look, a minimal grammar composed only of base adjacency pairs \(f_b\) and \(s_b\).
+</p>
+
+<p>
+Let \(N=\{C,S\}\), \(\Sigma=\{f_b,s_b\}\), then \(P\):
+\[C\rightarrow{S}\]
+\[S\rightarrow{f_bA}\]
+\[A\rightarrow{s_bS}\]
+\[S\rightarrow{\epsilon}\]
+</p>
+
+<p>
+In words, a conversation is composed of a sequence of sequences. Each sequence is composed of an adjacency pair followed by one or more sequences, or the end token. However, this does not account for pre- and post-expansion sequences. Let us add these rules:
+</p>
+
+<p>
+\[S\rightarrow{f_{pre}B}\]
+\[B\rightarrow{s_{pre}D}\]
+\[D\rightarrow{s_{pre}A}\]
+\[D\rightarrow{f_bA}\]
+\[A\rightarrow{f_{post}E}\]
+\[A\rightarrow{f_{post}S}\]
+\[E\rightarrow{s_{post}S}\]
+</p>
+
+<p>
+Note that rule \(B\) is necessary for the case in which a pre-expansion precludes the base pair. As an example:
+</p>
+
+<blockquote>
+<p>
+1  A: What are you up to?
+2  B: I'm very busy
+3  A: Never mind, then
+</p>
+</blockquote>
+
+<p>
+In this (fabricated) conversation, lines 1 and 2 are a pre-expansion of a projected invitation, but Bas business precludes the invitation actually happening, instead ending early with line 3's post-expansion acknowledgement. 
+</p>
+
+<p>
+Next we will add rules for insert sequences. Note that pre-sequences, post-sequences, and base adjacency pairs all need appropriate places for insert sequences, as well as insert sequences themselves.
+</p>
+
+<p>
+\[B\rightarrow{f_{ins}F}\]
+\[F\rightarrow{s_{ins}B\]
+\[A\rightarrow{f_{ins}G}\]
+\[G\rightarrow{s_{ins}S\]
+\[G\rightarrow{s_{ins}A\]
+\[E\rightarrow{f_{ins}H}\]
+\[H\rightarrow{s_{ins}E}\]
+</p>
+
+<p>
+This accounts for <i>serial</i> insert sequences, but what we cannot do in regular language is to add insert sequences of insert sequences. The problem is that this relies on a stack of known height in order to unpack the conversation before continuing. Finite State Automata lack the necessary memory for unpacking a stack. For example
+</p>
+
+<blockquote>
+<p>
+1 A: Would you like to go to lunch?
+2 B: Where?
+3 A: What time would we go?
+4 B: 12:30
+5 A: The Ethiopian place
+6 B: Yeah that sounds great
+</p>
+</blockquote>
+
+<p>
+In this case, attending lunch is contingent on location, but the location is contingent upon the time. A regular language cannot account for the stack-type structure of this conversation. This is an application of the pumping lemma for regular languages. In this case, we are pumping insert sequences, showing that the grammar of conversation is not regular.
+</p>
+
+<p>
+Moving up the Chomsky hierarchy, is \(C\) context-free?
+</p>
+
+<p>
+Let \(w\in{C}\) such that \(w=uvxyz\) such that \(\forall{i}\geq{0}, uv^ixy^iz\in{L}\), \(|vy|\geq{1}\), and \(|vxy|\leq{p}\)
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org6ba8540" class="outline-3">
+<h3 id="org6ba8540"><span class="section-number-3">3.3.</span> </h3>
+</div>
+</div>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
@@ -304,12 +580,28 @@ If the exact words used in boat naming are of the utmost importance in the ritua
 These are Austin's examples on the basis that we cannot say `I surprise you that X' or `I upset you that X.' This seems to contradict his assertion that certain illocutions cannot be explicit, such as imply or insinuate, since even if my intention is to surprise or upset, this cannot be the illocution. The difference is that the surprisal, upset, etc. is necessarily secondary to the propositional content. For example, `Theresa is engaged` may surprise or upset you, but the illocutionary force is to inform. Contrast this with `Theresa was wearing a diamond ring on her third left finger` for which the force is to imply. 
 </p></div></div>
 
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4" role="doc-backlink">4</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+The field of Conversation Analysis was originally developed by Harvey Sacks, Emanuel Schegloff, and Gail Jefferson. Here, we are mainly working from Schegloff's 2007 book <i>Sequence Organization in Interaction: A Primer in Conversation Analysis</i>, which lays out the foundations of the approach. Within this text are, of course, hundreds of other papers for methodology and findings. These will be cited where findings are appropriate, and the book is the main resource for methodology. Since the methodology is largely contained in this volume with a single author, we will attribute it to this author and also this field.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5" role="doc-backlink">5</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+We are building our own narrative from two chronological ends of speech act theory: Austin's lectures from 1955 and Schegloff's text from 2007. The intervening 50 years presents a tangle of literature building from and up to each of these seminal works. Rather than follow the divergence of the two lines of inquiry, the differences between the two approaches are highlighted most clearly when they are farthest apart.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6" role="doc-backlink">6</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Here, we are treating the organizational interrogation of Conversation Analysis as an extention of Speech Act Theory. Within their own fields, this is certainly not true. This quote from Schegloff makes the distinction explicit, and work within the philosophy of language would also not blur the lines between the two. However, the two fields of often pushed together in implementation, such as when creating conversational agents or labeling a dataset. These issues are discussed latter in this paper, but I want to note that the conflation here is purposeful and conscientious.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7" role="doc-backlink">7</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+A note on Conversation Analysis style transcripts. In CA, the actual talk is of the utmost importance, not a gloss of the talk. Therefore, rather than transcribing a sequence of words as understood by a transcriber, the transcriber seeks to transcribe the sounds that the participants make, including markup for many verbal cues that may be relevant to that portion of conversation, or to the angle of inquiry. This is why words are occasionally spelled roughly phonetically rather than by the book. Further, some markup such as `((sniff))' are included where the parentheses denote a non-verbal sound. The `F' and `S' markers in the transcripts show first and second pair parts, respectively, with subscripts for different expansions and `b' subscripts for base adjacency pairs.
+</p></div></div>
+
 
 </div>
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Chas Threlkeld</p>
-<p class="date">Created: 2023-01-18 Wed 13:01</p>
+<p class="date">Created: 2023-02-01 Wed 12:57</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
