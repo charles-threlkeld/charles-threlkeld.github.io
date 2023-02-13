@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-02-12 Sun 20:09 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Chas Threlkeld" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org1a3a6e8">1. Chapter 1 &#x2014; Introduction</a></li>
+<li><a href="#org18c37a2">2. Chapter 2 &#x2014; Philosophical Background</a>
+<ul>
+<li><a href="#orgff8416f">2.1. Austin Founds Speech Act Theory</a></li>
+<li><a href="#org54ba2fd">2.2. Conversation Analysis Examines Organization</a></li>
+<li><a href="#orgacb87bc">2.3. The Goal of a Grammar of Conversation</a></li>
+</ul>
+</li>
+<li><a href="#org862423b">3. Chapter 3 &#x2014; Speech Acts in Computation</a>
+<ul>
+<li><a href="#org9eb80a1">3.1. Fields Employing Speech Acts</a></li>
+<li><a href="#org8b7dfd9">3.2. Mismatch of Speech Act Logic and Conversational Organization</a></li>
+<li><a href="#org3ba1d1d">3.3. Building a Speech Act Schema from Data</a></li>
+</ul>
+</li>
+<li><a href="#orga425ea7">4. Chapter 4 &#x2014; Data Sources for Speech Act Discernment</a>
+<ul>
+<li><a href="#org27ae369">4.1. The Literal Force Hypothesis and the Limits Thereof</a></li>
+<li><a href="#orgbdc318b">4.2. Indirect Speech Acts and TRP Duration</a></li>
+<li><a href="#org2f02938">4.3. TRP Duration Dependent on Speaker Switch</a></li>
+<li><a href="#orgc44842b">4.4. Utterance Length is Exponential</a></li>
+</ul>
+</li>
+<li><a href="#orgb9817bc">5. Chapter 5 &#x2014; Computational Models of Speech Acts</a>
+<ul>
+<li><a href="#org11d2ae1">5.1. Models for a Syntax-Derived Schema</a></li>
+<li><a href="#org0867b4f">5.2. Learning a Schema from Conversational Data</a></li>
+<li><a href="#org2cc276e">5.3. Robustness Studies</a></li>
+</ul>
+</li>
+<li><a href="#org7fafe60">6. Chapter 6 &#x2014; Analysis of Data-First Speech Acts</a>
+<ul>
+<li><a href="#orga78fbf0">6.1. Quantitative Results of Clustering Approach</a></li>
+<li><a href="#org5b10c6f">6.2. Qualitative Results of Clustering Approach</a></li>
+<li><a href="#org7fe8ae1">6.3. Limitations of This Work</a></li>
+</ul>
+</li>
+<li><a href="#org7c04eed">7. Chapter 7 &#x2014; Conclusion and Future Work</a></li>
+<li><a href="#org033b8bf">8. Proposed Schedule</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1a3a6e8" class="outline-2">
+<h2 id="org1a3a6e8"><span class="section-number-2">1.</span> Chapter 1 &#x2014; Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-05-19 Fri&gt;</span></span>
+</p>
+
+<p>
+Hello and welcome to my dissertation. We are taking the philosophical speech act and defining it computationally. We will look at the various problems that speech acts hope to solve, and how lenses in one discipline fall short in others. To address this, we build a speech act set from scratch, using the linguistic cues of conversation. This data-first approach side-steps descriptional approaches that might not apply to other situations, and is unique to this research.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org18c37a2" class="outline-2">
+<h2 id="org18c37a2"><span class="section-number-2">2.</span> Chapter 2 &#x2014; Philosophical Background</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+In order to study speech acts, their use in conversation, and the goals of the projects, we will look at the two major strands of inquiry: Speech Act Theory and Conversation Analysis. The two have different goals, but are often put to similar ends, confusing their purpose. Once we have drawn distinctions between the two strands, we will explore one of the goals of pragmatics: establishing a grammar of conversation.
+</p>
+</div>
+
+<div id="outline-container-orgff8416f" class="outline-3">
+<h3 id="orgff8416f"><span class="section-number-3">2.1.</span> Austin Founds Speech Act Theory</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-02-24 Fri&gt;</span></span>
+</p>
+
+<p>
+In his lecture series, Austin established that speaking utterances extends beyond trading propositional content. This extends the logical interpretation of utterances in conversation beyond simple truth and falsehood to also ``happy and unhappy'' uses of language. Austin notices that many speech acts lend themselves to certain types of responses, and that this could entail an organizational property of conversation.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org54ba2fd" class="outline-3">
+<h3 id="org54ba2fd"><span class="section-number-3">2.2.</span> Conversation Analysis Examines Organization</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-02-24 Fri&gt;</span></span>
+</p>
+
+<p>
+Conversation Analysis was established in parallel to Speech Act Theory, but starts with noticing patterns in conversation. Rather than applying structure to utterances, it tries to notice the structure in real conversations and create a theory of regularities in every day speech.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgacb87bc" class="outline-3">
+<h3 id="orgacb87bc"><span class="section-number-3">2.3.</span> The Goal of a Grammar of Conversation</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-02-17 Fri&gt;</span></span>
+</p>
+
+<p>
+Much like the theory of syntax is to establish a formal system of how sentences are constructed, one goal of pragmatics is to establish how conversations may be constructed from utterances. Here, we use the findings of Conversation Analysis and the approaches of formal linguistics to sketch a Grammar of Conversation. We are able to establish that conversation is not regular, but note that the current theory is insufficient for further analysis.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org862423b" class="outline-2">
+<h2 id="org862423b"><span class="section-number-2">3.</span> Chapter 3 &#x2014; Speech Acts in Computation</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Computer scientists are interested in conversation for a number of different fields, but Speech Act Theory has only led to incremental improvements. According to the critique here, the logical structure of Speech Act Theory is usually used rather than the organization structure of Conversation Analysis. However, Conversation Analysis limits itself to noticing patterns, rather than establishing a formal structure of conversation, as would be needed in a symbolic approach to dialogue. This necessary formalization motivates the work of this document.
+</p>
+</div>
+
+<div id="outline-container-org9eb80a1" class="outline-3">
+<h3 id="org9eb80a1"><span class="section-number-3">3.1.</span> Fields Employing Speech Acts</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-03 Fri&gt;</span></span>
+</p>
+
+<p>
+Speech Act Theory has been employed in many subfields of computer science. These include building dialogue agents, dialogue structure, corpus tagging, summarization techniques, planning, and others. Within these topics, there are often disparate goals such as small talk, problem solving, human-robot teaming, or telephonic agents. Each task has often argued for specialized logics for its domain, and specialized logics beg specialized speech acts, fragmenting the computational speech act literature.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8b7dfd9" class="outline-3">
+<h3 id="org8b7dfd9"><span class="section-number-3">3.2.</span> Mismatch of Speech Act Logic and Conversational Organization</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-10 Fri&gt;</span></span>
+</p>
+
+<p>
+Speech Act Theory in computational settings often orients to the logics of conversation, making decisions about <i>what</i> to say. However, the <i>what</i> has been subservient to the <i>when</i> and <i>how</i>, which are examined with Conversation Analytics. Using Conversational Organization as a resource for computations about conversation will give us a naturalistic and realistic lens.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3ba1d1d" class="outline-3">
+<h3 id="org3ba1d1d"><span class="section-number-3">3.3.</span> Building a Speech Act Schema from Data</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-10 Fri&gt;</span></span>
+</p>
+
+<p>
+Speech Act Theory has taken many approaches to creating schemas and taxonomies of speech acts. Each of these has its own motivations, from Austin's locution, illocution, perlocution distinctions to Bunt's ISO standardization. The problem with each of them is that they make compromises to the data in some way. Labeling with any taxonomy is difficult, and so rather than build a taxonomy based on observations and construal, we propose and build two different models of speech acts. In the first, we take sentence syntax as our inspiration. We find that sentences have their <i>direct</i> meaning more often than we suspect, but that this taxonomy is lacking in several ways. In the second approach, we use the basic outline of a conversation, removed from details of semantics, to cluster utterances into categories in order to take a data-first approach.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga425ea7" class="outline-2">
+<h2 id="orga425ea7"><span class="section-number-2">4.</span> Chapter 4 &#x2014; Data Sources for Speech Act Discernment</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+If we are to build a speech act taxonomy based on high-level conversational concerns, we first need to identify aspects of conversation that are important to their pragmatic meanings. In this chapter, we review our published work.
+</p>
+</div>
+
+<div id="outline-container-org27ae369" class="outline-3">
+<h3 id="org27ae369"><span class="section-number-3">4.1.</span> The Literal Force Hypothesis and the Limits Thereof</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-17 Fri&gt;</span></span>
+</p>
+
+<p>
+First, we build models based on the literal force hypothesis which matches sentence type to a small set of speech acts. We find that sentence-complete utterance match their direct meaning more often than we as researchers expect, but not often enough to be theory-complete. We also find that a large plurality of utterance are not sentence-complete, making this theory severely lacking in detail.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbdc318b" class="outline-3">
+<h3 id="orgbdc318b"><span class="section-number-3">4.2.</span> Indirect Speech Acts and TRP Duration</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-24 Fri&gt;</span></span>
+</p>
+
+<p>
+Cognitive theories of speech act understanding suggest that indirectness may be re-framed as implicature. In this case, we suspect that indirect speech acts may take longer to respond to in conversation than direct speech acts. We find that the evidence supports speech-act first processing, as the TRP is correlated more highly with speech act than measures of indirectness.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2f02938" class="outline-3">
+<h3 id="org2f02938"><span class="section-number-3">4.3.</span> TRP Duration Dependent on Speaker Switch</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-31 Fri&gt;</span></span>
+</p>
+
+<p>
+Speech Act Theory and Conversation Organization both suggest that some speech acts are projectable as end-of-turn, leading to speaker switch. In this work, we find that about \(\frac{1}{6}\) of utterances have a 0ms TRP and no speaker switch, \(\frac{2}{3}\)  had a relatively long TRP and no speaker switch, and \(\frac{1}{2}\) has a relatively short TRP with a speaker switch. This supports the theory that turn taking is locally managed, and also that end of turn is projectable on a TCU level.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc44842b" class="outline-3">
+<h3 id="orgc44842b"><span class="section-number-3">4.4.</span> Utterance Length is Exponential</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-31 Fri&gt;</span></span>
+</p>
+
+<p>
+Early results indicate that utterance length is exponential in milliseconds, showing a constant hazard rate. In this work, we extend that work to a new corpus, and also to syllable- and word-count at the TCU and turn levels. We find that each of these has a fairly constant hazard rate, supporting the idea that length is not a good measure for a turn-taking or utterance-segmentation mechanism.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb9817bc" class="outline-2">
+<h2 id="orgb9817bc"><span class="section-number-2">5.</span> Chapter 5 &#x2014; Computational Models of Speech Acts</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+With our experimental results in hand, we set about to build models of conversational grammar.
+</p>
+</div>
+
+<div id="outline-container-org11d2ae1" class="outline-3">
+<h3 id="org11d2ae1"><span class="section-number-3">5.1.</span> Models for a Syntax-Derived Schema</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-04-07 Fri&gt;</span></span>
+</p>
+
+<p>
+In these models, we attempted to apply our results to the syntax-derived taxonomy. We found that our data does not lead to strong improvements on the baselines established by the syntax. We conclude that the taxonomy is not strong enough to provide useful information to the issue.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0867b4f" class="outline-3">
+<h3 id="org0867b4f"><span class="section-number-3">5.2.</span> Learning a Schema from Conversational Data</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-04-14 Fri&gt;</span></span>
+</p>
+
+<p>
+In this model, we take a data-first approach, using a low-dimension representation of utterances in order to cluster them in to speech acts. We start with a known set of hand-tagged speech acts, of which we are critical, but believe contain useful information. Using a series of models, estimate the optimal speech act number based on clustering mechanics.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2cc276e" class="outline-3">
+<h3 id="org2cc276e"><span class="section-number-3">5.3.</span> Robustness Studies</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-04-21 Fri&gt;</span></span>
+</p>
+
+<p>
+We permuted the data in the above pipeline to establish that it is not fragile with respect to certain key utterances in the corpus. We also applied the same pipeline to another corpus to establish that the clustering is robust to different datasets. There are still limitations to applying this approach to different datasets in different contexts or different taxonomies.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7fafe60" class="outline-2">
+<h2 id="org7fafe60"><span class="section-number-2">6.</span> Chapter 6 &#x2014; Analysis of Data-First Speech Acts</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+We've created the models, and here we examine the results.
+</p>
+</div>
+
+<div id="outline-container-orga78fbf0" class="outline-3">
+<h3 id="orga78fbf0"><span class="section-number-3">6.1.</span> Quantitative Results of Clustering Approach</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-04-28 Fri&gt;</span></span>
+</p>
+
+<p>
+Examination of metrics we used for choosing a model. Examination of the quantitative aspects of the clusters, such as TRP timing, typical syntax, and speaker switch propensities.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5b10c6f" class="outline-3">
+<h3 id="org5b10c6f"><span class="section-number-3">6.2.</span> Qualitative Results of Clustering Approach</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-04-28 Fri&gt;</span></span>
+</p>
+
+<p>
+Here we zoom back out and look at the semantic properties of the utterances in the clusters to determine what aspects of conversation our models have illuminated.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7fe8ae1" class="outline-3">
+<h3 id="org7fe8ae1"><span class="section-number-3">6.3.</span> Limitations of This Work</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-05-05 Fri&gt;</span></span>
+</p>
+
+<p>
+These studies work on the SWBD-DAMSL taxonomy as a baseline, and assume that small-talk, telephonic conversation is a reasonable baseline. Constraining contexts will likely differ systematically from the results presented here. Further, this data is all from native English speaking Americans, does not trivially generalize in certain ways.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7c04eed" class="outline-2">
+<h2 id="org7c04eed"><span class="section-number-2">7.</span> Chapter 7 &#x2014; Conclusion and Future Work</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-05-12 Fri&gt;</span></span>
+</p>
+
+<p>
+In this work, I've established that Speech Act Theory and Conversational Organization have distinct properties, but they have been used in convergent ways. I have shown that Conversational Organziation has important properties relating to syntax and turn-taking timing. I've built and assessed models that side-step the problems typical of Speech Act Theory by starting with the data and building a Speech Act Taxonomy. The results illuminate the geometry of the problem, and also some of the limitations of this approach.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org033b8bf" class="outline-2">
+<h2 id="org033b8bf"><span class="section-number-2">8.</span> Proposed Schedule</h2>
+<div class="outline-text-2" id="text-8">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Week of</th>
+<th scope="col" class="org-left">Writing</th>
+<th scope="col" class="org-left">Editing</th>
+<th scope="col" class="org-left">Sending</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Jan 20</td>
+<td class="org-left">Chapter 2 &#x2014; <a href="#orgff8416f">Austin</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Jan 27</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Feb 3</td>
+<td class="org-left">Chapter 2 &#x2014; <a href="#org54ba2fd">Schegloff</a> &amp;  <a href="#orgacb87bc">Grammar of Conversation</a></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Feb 10</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Feb 17</td>
+<td class="org-left">Chapter 3 &#x2014; <a href="#org9eb80a1">Speech Act Uses</a> &amp; <a href="#org8b7dfd9">Critique of Speech Acts</a></td>
+<td class="org-left">Chapter 2 &#x2014;  <a href="#orgacb87bc">Grammar of Conversation</a></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Feb 24</td>
+<td class="org-left">Chapter 3 &#x2014; <a href="#org3ba1d1d">Sketch of Personal Work</a></td>
+<td class="org-left">Chapter 2 &#x2014;  <a href="#orgff8416f">Austin</a> &amp;  <a href="#org54ba2fd">Schegloff</a></td>
+<td class="org-left"><a href="#org18c37a2">Chapter 2</a> to JP</td>
+</tr>
+
+<tr>
+<td class="org-left">Mar 3</td>
+<td class="org-left">Chapter 4 &#x2014; <a href="#org27ae369">Literal Force Hypothesis</a> &amp; <a href="#orgbdc318b">Indirect Speech Acts</a></td>
+<td class="org-left">Chapter 3 &#x2014;  <a href="#org9eb80a1">Speech Act Uses</a></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Mar 10</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Chapter 3 &#x2014;  <a href="#org8b7dfd9">Critique of Speech Acts</a> &amp;  <a href="#org3ba1d1d">Sketch of Personal Work</a></td>
+<td class="org-left"><a href="#org862423b">Chapter 3</a> to JP</td>
+</tr>
+
+<tr>
+<td class="org-left">Mar 17</td>
+<td class="org-left">Chapter 4 &#x2014; <a href="#org2f02938">TRP &amp; Speaker Switch</a> &amp; <a href="#orgc44842b">Utterance Length</a></td>
+<td class="org-left">Chapter 4 &#x2014;  <a href="#org27ae369">Literal Force Hypothesis</a></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Mar 24</td>
+<td class="org-left">Chapter 5 &#x2014; <a href="#org11d2ae1">Syntax-Derived Schema</a></td>
+<td class="org-left">Chapter 4 &#x2014;  <a href="#orgbdc318b">Indirect Speech Acts</a></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Mar 31</td>
+<td class="org-left">Chapter 5 &#x2014; <a href="#org0867b4f">Clustering for Speech Acts</a></td>
+<td class="org-left">Chapter 4 &#x2014; <a href="#org2f02938">TRP &amp; Speaker Switch</a> &amp; <a href="#orgc44842b">Utterance Length</a></td>
+<td class="org-left"><a href="#orga425ea7">Chapter 4</a> to JP</td>
+</tr>
+
+<tr>
+<td class="org-left">Apr 7</td>
+<td class="org-left">Chapter 5 &#x2014; <a href="#org2cc276e">5.3</a></td>
+<td class="org-left">Chapter 5 &#x2014; <a href="#org11d2ae1">Syntax-Derived Schema</a></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Apr 14</td>
+<td class="org-left">Chapter 6 &#x2014; <a href="#orga78fbf0">Quantiative Results</a></td>
+<td class="org-left">Chapter 5 &#x2014; <a href="#org0867b4f">Clustering for Speech Acts</a></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Apr 21</td>
+<td class="org-left">Chapter 6 &#x2014; <a href="#org5b10c6f">Qualitative Results</a> &amp; <a href="#org7fe8ae1">Limitations</a></td>
+<td class="org-left">Chapter 5 &#x2014; <a href="#org2cc276e">5.3</a></td>
+<td class="org-left"><a href="#orgb9817bc">Chapter 5</a> to JP</td>
+</tr>
+
+<tr>
+<td class="org-left">Apr 28</td>
+<td class="org-left">Chapter 7 &#x2014; <a href="#org7c04eed">Conclusion</a></td>
+<td class="org-left">Chapter 6 &#x2014; <a href="#orga78fbf0">Quantiative Results</a> &amp; <a href="#org5b10c6f">Qualitative Results</a></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">May 5</td>
+<td class="org-left">Chapter 1 &#x2014; <a href="#org1a3a6e8">Introduction</a></td>
+<td class="org-left">Chapter 6 &#x2014; <a href="#org5b10c6f">Qualitative Results</a> &amp; <a href="#org7fe8ae1">Limitations</a></td>
+<td class="org-left"><a href="#org7fafe60">Chapter 6</a> to JP</td>
+</tr>
+
+<tr>
+<td class="org-left">May 12</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Chapter 7 &#x2014; <a href="#org7c04eed">Conclusion</a></td>
+<td class="org-left"><a href="#org7c04eed">Chapter 7</a> to JP</td>
+</tr>
+
+<tr>
+<td class="org-left">May 19</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Chapter 1 &#x2014; <a href="#org1a3a6e8">Introduction</a></td>
+<td class="org-left"><a href="#org1a3a6e8">Chapter 1</a> to JP</td>
+</tr>
+
+<tr>
+<td class="org-left">Jun 2</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Full Draft to JP</td>
+</tr>
+
+<tr>
+<td class="org-left">Jun 9</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Jun 16</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Jun 23</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Doc to Committee</td>
+</tr>
+
+<tr>
+<td class="org-left">Jun 30</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Jul 7</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Jul 14</td>
+<td class="org-left">Defend Dissertation</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Jul 21</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Jul 28</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Aug 4</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Aug 10</td>
+<td class="org-left">All Requirements Due</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Submit Final Draft</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Chas Threlkeld</p>
+<p class="date">Created: 2023-02-12 Sun 20:09</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
