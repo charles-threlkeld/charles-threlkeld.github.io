@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-01 Wed 12:57 -->
+<!-- 2023-02-14 Tue 09:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -221,13 +221,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4bac35c">1. The Origins of Speech Act Theory</a></li>
-<li><a href="#org0d1d061">2. Conversational Organization</a></li>
-<li><a href="#org9f77ffd">3. Computability of Conversational Organization</a>
+<li><a href="#org4915275">1. The Origins of Speech Act Theory</a></li>
+<li><a href="#orgd0b860b">2. Conversational Organization</a></li>
+<li><a href="#org28b06b7">3. Computability of Conversational Organization</a>
 <ul>
-<li><a href="#org6292109">3.1. Definitions of terms</a></li>
-<li><a href="#org6697f07">3.2. Finite State Machine</a></li>
-<li><a href="#org6ba8540">3.3. </a></li>
+<li><a href="#org0a9a25c">3.1. Definitions of terms</a></li>
+<li><a href="#org235f3d0">3.2. Finite State Machine</a></li>
+<li><a href="#org4f357cf">3.3. </a></li>
 </ul>
 </li>
 </ul>
@@ -237,8 +237,8 @@
 What problem do Speech Acts solve?
 </p>
 
-<div id="outline-container-org4bac35c" class="outline-2">
-<h2 id="org4bac35c"><span class="section-number-2">1.</span> The Origins of Speech Act Theory</h2>
+<div id="outline-container-org4915275" class="outline-2">
+<h2 id="org4915275"><span class="section-number-2">1.</span> The Origins of Speech Act Theory</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 In the early 20th century, philosophers of language (working from Wittgenstein's <i>Tractatus Logicio-Philisophicus</i>) posited that language is the vehicle we use to make claims on the world. The important part of language is that it creates propositions, which are either true or false regarding the way the world is. Wittgenstein thought that if a sentence is neither true or false, then it is nonsense, and cannot be used in philosophical reasoning. Wittgenstein's purpose in making this distinction is to delineate what can or cannot be done with philosophy. Working in this framework, many previously important philosophical debates are immediately categorized as nonsense. What is the purpose of life? What is justice? These types of questions have no truth or falsehood in the world, and so debate on them can be thrown in the nonsense bin. Wittgenstein's <i>Tractatus</i> has been roundly rejected on a few different points by many philosophers over the years (including Wittgenstein himself), but it helps us set the stage for the entrance of Speech Act Theory.
@@ -306,8 +306,8 @@ I offer three arguments against these criticisms. The first is that classificati
 </div>
 </div>
 
-<div id="outline-container-org0d1d061" class="outline-2">
-<h2 id="org0d1d061"><span class="section-number-2">2.</span> Conversational Organization</h2>
+<div id="outline-container-orgd0b860b" class="outline-2">
+<h2 id="orgd0b860b"><span class="section-number-2">2.</span> Conversational Organization</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Now let us turn the bracketed question from above: how do speech acts relate to conversational organization. As noted above, Austin offers a brief aside, noting that (TODO: cite page 116) ``many illocutionary acts invite by convention a response or sequel.'' His intention here is to distinguish between a perlocutionary <i>goal</i> and a perlocutionary <i>effect</i>, noting that evidence of the effect can often be found in the response.
@@ -448,16 +448,16 @@ TODO Sequences of Sequences
 </div>
 </div>
 
-<div id="outline-container-org9f77ffd" class="outline-2">
-<h2 id="org9f77ffd"><span class="section-number-2">3.</span> Computability of Conversational Organization</h2>
+<div id="outline-container-org28b06b7" class="outline-2">
+<h2 id="org28b06b7"><span class="section-number-2">3.</span> Computability of Conversational Organization</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Let us turn to the computability of conversational organization. I will follow the template of Chomsky (1957) in which the author offers formalized definitions of sentences of a language and outlines the constraints for a grammar to compute sentences that are inside or outside of the language. My goal here is to similarly formalize sequences of utterances within a language that may or may not compose a conversation according to the conversational organization that we have outlined above. This will give us a sense of the difficulty of the problem that we are looking to solve.
 </p>
 </div>
 
-<div id="outline-container-org6292109" class="outline-3">
-<h3 id="org6292109"><span class="section-number-3">3.1.</span> Definitions of terms</h3>
+<div id="outline-container-org0a9a25c" class="outline-3">
+<h3 id="org0a9a25c"><span class="section-number-3">3.1.</span> Definitions of terms</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 First a few definitions. Let \(L\) be a language. $L is a set composed of possible conversations in that language. For any conversation \(C\), it is defined as a fully-ordered, finite set of sequences $\{S<sub>1\ldots</sub>{S<sub>n</sub>}\} for a conversation of length \(n\). Each sequence \(S\) is minimally composed of a first pair part \(f_b\) and a second pair part \(s_b\). A conversational grammar \(G\) decides whether a conversation \(C\) is admissible in language \(L\).
@@ -465,8 +465,8 @@ First a few definitions. Let \(L\) be a language. $L is a set composed of possib
 </div>
 </div>
 
-<div id="outline-container-org6697f07" class="outline-3">
-<h3 id="org6697f07"><span class="section-number-3">3.2.</span> Finite State Machine</h3>
+<div id="outline-container-org235f3d0" class="outline-3">
+<h3 id="org235f3d0"><span class="section-number-3">3.2.</span> Finite State Machine</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 First consider the Type-3 grammar or regular grammar of the Chomsky hierarchy. This type of grammar can be decide a regular language and only admits either left-regular or right-regular introduction rules.
@@ -560,8 +560,8 @@ Let \(w\in{C}\) such that \(w=uvxyz\) such that \(\forall{i}\geq{0}, uv^ixy^iz\i
 </div>
 
 
-<div id="outline-container-org6ba8540" class="outline-3">
-<h3 id="org6ba8540"><span class="section-number-3">3.3.</span> </h3>
+<div id="outline-container-org4f357cf" class="outline-3">
+<h3 id="org4f357cf"><span class="section-number-3">3.3.</span> </h3>
 </div>
 </div>
 <div id="footnotes">
@@ -601,7 +601,7 @@ A note on Conversation Analysis style transcripts. In CA, the actual talk is of 
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Chas Threlkeld</p>
-<p class="date">Created: 2023-02-01 Wed 12:57</p>
+<p class="date">Created: 2023-02-14 Tue 09:24</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

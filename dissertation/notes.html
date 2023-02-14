@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-01 Wed 12:57 -->
+<!-- 2023-02-14 Tue 09:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -196,17 +196,734 @@
 </head>
 <body>
 <div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org0687646">1. Info sources</a>
+<ul>
+<li><a href="#orgab1b1c7">1.1. Graduation Information</a></li>
+<li><a href="#orgc87e50c">1.2. Felix's Dissertation</a></li>
+</ul>
+</li>
+<li><a href="#org3eaebfd">2. Notes</a>
+<ul>
+<li><a href="#org80487b3">2.1. Background and Motivation</a>
+<ul>
+<li><a href="#org0010b17">2.1.1. What problem are we trying to solve?</a></li>
+<li><a href="#org8e35150">2.1.2. How do we expect to solve it?</a></li>
+<li><a href="#org1c3769b">2.1.3. What traditions are we pulling from and why?</a></li>
+</ul>
+</li>
+<li><a href="#orgcd33935">2.2. Philosophical Origins</a>
+<ul>
+<li><a href="#org3214115">2.2.1. When was ``Speech Act'' coined?</a></li>
+<li><a href="#org20fe3f7">2.2.2. What problem is it trying to solve?</a></li>
+<li><a href="#orge856130">2.2.3. Has the problem changed?</a></li>
+<li><a href="#orgab541f1">2.2.4. Is this the same problem we are trying to solve?</a></li>
+<li><a href="#org6813bfb">2.2.5. Short comings in explanatory power and external validity</a></li>
+</ul>
+</li>
+<li><a href="#org54545f0">2.3. Sociological Interactions</a>
+<ul>
+<li><a href="#org7bfbc23">2.3.1. Adjacency Pairs are speech acts defined in their relationship</a></li>
+<li><a href="#orgdfdf3ef">2.3.2. Preference organization shows that different speech acts have different conversational shapes</a></li>
+<li><a href="#org8eeba62">2.3.3. Short-comings in operationalization and generalization</a></li>
+</ul>
+</li>
+<li><a href="#org925985a">2.4. Linguistic Interpretations</a>
+<ul>
+<li><a href="#orgb9291f2">2.4.1. Sentences are the unit of meaning, so sentence-type can explain meaning</a></li>
+<li><a href="#org5af162c">2.4.2. Syntactic transformations morph the meaning according to circumstance</a></li>
+<li><a href="#orgc5086b2">2.4.3. Difficulty explaining indirect speech acts, fragments, and changes in interpretation based on (e.g.) timing</a></li>
+<li><a href="#org367689f">2.4.4. Speech acts are pushed to pragmatics, out of syntactic construction or semantic meaning</a></li>
+</ul>
+</li>
+<li><a href="#org0e4b064">2.5. Psychological Use</a>
+<ul>
+<li><a href="#org199fdfe">2.5.1. Experiments alter local context to change how utterances are interpreted or whether they make sense at all</a></li>
+</ul>
+</li>
+<li><a href="#org764f0c4">2.6. Computational Schemas</a>
+<ul>
+<li><a href="#org907f558">2.6.1. DAMSL and SWBD-DAMSL</a></li>
+<li><a href="#orgf1a24fb">2.6.2. The ISO Standard</a></li>
+<li><a href="#orgc0cf885">2.6.3. Smaller, local schemas</a></li>
+<li><a href="#org916b8e8">2.6.4. Task-specific schemas</a></li>
+</ul>
+</li>
+<li><a href="#org70e740d">2.7. Criticisms to the Speech Act approach</a>
+<ul>
+<li><a href="#orgfe504d3">2.7.1. Utterances are unique in what they do</a></li>
+<li><a href="#orgc020719">2.7.2. More than one act may be performed at a time</a></li>
+<li><a href="#org0b88edb">2.7.3. Labeling a speech act is a construal, not necessarily an intention or uptake</a></li>
+</ul>
+</li>
+<li><a href="#orgd296972">2.8. Conclusion</a>
+<ul>
+<li><a href="#org3d05ad1">2.8.1. We want to create a set of speech acts that is pragmatic, apart from syntax and (particularly) semantics</a></li>
+<li><a href="#org49ba9ad">2.8.2. The schema should differentiate based on conversational context elements, like speaker switch</a></li>
+<li><a href="#orgcb31b9c">2.8.3. The schema should work to show how utterances link together (adjacency pairs)</a></li>
+<li><a href="#orgc705d84">2.8.4. Truth values and explanatory labels are secondary; they simply help us understand the labels we derive</a></li>
+<li><a href="#org1b7ab27">2.8.5. Our schema is derived from conversational data, rather than task-based <i>ad hoc</i> or verified <i>post hoc</i> .</a></li>
+</ul>
+</li>
+<li><a href="#org7344c63">2.9. Cluster Models</a></li>
+<li><a href="#org8313ff6">2.10. Comnpute</a></li>
+<li><a href="#org5a890b3">2.11. Data</a></li>
+<li><a href="#orged8838f">2.12. Goals</a></li>
+<li><a href="#org7bec385">2.13. Interpretation</a></li>
+<li><a href="#orga1b04c1">2.14. Introduction</a></li>
+<li><a href="#orgd94b158">2.15. ISA FTOs</a></li>
+<li><a href="#orgafba28c">2.16. ISAs</a></li>
+<li><a href="#orgdc64465">2.17. Iterations</a></li>
+<li><a href="#org712c9ab">2.18. Linguistics</a></li>
+<li><a href="#org67430f9">2.19. Metrics</a></li>
+<li><a href="#org8dfe6de">2.20. Model Parameters</a>
+<ul>
+<li><a href="#org21215f5">2.20.1. Previous Speech Act</a></li>
+<li><a href="#org30e1051">2.20.2. Previous TRP, Previous Speaker Switch</a></li>
+<li><a href="#org692f8aa">2.20.3. Sentence Type Probability</a></li>
+<li><a href="#orgc98dafc">2.20.4. TCU Length</a></li>
+<li><a href="#orgdc5f630">2.20.5. Next TRP, Next Speaker-Switch</a></li>
+<li><a href="#org9a1244c">2.20.6. Next Speech Act</a></li>
+</ul>
+</li>
+<li><a href="#org932a9d0">2.21. Outline</a>
+<ul>
+<li><a href="#org70b1ec9">2.21.1. Chapter 1</a></li>
+<li><a href="#org7001df5">2.21.2. Previous Computational Speech Act Implementations</a></li>
+<li><a href="#org8e77668">2.21.3. Terms, Definitions, and Equations</a></li>
+<li><a href="#org779f638">2.21.4. Published Studies</a></li>
+<li><a href="#org317e5f5">2.21.5. A Computational Model of Speech Act Recognition</a></li>
+<li><a href="#orgad99abe">2.21.6. Future Work</a></li>
+</ul>
+</li>
+<li><a href="#org2065a6e">2.22. Philosophy</a></li>
+<li><a href="#orgd51bdbc">2.23. Psychology</a></li>
+<li><a href="#org99c473d">2.24. Terms</a></li>
+<li><a href="#org933d7c4">2.25. TRPs</a></li>
+<li><a href="#orgba8cb79">2.26. Turn Lengths</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0687646" class="outline-2">
+<h2 id="org0687646"><span class="section-number-2">1.</span> Info sources</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgab1b1c7" class="outline-3">
+<h3 id="orgab1b1c7"><span class="section-number-3">1.1.</span> <a href="https://students.tufts.edu/registrar/make-request/apply-graduation/graduation-information-graduate-students">Graduation Information</a></h3>
+</div>
+<div id="outline-container-orgc87e50c" class="outline-3">
+<h3 id="orgc87e50c"><span class="section-number-3">1.2.</span> <a href="https://www.proquest.com/pqdtlocal1006853/pagepdf/2414401934/Record/BD2675883EE4F72PQ/1?accountid=14434&amp;parentSessionId=%2B6gVGSLSOoZkltnfCOzHVNZw9fag0HpObDQ6afcR%2FVM%3D&amp;parentSessionId=x5yZnhTzfvMXpwGJJjEMAgIFI9XIEpyygf8vr9nVsRk%3D">Felix's Dissertation</a></h3>
+</div>
+</div>
+<div id="outline-container-org3eaebfd" class="outline-2">
+<h2 id="org3eaebfd"><span class="section-number-2">2.</span> Notes</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org80487b3" class="outline-3">
+<h3 id="org80487b3"><span class="section-number-3">2.1.</span> Background and Motivation</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org0010b17" class="outline-4">
+<h4 id="org0010b17"><span class="section-number-4">2.1.1.</span> What problem are we trying to solve?</h4>
+</div>
+<div id="outline-container-org8e35150" class="outline-4">
+<h4 id="org8e35150"><span class="section-number-4">2.1.2.</span> How do we expect to solve it?</h4>
+</div>
+<div id="outline-container-org1c3769b" class="outline-4">
+<h4 id="org1c3769b"><span class="section-number-4">2.1.3.</span> What traditions are we pulling from and why?</h4>
+</div>
+</div>
+<div id="outline-container-orgcd33935" class="outline-3">
+<h3 id="orgcd33935"><span class="section-number-3">2.2.</span> Philosophical Origins</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org3214115" class="outline-4">
+<h4 id="org3214115"><span class="section-number-4">2.2.1.</span> When was ``Speech Act'' coined?</h4>
+</div>
+<div id="outline-container-org20fe3f7" class="outline-4">
+<h4 id="org20fe3f7"><span class="section-number-4">2.2.2.</span> What problem is it trying to solve?</h4>
+</div>
+<div id="outline-container-orge856130" class="outline-4">
+<h4 id="orge856130"><span class="section-number-4">2.2.3.</span> Has the problem changed?</h4>
+</div>
+<div id="outline-container-orgab541f1" class="outline-4">
+<h4 id="orgab541f1"><span class="section-number-4">2.2.4.</span> Is this the same problem we are trying to solve?</h4>
+</div>
+<div id="outline-container-org6813bfb" class="outline-4">
+<h4 id="org6813bfb"><span class="section-number-4">2.2.5.</span> Short comings in explanatory power and external validity</h4>
+</div>
+</div>
+<div id="outline-container-org54545f0" class="outline-3">
+<h3 id="org54545f0"><span class="section-number-3">2.3.</span> Sociological Interactions</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org7bfbc23" class="outline-4">
+<h4 id="org7bfbc23"><span class="section-number-4">2.3.1.</span> Adjacency Pairs are speech acts defined in their relationship</h4>
+</div>
+<div id="outline-container-orgdfdf3ef" class="outline-4">
+<h4 id="orgdfdf3ef"><span class="section-number-4">2.3.2.</span> Preference organization shows that different speech acts have different conversational shapes</h4>
+</div>
+<div id="outline-container-org8eeba62" class="outline-4">
+<h4 id="org8eeba62"><span class="section-number-4">2.3.3.</span> Short-comings in operationalization and generalization</h4>
+</div>
+</div>
+<div id="outline-container-org925985a" class="outline-3">
+<h3 id="org925985a"><span class="section-number-3">2.4.</span> Linguistic Interpretations</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-orgb9291f2" class="outline-4">
+<h4 id="orgb9291f2"><span class="section-number-4">2.4.1.</span> Sentences are the unit of meaning, so sentence-type can explain meaning</h4>
+</div>
+<div id="outline-container-org5af162c" class="outline-4">
+<h4 id="org5af162c"><span class="section-number-4">2.4.2.</span> Syntactic transformations morph the meaning according to circumstance</h4>
+</div>
+<div id="outline-container-orgc5086b2" class="outline-4">
+<h4 id="orgc5086b2"><span class="section-number-4">2.4.3.</span> Difficulty explaining indirect speech acts, fragments, and changes in interpretation based on (e.g.) timing</h4>
+</div>
+<div id="outline-container-org367689f" class="outline-4">
+<h4 id="org367689f"><span class="section-number-4">2.4.4.</span> Speech acts are pushed to pragmatics, out of syntactic construction or semantic meaning</h4>
+</div>
+</div>
+<div id="outline-container-org0e4b064" class="outline-3">
+<h3 id="org0e4b064"><span class="section-number-3">2.5.</span> Psychological Use</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-org199fdfe" class="outline-4">
+<h4 id="org199fdfe"><span class="section-number-4">2.5.1.</span> Experiments alter local context to change how utterances are interpreted or whether they make sense at all</h4>
+</div>
+</div>
+<div id="outline-container-org764f0c4" class="outline-3">
+<h3 id="org764f0c4"><span class="section-number-3">2.6.</span> Computational Schemas</h3>
+<div class="outline-text-3" id="text-2-6">
+</div>
+<div id="outline-container-org907f558" class="outline-4">
+<h4 id="org907f558"><span class="section-number-4">2.6.1.</span> DAMSL and SWBD-DAMSL</h4>
+</div>
+<div id="outline-container-orgf1a24fb" class="outline-4">
+<h4 id="orgf1a24fb"><span class="section-number-4">2.6.2.</span> The ISO Standard</h4>
+</div>
+<div id="outline-container-orgc0cf885" class="outline-4">
+<h4 id="orgc0cf885"><span class="section-number-4">2.6.3.</span> Smaller, local schemas</h4>
+</div>
+<div id="outline-container-org916b8e8" class="outline-4">
+<h4 id="org916b8e8"><span class="section-number-4">2.6.4.</span> Task-specific schemas</h4>
+</div>
+</div>
+<div id="outline-container-org70e740d" class="outline-3">
+<h3 id="org70e740d"><span class="section-number-3">2.7.</span> Criticisms to the Speech Act approach</h3>
+<div class="outline-text-3" id="text-2-7">
+</div>
+<div id="outline-container-orgfe504d3" class="outline-4">
+<h4 id="orgfe504d3"><span class="section-number-4">2.7.1.</span> Utterances are unique in what they do</h4>
+</div>
+<div id="outline-container-orgc020719" class="outline-4">
+<h4 id="orgc020719"><span class="section-number-4">2.7.2.</span> More than one act may be performed at a time</h4>
+</div>
+<div id="outline-container-org0b88edb" class="outline-4">
+<h4 id="org0b88edb"><span class="section-number-4">2.7.3.</span> Labeling a speech act is a construal, not necessarily an intention or uptake</h4>
+</div>
+</div>
+<div id="outline-container-orgd296972" class="outline-3">
+<h3 id="orgd296972"><span class="section-number-3">2.8.</span> Conclusion</h3>
+<div class="outline-text-3" id="text-2-8">
 <p>
-<a href="https://students.tufts.edu/registrar/make-request/apply-graduation/graduation-information-graduate-students">Graduation Information</a>
+This work attempts to re-situate speech acts in conversation into the data of conversation, rather than descriptive analysis. The work shows that we can create a model of conversation where each utterance constrains the next utterance in certain normative, predictable ways. Our model orients to these constraints and builds a set of speech acts based on conversational behavior, which can be used to improve the naturalness of agents, and also to explore how intersubjectivity is maintained in conversation despite ambiguity.
+</p>
+</div>
+
+<div id="outline-container-org3d05ad1" class="outline-4">
+<h4 id="org3d05ad1"><span class="section-number-4">2.8.1.</span> We want to create a set of speech acts that is pragmatic, apart from syntax and (particularly) semantics</h4>
+</div>
+<div id="outline-container-org49ba9ad" class="outline-4">
+<h4 id="org49ba9ad"><span class="section-number-4">2.8.2.</span> The schema should differentiate based on conversational context elements, like speaker switch</h4>
+</div>
+<div id="outline-container-orgcb31b9c" class="outline-4">
+<h4 id="orgcb31b9c"><span class="section-number-4">2.8.3.</span> The schema should work to show how utterances link together (adjacency pairs)</h4>
+</div>
+<div id="outline-container-orgc705d84" class="outline-4">
+<h4 id="orgc705d84"><span class="section-number-4">2.8.4.</span> Truth values and explanatory labels are secondary; they simply help us understand the labels we derive</h4>
+</div>
+<div id="outline-container-org1b7ab27" class="outline-4">
+<h4 id="org1b7ab27"><span class="section-number-4">2.8.5.</span> Our schema is derived from conversational data, rather than task-based <i>ad hoc</i> or verified <i>post hoc</i> .</h4>
+</div>
+</div>
+<div id="outline-container-org7344c63" class="outline-3">
+<h3 id="org7344c63"><span class="section-number-3">2.9.</span> Cluster Models</h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+We looked into several models for clustering: Affinity Propagation, Mean Shift, DBSCAN, and OPTICS. Each has its own advantages and drawbacks, and since we weren't sure what the geometry of the problem is that we are addressing, we pursued each with the metrics listed below.
+</p>
+</div>
+</div>
+<div id="outline-container-org8313ff6" class="outline-3">
+<h3 id="org8313ff6"><span class="section-number-3">2.10.</span> Comnpute</h3>
+<div class="outline-text-3" id="text-2-10">
+<p>
+Computer scientists have been interested in speech acts for decades for use in conversational agents. Programming an agent to behave appropriately has turned out to be a tricky task. Developers realized that assuming that the literal words that people say is also what they mean leads to errors. Similarly, there are many ambiguities within language, and the speech act is one of these. A common approach to solving this problem is to create large corpuses of linguistic interactions tagged for speech acts. This leads to problems of which tag-set to use. DAMSL, ISO, SWBD<sub>DAMSL</sub>, Matthias's Big 5, Rhetorical Structure Theory and others have proposed to be solutions to speech act problems in agents, but each has fallen short in its own way, showing a disconnect between the motivation and the implementation of these projects.
 </p>
 
 <p>
-<a href="https://www.proquest.com/pqdtlocal1006853/pagepdf/2414401934/Record/BD2675883EE4F72PQ/1?accountid=14434&amp;parentSessionId=%2B6gVGSLSOoZkltnfCOzHVNZw9fag0HpObDQ6afcR%2FVM%3D&amp;parentSessionId=x5yZnhTzfvMXpwGJJjEMAgIFI9XIEpyygf8vr9nVsRk%3D">Felix's Dissertation</a>
+Here we see that speech acts are for refining the interpretation of language or constraining the responses we get to our own utterances.
+o
 </p>
+</div>
+</div>
+
+<div id="outline-container-org5a890b3" class="outline-3">
+<h3 id="org5a890b3"><span class="section-number-3">2.11.</span> Data</h3>
+<div class="outline-text-3" id="text-2-11">
+<p>
+The data comes from the Switchboard corpus. We took data from the Jurafsky project that annotated with SWBD<sub>DAMSL</sub> tags and the MSU transcription that had timestamps down to the millisecond. We added our own annotations for sentence type using a DistilBERT model trained on a few hundred hand-tagged examples.
+</p>
+</div>
+</div>
+<div id="outline-container-orged8838f" class="outline-3">
+<h3 id="orged8838f"><span class="section-number-3">2.12.</span> Goals</h3>
+<div class="outline-text-3" id="text-2-12">
+<p>
+Each discipline has its own theory and use for speech acts. In this work, we want to draw on each of them in order to have a useful operationalization of speech acts. However, we take a data-first approach. We think that the psychological findings of Warnke &amp; Levinson are promising, but lack theoretical grounding for differentiating speech acts online. DAMSL, ISO, RST, etc., by contrast, all fall short by imposing their own constraints onto the data. Linguistic structure has not proven robust to the open-set of conversational utterances, but their mechanisms of encoding and decoding intention, still seems to be present for people.
+</p>
+
+<p>
+Therefore, in this work, we look at meta-linguistic parameters within conversation to detail a speech act set and built a model for recognizing this set. This allows us to create a tag-set, ensure that we are operating at the pragmatic (rather than lexical, syntactic, or even semantic levels), and build from the reasoning that people do every day, rather than assign values of the reasoning we believe them to have done.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7bec385" class="outline-3">
+<h3 id="org7bec385"><span class="section-number-3">2.13.</span> Interpretation</h3>
+<div class="outline-text-3" id="text-2-13">
+<p>
+The clusters had parameters X, Y, and Z.
+</p>
+
+<p>
+In practice, this meant that the algorithm had clustered around utterances like A B and C.
+</p>
+
+<p>
+As some examples, we see that label N has words like W1, W2, W3, even though we did not train on words. Here at the end of the work, we can finally add post-hoc descriptive labels to the clusters. Our interpretation of these labels is as follows:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">L1</td>
+<td class="org-left">Desc1</td>
+</tr>
+
+<tr>
+<td class="org-left">L2</td>
+<td class="org-left">Desc2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-orga1b04c1" class="outline-3">
+<h3 id="orga1b04c1"><span class="section-number-3">2.14.</span> Introduction</h3>
+<div class="outline-text-3" id="text-2-14">
+<p>
+Hello and welcome to my dissertation. We are taking the philosophical speech act and defining it computationally. We will look at the various problems that speech acts hope to solve, and how lenses in one discipline fall short in others. To address this, we build a speech act set from scratch, using the linguistic cues of conversation. This data-first approach side-steps descriptional approaches that might not apply to other situations, and is unique to this research.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd94b158" class="outline-3">
+<h3 id="orgd94b158"><span class="section-number-3">2.15.</span> ISA FTOs</h3>
+<div class="outline-text-3" id="text-2-15">
+<p>
+Paper published with Lena shows that FTOs do not differ in conjunction with being direct / indirect. The hypothesis is that if we did find a longer FTO for indirect speech acts, it could be evidence of extra cognitive processing. We did not find this, but we did find that the data was best explained by a model including only speech act. This suggests that the timing of conversation orients to the social work being done, not any supposed cognitive load. This is also evidence that the pragmatic level of conversation is separated from the syntactic level.
+</p>
+</div>
+</div>
+<div id="outline-container-orgafba28c" class="outline-3">
+<h3 id="orgafba28c"><span class="section-number-3">2.16.</span> ISAs</h3>
+<div class="outline-text-3" id="text-2-16">
+<p>
+A re-telling of the CABNC work on indirect speech acts. A few hundred utterances were hand-tagged for sentence type (declarative, interrogative, imperative, none) and sentences were tagged for speech act based on a set motivated by sentence type (statement, question, command). The goal was to find how big of a problem indirect speech acts are in real-world conversation, even given a small set of speech acts. We found that indirect speech acts are somewhat common (~8%) and that non-sentence utterances were very common (~40%). We have an outline of where indirect speech acts are found and some ideas about how this study might be extended in future work.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdc64465" class="outline-3">
+<h3 id="orgdc64465"><span class="section-number-3">2.17.</span> Iterations</h3>
+<div class="outline-text-3" id="text-2-17">
+<p>
+While there is considerable debate about the number of speech acts that is appropriate to a schema, our goal was about a dozen. Our thinking is informed by examining the list of acts in competing schemas and background research on preference organization. There were several different types of statement, question, command, and non-sentence utterances that we thought a dozen speech acts would cover without any individual being too rare.
+</p>
+
+<p>
+Therefore, we iterated on our clustering algorithm X times, reducing the number of labels in each iteration. Since the accessible, ground-truth parameters were consistent throughout, they should allow us to maintain consistency across iterations. However, since there are more parameters (due to the one-hot encoding) pointing to the previous (and next) labels, this is still a major feature of the model
+</p>
+</div>
+</div>
+<div id="outline-container-org712c9ab" class="outline-3">
+<h3 id="org712c9ab"><span class="section-number-3">2.18.</span> Linguistics</h3>
+<div class="outline-text-3" id="text-2-18">
+<p>
+The elephant in the room is Chomsky, but Chomsky himself claims to only work at the syntactic level, not semantic or pragmatic. Linguistics at large has still posited cognitive mechanisms in language that might be present to account for speech acts. Transformations, such as tag questions, change the structure of a sentence to create a differently inflected meaning than sentences not including these constructions. The difference between the two can be considered the action that they are performing. At its base, these linguistic analyses has given rise to the direct force hypothesis.
+</p>
+
+<p>
+Talk about alternative approaches (e.g. Jackendoff's spatial language).
+</p>
+
+<p>
+Here we see that the point of the speech act is to link the intention of speech to the words we say.
+</p>
+</div>
+</div>
+<div id="outline-container-org67430f9" class="outline-3">
+<h3 id="org67430f9"><span class="section-number-3">2.19.</span> Metrics</h3>
+<div class="outline-text-3" id="text-2-19">
+<p>
+Metrics had two types: known ground truth and unknown ground truth. The advantage of known truth was that they worked for all models. The disadvantage was that we know the ground truth had issues. The problem with the metrics that had an unknown ground truth is that they do not play well with the DBSCAN and OPTICS algorithms due to the geometry of those solutions. However, DBSCAN and OPTICS do come with their own metrics that determine whether points are core or non-core for their clusters, which gives a sense for how well-clustered the data is in the model, which is useful in this context. 
+</p>
+</div>
+</div>
+<div id="outline-container-org8dfe6de" class="outline-3">
+<h3 id="org8dfe6de"><span class="section-number-3">2.20.</span> Model Parameters</h3>
+<div class="outline-text-3" id="text-2-20">
+<p>
+In order of access in a conversation:
+</p>
+</div>
+<div id="outline-container-org21215f5" class="outline-4">
+<h4 id="org21215f5"><span class="section-number-4">2.20.1.</span> Previous Speech Act</h4>
+<div class="outline-text-4" id="text-2-20-1">
+<p>
+A fundamental part of this idea is that our options are limited in response to previous context, therefore previous speech is perhaps the most important parameter of the models.
+</p>
+</div>
+</div>
+<div id="outline-container-org30e1051" class="outline-4">
+<h4 id="org30e1051"><span class="section-number-4">2.20.2.</span> Previous TRP, Previous Speaker Switch</h4>
+<div class="outline-text-4" id="text-2-20-2">
+<p>
+Based on previous work by Warnke, we expect that speech acts depend upon which speaker takes their turn next.
+</p>
+
+<p>
+Previous work by the author shows that speaker-switch is time-sensitive. The pregnant pause paper and preference organization also make the argument that we are more likely to do some speech acts (e.g. accept, agree) faster than others (e.g. reject, disagree). Therefore, we include timing information, too.
+</p>
+</div>
+</div>
+<div id="outline-container-org692f8aa" class="outline-4">
+<h4 id="org692f8aa"><span class="section-number-4">2.20.3.</span> Sentence Type Probability</h4>
+<div class="outline-text-4" id="text-2-20-3">
+<p>
+Previous work shows that while it is not perfect, sentence type does inform the speech act in many cases. Our work here seeks a more fine-grained schema than sentence type provides, but that may simply segment the sentence types more finely.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc98dafc" class="outline-4">
+<h4 id="orgc98dafc"><span class="section-number-4">2.20.4.</span> TCU Length</h4>
+<div class="outline-text-4" id="text-2-20-4">
+<p>
+Our work shows that TCU length is exponential, but since turn end is projectable, we suspect that there is some interaction between pragmatic closer and speech act.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdc5f630" class="outline-4">
+<h4 id="orgdc5f630"><span class="section-number-4">2.20.5.</span> Next TRP, Next Speaker-Switch</h4>
+<div class="outline-text-4" id="text-2-20-5">
+<p>
+While next TRP and Next Speaker-switch are not available during the turn itself, the reaction to an utterance may be an important part of its characterization. For example, a rhetorical question may be followed by speaker continuation while an inquiry would be followed by a speaker switch. We include TRP for similar reasons as above.
+</p>
+</div>
+</div>
+<div id="outline-container-org9a1244c" class="outline-4">
+<h4 id="org9a1244c"><span class="section-number-4">2.20.6.</span> Next Speech Act</h4>
+<div class="outline-text-4" id="text-2-20-6">
+<p>
+While our chief goal is to understand how responses are constrained by context, it is also important what constraints are created. This is characterized by following speech act.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org932a9d0" class="outline-3">
+<h3 id="org932a9d0"><span class="section-number-3">2.21.</span> Outline</h3>
+<div class="outline-text-3" id="text-2-21">
+</div>
+<div id="outline-container-org70b1ec9" class="outline-4">
+<h4 id="org70b1ec9"><span class="section-number-4">2.21.1.</span> Chapter 1</h4>
+<div class="outline-text-4" id="text-2-21-1">
+</div>
+<ol class="org-ol">
+<li><a id="orge72d8f3"></a><a href="./background.html">Philosophical and Psychological Background</a><br />
+<ol class="org-ol">
+<li><a id="org8a28088"></a>Philosophical Speech Act Theory (, Frege,<br /></li>
+<li><a id="orge88cc0b"></a>Speech Acts relate to action and truth values (Searle and <a href="./References/Austin1955How.pdf">Austin</a>, Grice, Chomsky)<br /></li>
+<li><a id="orgc77551c"></a>Speech Acts are an aspect of pragmatic meaning (Jackendoff)<br /></li>
+<li><a id="org6c90cc7"></a>Speech Acts are a way to quantify contextual meaning (Shannon, <a href="./References/Meibauer2019Indirect.pdf">Meibauer</a>)<br /></li>
+<li><a id="orgbb84291"></a>Speech Acts are for organizing conversation (<a href="./References/Schegloff2007Sequence.pdf">Schegloff</a>)<br /></li>
+</ol>
+</li>
+<li><a id="org1367f4f"></a>Psycholinguistic Speech Act Theory<br />
+<ol class="org-ol">
+<li><a id="org7cddd6c"></a>Intentionality and Intersubjectivity (Levelt, <a href="./References/Levinson2016SpeechActs.pdf">Levinson</a>, Shannon, Clark, <a href="./References/Mertens2022Ecocentricy.pdf">Mertens</a>)<br /></li>
+<li><a id="orgbbca08a"></a>Speech Act Detection (Scheutz, <a href="./References/Epley2014Egocentric.pdf">Keysar</a>, <a href="./References/Stivers2010Mobilizing.pdf">Stivers</a>, <a href="./References/Gisladottir2018Oscillatory.pdf">Bögels</a>, <a href="./References/Warnke2022Predicting.pdf">Warnke</a>, <a href="./References/Gisladottir2015Conversation.pdf">Gisladottir</a>)<br /></li>
+</ol>
+</li>
+</ol>
+</div>
+<div id="outline-container-org7001df5" class="outline-4">
+<h4 id="org7001df5"><span class="section-number-4">2.21.2.</span> Previous Computational Speech Act Implementations</h4>
+<div class="outline-text-4" id="text-2-21-2">
+</div>
+<ol class="org-ol">
+<li><a id="org0f0cdb8"></a>The Necessity of Speech Acts in Language Systems (<a href="./References/Cummins2014Computational.pdf">Cummins</a>, Wachsmuth, <a href="./References/McTear2022Interface.pdf">McTear</a>, <a href="./References/DeVault2006Societal.pdf">Devault</a>, <a href="./References/Cohen1979Elements.pdf">Cohen</a>, <a href="./References/Enfield2017Action.pdf">Enfield &amp; Sidnell</a>, <a href="./Jurafsky1997Automatic.pdf">Jurafsky</a>)<br /></li>
+<li><a id="org39df8bb"></a>Labeling Schemas (<a href="./References/Stolcke2000dialogue.pdf">Stolcke</a>, <a href="./References/Fang2012ISO.pdf">Bunt</a>, <a href="./References/Traum2000Twenty.pdf">Traum</a>, <a href="./References/Core1997DAMSL.pdf">Core &amp; Allen</a>)<br /></li>
+</ol>
+</div>
+<div id="outline-container-org8e77668" class="outline-4">
+<h4 id="org8e77668"><span class="section-number-4">2.21.3.</span> Terms, Definitions, and Equations</h4>
+<div class="outline-text-4" id="text-2-21-3">
+</div>
+<ol class="org-ol">
+<li><a id="orgc9ca9b0"></a>Speech Act<br /></li>
+<li><a id="org57353dd"></a>Direct &amp; Indirect Speech Act<br /></li>
+<li><a id="orgabdff6b"></a>Pragmatic Completion<br /></li>
+<li><a id="org6716c44"></a>TCU and Turn<br /></li>
+<li><a id="org3f03218"></a>Conversational Context<br /></li>
+</ol>
+</div>
+<div id="outline-container-org779f638" class="outline-4">
+<h4 id="org779f638"><span class="section-number-4">2.21.4.</span> Published Studies</h4>
+<div class="outline-text-4" id="text-2-21-4">
+</div>
+<ol class="org-ol">
+<li><a id="org9abaf42"></a>Indirect Speech Act Frequency<br /></li>
+<li><a id="orgef57c1b"></a>Turn Lengths<br /></li>
+<li><a id="orgf111735"></a>TRP Durations<br /></li>
+<li><a id="org3c4e8fa"></a>FTOs Sensitive to Speech Act<br /></li>
+</ol>
+</div>
+<div id="outline-container-org317e5f5" class="outline-4">
+<h4 id="org317e5f5"><span class="section-number-4">2.21.5.</span> A Computational Model of Speech Act Recognition</h4>
+<div class="outline-text-4" id="text-2-21-5">
+</div>
+<ol class="org-ol">
+<li><a id="org1c63f55"></a>Previous work with the SWBD<sub>DAMSL</sub> set (<a href="./References/Li2019RNN.pdf">Li</a>, <a href="./References/Liu2017DNN.pdf">Liu</a>)<br /></li>
+</ol>
+</div>
+<div id="outline-container-orgad99abe" class="outline-4">
+<h4 id="orgad99abe"><span class="section-number-4">2.21.6.</span> Future Work</h4>
+<div class="outline-text-4" id="text-2-21-6">
+</div>
+<ol class="org-ol">
+<li><a id="orgefec026"></a>Implementation<br /></li>
+<li><a id="org5270682"></a>Experimental Manipulation<br /></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org2065a6e" class="outline-3">
+<h3 id="org2065a6e"><span class="section-number-3">2.22.</span> Philosophy</h3>
+<div class="outline-text-3" id="text-2-22">
+<p>
+In philosophy, speech act theory is an attempt to bridge the gap between words and meaning. The term was first coined by J.L. Austin in Doing Things With Words. Austin, likely working in the wake of Wittgenstein's Tractatus Logico-Philosophicus, began with an exploration of utterances with truth values. For example, ``The cat is on the mat'' might be true or false, depending on the specific cat or mat. These types of sentences are said to have sense in Wittgenstein's terms. However, a sentence like ``I now pronounce you man and wife'' cannot be true until after it is said. This means that only by virtue of its utterance does the sentence obtain. Austin called this type of utterance a performative, since its action is to perform a state of the world into being.
+</p>
+
+<p>
+Austin's student John Searle codified Austin's approach to all language. Searle surmised that there are five  speech acts: assertives, directives, commissives, expressives, and declarations. Armed with these five categories, Searle argued that one could model the truth-value changes occurring throughout a conversation. For example, an assertive asserts to a listener that a speaker has a certain belief. What we see here is that there has been a slight pivot from Wittgenstein's concerns about philosophical claims that we can make to an everyday sense of conveying information to each other. The stakes are somewhat lower, since Searle's schema works on an evidential basis, and Wittgensteins's on a Boolean one, but this also means that Austin and Searle have made speech acts useful for analyzing everyday speech.
+</p>
+
+<p>
+Many other philosophers have added to the Speech Act tradition over time, but chief for our concerns is H.P. Grice, who posited a Principle of Cooperation in conversation and argued that clearly ignoring the Principle would lead to implicatures. Grice begins his work by showing that in conversation, the things that people say and they way that they say them are bound by norms. He terms the norms maxims, and enumerates several. There is, for example, the maxim of quantity&#x2014;say only as much as is necessary. If I would like to begin a meeting with Prof. de Ruiter and Prof. Scheutz, but Prof. Scheutz has not arrived, I may say ``I suppose we will wait for Dr. Dr. Scheutz.'' Strictly speaking, Prof. Scheutz only needs one title, and referring to him as `Dr. Dr.' may be correct given his two doctorate degrees. Drawing attention to the extra credentials flaunts the maxim of quantity and Prof. de Ruiter may understand my meaning that Prof. Scheutz believes himself to be quite important to keep us waiting.
+</p>
+
+<p>
+For our purposes here, the interesting thing about Gricean implicature is that it allows us to draw two meanings from an utterance. In our example, there is the surface-level text that we should postpone the start of the meeting, but there is the implicature that Prof. Scheutz cannot be bothered to attend on time for our sakes. In this case, perhaps two speech acts are communicated in one utterance.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd51bdbc" class="outline-3">
+<h3 id="orgd51bdbc"><span class="section-number-3">2.23.</span> Psychology</h3>
+<div class="outline-text-3" id="text-2-23">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Condition</th>
+<th scope="col" class="org-left">Context</th>
+<th scope="col" class="org-left">Target Utterance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Answer (Control)</td>
+<td class="org-left">How are you going to</td>
+<td class="org-left">I have a credit card.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">pay for the ticket?</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Declination</td>
+<td class="org-left">I can lend you money</td>
+<td class="org-left">I have a credit card.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">for the ticket</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Pre-Offer</td>
+<td class="org-left">I don't have any money</td>
+<td class="org-left">I have a credit card.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">to pay for the ticket</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Answer</td>
+<td class="org-left">Where do you buy your shampoo</td>
+<td class="org-left">I go/am going to the drugstore</td>
+</tr>
+
+<tr>
+<td class="org-left">Declination</td>
+<td class="org-left">I can bring some shampoo for you</td>
+<td class="org-left">I go/am going to the drugstore</td>
+</tr>
+
+<tr>
+<td class="org-left">Pre-Offer</td>
+<td class="org-left">My shampoo is finished</td>
+<td class="org-left">I go/am going to the drugstore</td>
+</tr>
+</tbody>
+</table>
+<p>
+#:caption Reproduced from Gisladottir, Chwilla, &amp; Levinson 2015
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Congruent</td>
+<td class="org-left">Speech Act Violation</td>
+<td class="org-left">Speaker-Independent Violation</td>
+</tr>
+
+<tr>
+<td class="org-left">Different Speaker</td>
+<td class="org-left">"Where"</td>
+<td class="org-left">"Come by"</td>
+<td class="org-left">"I'm lost"</td>
+</tr>
+
+<tr>
+<td class="org-left">Same Speaker</td>
+<td class="org-left">"Come by"</td>
+<td class="org-left">"Where"</td>
+<td class="org-left">"You shure</td>
+</tr>
+</tbody>
+</table>
+<p>
+#:caption Reproduced from Warnke 2022. Context utterance: "We just moved into a new house"
+</p>
+
+<p>
+In linguistics and philosophy, we saw a trend where speech acts were determined by the grammar of the language. They are necessary components of language, and we cannot make sense without them. However, they are dependent on the formulations of someone creating them. The locution, illocution, and perlocutions are all forms of language constraint upon the speaker.
+</p>
+
+<p>
+In psychology, we instead see the speech act operationalized as a part of <i>joint action</i> (coined by Clark). Speech acts are intentions by the speaker in order to make the most sense to a listener. Likewise, speech acts are interpreted as <i>cooperation</i> with the speaker by the listener (Gricean?). In the work of Clark,  Gisladottir, and Warnke, we see that listeners use speech acts to make sense of the words of the speaker in context of the conversation at hand.
+</p>
+
+<p>
+Psychologists have operationalized speech acts as pragmatic differences for the ways that words are interpreted in contexts of conversation. Conversation analysis does this by studying sequences within conversation to see how it is organized. For example, adjacency pairs are types of speech that are often found bordering each other (e.g. offer/accept, thank/welcome). Other, more experimental psychologists have looked at speech acts to change behavior. Lena's study shows that speaker switch changes expectations about incoming speech. Gisladottir, Bögels and Levinson used context utterances to show that otherwise identical utterances are processed differently in the brain if their speech act is different.
+</p>
+
+<p>
+Here we see that the speech act of the words is contextually dependent. 
+</p>
+</div>
+</div>
+<div id="outline-container-org99c473d" class="outline-3">
+<h3 id="org99c473d"><span class="section-number-3">2.24.</span> Terms</h3>
+<div class="outline-text-3" id="text-2-24">
+<p>
+In this and following chapters, we will use several terms that are used in different ways in different parts of the literature. Therefore, we outline definitions here for:
+</p>
+<ul class="org-ul">
+<li>Speech Act</li>
+<li>Direct Speech Act</li>
+<li>Indirect Speech Act</li>
+<li>Pragmatic Completion</li>
+<li>Turn Construction Unit</li>
+<li>Turn</li>
+<li>Conversational Context</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org933d7c4" class="outline-3">
+<h3 id="org933d7c4"><span class="section-number-3">2.25.</span> TRPs</h3>
+<div class="outline-text-3" id="text-2-25">
+<p>
+TRP durations are sensitive to speaker switch. We found that in about 1/6 of cases, there was a 0ms TRP and the same speaker continued, 1/2 cases there was a speaker switch (TRP ~250ms) and 1/3 cases no speaker switch (TRP ~600ms). This shows that we are sensitive to what is being said when and by whom in conversation.
+</p>
+</div>
+</div>
+<div id="outline-container-orgba8cb79" class="outline-3">
+<h3 id="orgba8cb79"><span class="section-number-3">2.26.</span> Turn Lengths</h3>
+<div class="outline-text-3" id="text-2-26">
+<p>
+We look at 7 different formulation of Turn and TCU length and find that they are well described by exponential (or geometric) distributions. This means that, en masse, turns and TCUs have a constant hazard rate. We must therefore be projecting the end of turns by other means.
+</p>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Chas Threlkeld</p>
-<p class="date">Created: 2023-02-01 Wed 12:57</p>
+<p class="date">Created: 2023-02-14 Tue 09:24</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
