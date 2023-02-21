@@ -23,59 +23,65 @@
 
 (define (author . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\par{\\centering{\\sffamily\\Huge "
+    [(tex pdf) (apply string-append `("\\par{\\centering{\\Huge "
                                   ,@elements
                                   "}\\\\"))]
     [else (txexpr 'h1 empty elements)]))
 
 (define (doc-type . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("{\\color{headings}\\fontspec[Variant = 2]{Charter}"
-                                  ,@elements
-                                  "}\\\\[15pt]\\par}"))]
+    ;; [(tex pdf) (apply string-append `("{\\color{headings}\\fontspec[Variant = 2]{Charter}"
+    ;;                              ,@elements
+    ;;                              "}\\\\[15pt]\\par}"))]
+    [(tex pdf) "\\vspace{0.5cm}"]
     [else (txexpr 'h4 empty elements)]))
 
 (define (contact . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\colorbox{shade}{\\textcolor{text1}{\n"
-                                  "\\begin{tabular}{c|p{7cm}}\n"
-                                  ,@elements
-                                  "\\end{tabular}}}\\\\[10pt]"))]
+    ;; [(tex pdf) (apply string-append `("\\colorbox{shade}{\\textcolor{text1}{\n"
+    ;;                               "\\begin{tabular}{c|p{7cm}}\n"
+    ;;                               ,@elements
+    ;;                               "\\end{tabular}}}\\\\[10pt]"))]
+    [(tex pdf) (apply string-append `(,@elements))]
     [else (txexpr 'div '((id "contact")) elements)]))
      
 (define (address . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\raisebox{-4pt}{\\textifsymbol{18}} & "
-                                  ,@elements
-                                  " \\\\"))]
+    ;; [(tex pdf) (apply string-append `("\\raisebox{-4pt}{\\textifsymbol{18}} & "
+    ;;                               ,@elements
+    ;;                               " \\\\"))]
+    [(tex pdf) (apply string-append `(,@elements "\\\n"))]
     [else ""]))
 ;   [else (txexpr 'address empty elements)]))
 
 (define (telephone . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\raisebox{-3pt}{\\Mobilefone} & "
-                                  ,@elements
-                                  " \\\\"))]
+    [(tex pdf) (apply string-append `(,@elements "\\\n"))]
+    ;; [(tex pdf) (apply string-append `("\\raisebox{-3pt}{\\Mobilefone} & "
+    ;;                               ,@elements
+    ;;                               " \\\\"))]
     [else ""]))
 ;   [else (txexpr 'telephone empty elements)]))
 
 (define (email . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\raisebox{-1pt}{\\Letter} & \\href{mailto:"
-                                  ,@elements
-                                  "}{"
-                                  ,@elements
-                                  "} \\\\"))]
+    ;; [(tex pdf) (apply string-append `("\\raisebox{-1pt}{\\Letter} & \\href{mailto:"
+    ;;                               ,@elements
+    ;;                               "}{"
+    ;;                               ,@elements
+    ;;                               "} \\\\"))]
+    [(tex pdf) (apply string-append `(,@elements "\\\n"))]
     [else (let ([email-to (string-append "mailto:" (first elements))])
             (txexpr 'a `((href ,email-to)) elements))]))
 
 (define (website . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\Keyboard & \\href{"
-                                  ,@elements
-                                  "}{"
-                                  ,@elements
-                                  "} \\\\\n"))]
+    ;; [(tex pdf) (apply string-append `("\\Keyboard & \\href{"
+    ;;                               ,@elements
+    ;;                               "}{"
+    ;;                               ,@elements
+    ;;                               "} \\\\\n"))]
+    [(tex pdf) (apply string-append `(,@elements "\\\n"))]
     [else (txexpr 'a `((href ,@elements)) elements)]))
 
 (define (education . elements)
@@ -251,17 +257,20 @@
 
 (define begin-first-column
   (case (current-poly-target)
-    [(tex pdf) "\\begin{minipage}[t]{0.5\\textwidth}\n\\vspace{0pt}\n\n"]
+    ; [(tex pdf) "\\begin{minipage}[t]{0.5\\textwidth}\n\\vspace{0pt}\n\n"]
+    [(tex pdf) "\n\n"]
     [else ""]))
 
 (define end-column
   (case (current-poly-target)
-    [(tex pdf) "\\end{minipage}\n"]
+    ; [(tex pdf) "\\end{minipage}\n"]
+    [(tex pdf) "\n"]
     [else ""]))
 
 (define begin-second-column
   (case (current-poly-target)
-    [(tex pdf) "\\qquad\\begin{minipage}[t]{0.38\\textwidth}\n\\vspace{0pt}\n\n"]
+    ; [(tex pdf) "\\qquad\\begin{minipage}[t]{0.38\\textwidth}\n\\vspace{0pt}\n\n"]
+    [(tex pdf) "\n\n"]
     [else ""]))
 
 (define (inline-math . elements)

@@ -6,29 +6,33 @@
 ◊begin-first-column
 
 ◊contact{
-  ◊address{253 Boston Ave, Medford, MA 02155}
-  ◊telephone{+1 812.431.8049}
   ◊email{charles.l.threlkeld@gmail.com}
+  ◊address{68 Brooks Ave, Arlington, MA 02474}
+  ◊telephone{+1 812.431.8049}
   ◊website{https://charles-threlkeld.github.io}
 }
 
 ◊education{
-  ◊edu-dates{2018-Present}◊edu-pursuit{PhD Track}
-  ◊edu-focus{Computer Science, Cognitive Science}
-  ◊edu-name{Tufts University}
-
-  ◊edu-dates{2011–2012}◊edu-pursuit{Non-degree seeking}
-  ◊edu-focus{Life Sciences}
-  ◊edu-name{Roosevelt University}
-
-  ◊edu-dates{2007–2010}◊edu-pursuit{B.A., B.S}
-  ◊edu-focus{Philosophy, Economics, Mathematics}
-  ◊edu-name{Indiana University}
-
-  ◊edu-dates{2005–2007}◊edu-pursuit{No degree awarded}
-  ◊edu-focus{Software Engineering}
-  ◊edu-name{Rose-Hulman Institute of Technology}
+  
 }
+
+◊; ◊education{
+◊;   ◊edu-dates{2018--Present}◊edu-pursuit{PhD Candidate}
+◊;   ◊edu-focus{Computer Science, Cognitive Science}
+◊;   ◊edu-name{Tufts University}
+
+◊;   ◊edu-dates{2011--2012}◊edu-pursuit{Non-degree seeking}
+◊;   ◊edu-focus{Life Sciences}
+◊;   ◊edu-name{Roosevelt University}
+
+◊;   ◊edu-dates{2007--2010}◊edu-pursuit{B.A., B.S}
+◊;   ◊edu-focus{Philosophy, Economics, Mathematics}
+◊;   ◊edu-name{Indiana University}
+
+◊;   ◊edu-dates{2005--2007}◊edu-pursuit{No degree awarded}
+◊;   ◊edu-focus{Software Engineering}
+◊;   ◊edu-name{Rose-Hulman Institute of Technology}
+◊; }
 
 ◊projects{
   ◊item{◊item-name{Grammar of Conversation}: a computational model to explore the heuristics people use to interpret meaning at the interface of syntax and semantics.}
@@ -61,7 +65,8 @@
   ◊job-dates{Jan 2018 - May 2020}
   ◊job-title{Teaching Assistant}
   ◊company{Tufts University}
-  ◊job-desc{◊item{◊item-name{Explainable Artificial Intelligence, Spring 2021}: with Daniel Kasenberg}
+  ◊job-desc{◊item{◊item-name{Algorithms, Spring 2023}: with Diane Souvaine}
+  	    ◊item{◊item-name{Explainable Artificial Intelligence, Spring 2021}: with Daniel Kasenberg}
   	    ◊item{◊item-name{Computational Models in Cognitive Science, Fall 2020}: Co-teacher with Professor JP de Ruiter}
             ◊item{◊item-name{Discrete Mathematics, Spring 2018}: with Professor Laney Strange.}
             ◊item{◊item-name{Computation Theory, Spring 2020}: with Professor Alexa Sharp}
