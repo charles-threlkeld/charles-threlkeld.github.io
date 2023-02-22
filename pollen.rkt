@@ -86,44 +86,54 @@
 
 (define (education . elements)
   (case (current-poly-target)
+    ;; [(tex pdf) (apply string-append `("\\section{Education}\n"
+    ;;                               "\\begin{tabular}{rl}\n"
+    ;;                               ,@elements
+    ;;                               "\\end{tabular}\\\\[10pt]\n"))]
     [(tex pdf) (apply string-append `("\\section{Education}\n"
-                                  "\\begin{tabular}{rl}\n"
-                                  ,@elements
-                                  "\\end{tabular}\\\\[10pt]\n"))]
+                                      "\\begin{itemize}"
+                                      ,@elements
+                                      "\\end{itemize}"))]
     [else (txexpr 'div '((id "education"))
                   (cons (txexpr 'h2 empty '("Education")) elements))]))
                                   
 (define (edu-dates . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `(""
-                                  ,@elements))]
+    [(tex pdf) (apply string-append `("\\hfill{}" ,@elements "}\\\\\n"))]
     [else (txexpr 'span '((class "edu-dates")) elements)]))
 
 (define (edu-pursuit . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `(" & \\textbf{"
-                                  ,@elements
-                                  "} \\\\"))]
+    ;; [(tex pdf) (apply string-append `(" & \\textbf{"
+    ;;                               ,@elements
+    ;;                               "} \\\\"))]
+    [(tex pdf) (apply string-append `(,@elements))]
     [else (txexpr 'span '((class "edu-pursuit"))
                   (cons (txexpr 'br empty '()) elements))]))
 
 (define (edu-focus . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `(" & \\textsc{"
-                                  ,@elements
-                                  "} \\\\"))]
+    ;; [(tex pdf) (apply string-append `(" & \\textsc{"
+    ;;                               ,@elements
+    ;;                               "} \\\\"))]
+    [(tex pdf) (apply string-append `("\\textit{"
+                                      ,@elements
+                                      "} "))]
     [else (txexpr 'span '((class "edu-focus")) elements)]))
 
 (define (edu-name . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `(" & \\textit{"
-                                  ,@elements
-                                  "}\\\\\n"))]
+    ;; [(tex pdf) (apply string-append `(" & \\textit{"
+    ;;                               ,@elements
+    ;;                               "}\\\\\n"))]
+    [(tex pdf) (apply string-append `("\\item{\n\\textbf{"
+                                      ,@elements
+                                      "}, "))]
     [else (txexpr 'span '((class "edu-name")) elements)]))
 
-(define (computer-skills . elements)
+(define (skills . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\section{Computer Skills}"
+    [(tex pdf) (apply string-append `("\\section{Skills}"
                                   "\\begin{tabularx}{\\textwidth}{rX}\n"
                                   ,@elements
                                   "\\end{tabularx}\\\\[10pt]\n"))]
@@ -176,29 +186,40 @@
 
 (define (job-dates . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("{\\raggedleft\\textsc{" ,@elements "}\\par}"))]
+    [(tex pdf) (apply string-append `("\\hfill{}" ,@elements "\\\\\n"))]
     [else (txexpr 'div '((class "job-dates")) elements)]))
 
 (define (job-title . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("{\\raggedright\\large " ,@elements "\\\\"))]
+    [(tex pdf) (apply string-append `("\\raggedright\\large " ,@elements "\\\\"))]
     [else (txexpr 'div '((class "job-title")) elements)]))
 
 (define (company . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\textit{" ,@elements "}\\\\[5pt]}"))]
+    [(tex pdf) (apply string-append `("\\textbf{" ,@elements "}"))]
     [else (txexpr 'div '((class "company")) elements)]))
+
+(define (job-descs . elements)
+  (case (current-poly-target)
+    [(tex pdf) (apply string-append `("\\begin{itemize}" ,@elements "\\end{itemize}"))]
+    (else (txexpr 'div '((class "job-descs" elements))))))
 
 (define (job-desc . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\normalsize{\\begin{itemize}\n"
-                                  ,@elements
-                                  "\\end{itemize}}\n"))]
+    ;; [(tex pdf) (apply string-append `("\\normalsize{\\begin{itemize}\n"
+    ;;                               ,@elements
+    ;;                               "\\end{itemize}}\n"))]
+    [(tex pdf) (apply string-append `("\\item{" ,@elements "}\n"))]
+    [else (txexpr 'ul empty elements)]))
+
+(define (job-location . elements)
+  (case (current-poly-target)
+    [(tex pdf) (apply string-append `(", " ,@elements))]
     [else (txexpr 'ul empty elements)]))
 
 (define (title . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\textit{" ,@elements "}"))]
+    [(tex pdf) (apply string-append `("\\textbf{" ,@elements "}\\\\\n"))]
     [else (txexpr 'span '((class "title")) elements)]))
 
 (define (item . elements)
