@@ -177,9 +177,9 @@
     [else (txexpr 'div '((id "projects"))
                   (cons (txexpr 'h2 empty `("Projects")) elements))]))
 
-(define (work-experience . elements)
+(define (professional-experience . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\section{Work Experience}\n"
+    [(tex pdf) (apply string-append `("\\section{Professional Experience}\n"
                                   ,@elements))]
     [else (txexpr 'div '((id "work-experience"))
                   (cons (txexpr 'h2 empty `("Work Experience")) elements))]))
@@ -191,7 +191,7 @@
 
 (define (job-title . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\raggedright\\large " ,@elements "\\\\"))]
+    [(tex pdf) (apply string-append `("\\raggedright\\textbf{" ,@elements "}\n"))]
     [else (txexpr 'div '((class "job-title")) elements)]))
 
 (define (company . elements)
@@ -219,14 +219,14 @@
 
 (define (title . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\textbf{" ,@elements "}\\\\\n"))]
+    [(tex pdf) (apply string-append `("\\textbf{" ,@elements "}"))]
     [else (txexpr 'span '((class "title")) elements)]))
 
 (define (item . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\item "
+    [(tex pdf) (apply string-append `("\\item{"
                                   ,@elements
-                                  "\n"))]
+                                  "}\n"))]
     [else (txexpr 'li empty elements)]))
 
 (define (item-name . elements)
