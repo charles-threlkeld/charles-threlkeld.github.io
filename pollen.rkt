@@ -219,7 +219,7 @@
 
 (define (title . elements)
   (case (current-poly-target)
-    [(tex pdf) (apply string-append `("\\textbf{" ,@elements "}"))]
+    [(tex pdf) (apply string-append `("\\textit{" ,@elements "}"))]
     [else (txexpr 'span '((class "title")) elements)]))
 
 (define (item . elements)
