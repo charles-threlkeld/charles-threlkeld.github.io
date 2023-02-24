@@ -9,7 +9,7 @@
   ◊email{charles.l.threlkeld@gmail.com}
   ◊address{68 Brooks Ave, Arlington, MA 02474}
   ◊telephone{+1 812.431.8049}
-  ◊website{https://charles-threlkeld.github.io}
+  ◊website{charles-threlkeld.github.io}
 }
 
 ◊education{
@@ -40,20 +40,19 @@
 
 ◊professional-experience{
   ◊all-forms{
-  ◊company{Tufts University}
-  ◊job-location{Medford, MA}
-  ◊job-dates{January 2018--Present}
-  ◊job-title{Research Assistant}
-  ◊job-descs{
-  ◊job-desc{Created unsupervised learning model of speech acts to build peech act theory based on local conversation context.}
-  ◊job-desc{Collated data disperate data sources to a single, reusable format for research use, resulting in five published papers.}
-  ◊job-desc{Modeled statistical properties of conversation to empirically distinguish between competing theories of cognition, turn-taking, and speech structure.}
-  ◊job-desc{Annotated corpus of natural conversation, resulting in falsification of a long-standing linguistic hypothesis.}
-  ◊job-desc{Created modern, cross-platform conversation annotation software to replace the state-of-the-art which has been deprecated.}
-  ◊job-desc{Managed undergraduate writing tools to make conversation annotation software interoperable with phonetic annotation software.}
-  ◊job-desc{Managed undergraduate work to improve data pipeline, resulting in her honors thesis work on experimental vs natural language expectations.}
-  ◊job-desc{Engineered robot dialogue component to interoperate with physical action reasoning.}}}
-    ◊; ◊job-desc{Grammar of Conversation: a computational model using unsupervised machine learning to explore the heuristics people use to interpnret pragmatic meaning from the local context of an utterance.}
+    ◊company{Tufts University}◊job-location{Medford, MA}
+    ◊job-dates{January 2018--Present}
+    ◊job-title{Research Assistant}
+    ◊job-descs{
+    ◊job-desc{Created unsupervised learning model of speech acts to build speech act theory based on local conversation context.}
+    ◊job-desc{Collated data disperate data sources to a single, reusable format for research use, resulting in five published papers.}
+    ◊job-desc{Modeled statistical properties of conversation to empirically distinguish between competing theories of cognition, turn-taking, and speech structure.}
+    ◊job-desc{Annotated corpus of natural conversation, resulting in falsification of a long-standing linguistic hypothesis.}
+    ◊job-desc{Created modern, cross-platform conversation annotation software to replace the state-of-the-art which has been deprecated.}
+    ◊job-desc{Managed undergraduate writing tools to make conversation annotation software interoperable with phonetic annotation software.}
+    ◊job-desc{Supervised undergraduate data acquisition and modeling, resulting in her honors thesis critiquing experimental results applied to natural language.}
+    ◊job-desc{Engineered robot dialogue component to interoperate with physical action reasoning.}}}
+      ◊; ◊job-desc{Grammar of Conversation: a computational model using unsupervised machine learning to explore the heuristics people use to interpnret pragmatic meaning from the local context of an utterance.}
     ◊; ◊job-desc{Another Language ANalyzer (ALAN): Multi-media academic application for Jeffersonian transcription to create rich linguistic annoations.}
     ◊; ◊job-desc{TRP Analysis: Bayesian analysis of turn-taking data to determine floor transfer sensitivity with respect to time in natural conversation. Published in SigDial 2022}
     ◊; ◊job-desc{Utterance Length Analysis: Probabilistic analysis of utterance length at phonetic, morphemic, and lexical levels with respect to constant hazard rate distributions to determine likelihood of utterance completions. Published in SigDial 2022.}
@@ -65,18 +64,17 @@
 
 
   ◊all-forms{
-  ◊company{Tufts University}
-  ◊job-location{Medford, MA}
-  ◊job-dates{January 2018--Present}
-  ◊job-title{Teaching Assistant}
-  ◊; STAR: Situation, Task, Action, Result
-  ◊job-descs{
-  ◊job-desc{Created course content for online and in-person classes, including assignments, quizzes, and final projects for nearly 100 students over three semesters.}
-  ◊job-desc{Managed several other teaching assistants to improve workflow between professor, teaching assistants, and students.}
-  ◊job-desc{Presented lecture series on Bayesian modelling to introduce students to the concepts and teach them state-of-the-art techniques.}
-  ◊job-desc{Introduced dozens students to rigorous mathematical notation necessary for presenting their ideas unambiguously.}
-  ◊job-desc{Provided timely and robust feedback to students for up to weekly assignments.}}}
-    ◊; ◊job-desc{Algorithms, Spring 2023 with Diane Souvaine}
+    ◊company{Tufts University}◊job-location{Medford, MA}
+    ◊job-dates{January 2018--Present}
+    ◊job-title{Teaching Assistant}
+    ◊; STAR: Situation, Task, Action, Result
+    ◊job-descs{
+    ◊job-desc{Created course content for online and in-person classes, including assignments, quizzes, and final projects for nearly 100 students over three semesters.}
+    ◊job-desc{Managed several other teaching assistants to improve workflow between professor, teaching assistants, and students.}
+    ◊job-desc{Presented lecture series on Bayesian modelling to introduce students to the concepts and teach them state-of-the-art techniques.}
+    ◊job-desc{Introduced dozens students to rigorous mathematical notation necessary for presenting their ideas unambiguously.}
+    ◊job-desc{Provided timely and robust feedback to students for up to weekly assignments.}}}
+      ◊; ◊job-desc{Algorithms, Spring 2023 with Diane Souvaine}
     ◊; ◊job-desc{Explainable Artificial Intelligence, Spring 2021 with Daniel Kasenberg}
     ◊; ◊job-desc{Computational Models in Cognitive Science, Fall 2022 with Professor JP de Ruiter}
     ◊; ◊job-desc{Computational Models in Cognitive Science, Fall 2020 Co-teacher with Professor JP de Ruiter}
@@ -86,8 +84,7 @@
     ◊; ◊job-desc{Discrete Mathematics, Spring 2018: with Professor Laney Strange}}}
 
   ◊all-forms{
-    ◊company{Tufts University}
-    ◊job-location{Medford, MA}
+    ◊company{Tufts University}◊job-location{Medford, MA}
     ◊job-dates{September 2020--May 2022}
     ◊job-title{Emerging Scholars Program PhD Coordinator}
     ◊job-descs{
@@ -97,23 +94,21 @@
       ◊job-desc{Recruited and managed the rest of the team who delivered the content to the students.}}}
    
   ◊all-forms{
-  ◊company{Rosenthal Collins Group, LLC}
-  ◊job-location{Chicago, IL}
-  ◊job-dates{Oct 2010 - Apr 2017}
-  ◊job-title{Risk Analyst}
-  ◊job-descs{
-    ◊job-desc{Produced ongoing long-term study of the options markets with respect to the futures price, finding that the strike prices exerted pressure on the underlying, enabling an edge in brokerage.}
-    ◊job-desc{Managed risk assessment of portfolios totalling over \$100M, detailing susceptibility to price and volatility changes using commercial software.}
-    ◊job-desc{Produced bespoke risk analyses for clients, detailing time, volatility, futures price, calendar, and inter-commodity spread risks.}
-    ◊job-desc{Developed in-house software for risk assessment, allowing assessments beyond what was available off-the-shelf, and saving the group over \$10,000 monthly in licensing costs.}
-    ◊job-desc{Created graphical snapshots of market or risk analyses that could be interpreted easily by clients and coworkers.}}}
-  ◊; ◊item{◊item-name{Data Scraping}: Located, downloaded, cleaned, and processed raw data into useable formats for broker, client, and personal use.}
+    ◊company{Rosenthal Collins Group, LLC}◊job-location{Chicago, IL}
+    ◊job-dates{Oct 2010 - Apr 2017}
+    ◊job-title{Risk Analyst}
+    ◊job-descs{
+      ◊job-desc{Produced ongoing long-term study of the options markets with respect to the futures price, finding that the strike prices exerted pressure on the underlying, enabling an edge in brokerage.}
+      ◊job-desc{Managed risk assessment of portfolios totalling over \$100M, detailing susceptibility to price and volatility changes using commercial software.}
+      ◊job-desc{Produced bespoke risk analyses for clients, detailing time, volatility, futures price, calendar, and inter-commodity spread risks.}
+      ◊job-desc{Developed in-house software for risk assessment, allowing assessments beyond what was available off-the-shelf, and saving the group over \$10,000 monthly in licensing costs.}
+      ◊job-desc{Created graphical snapshots of market or risk analyses that could be interpreted easily by clients and coworkers.}}}
+    ◊; ◊item{◊item-name{Data Scraping}: Located, downloaded, cleaned, and processed raw data into useable formats for broker, client, and personal use.}
   ◊; ◊item{◊item-name{Exploratory Data Analysis}: Applied statistical techniques to datasets to find correlations or anomalies.}
   ◊; ◊item{◊item-name{Analysis Reporting}: Compiled findings of data analysis into essays, charts, and graphs in order to disseminate the findings to coworkers and clients in an easily interpretable way.}
 
 ◊long-form-only{
-  ◊company{Indiana University College of Optometry}
-  ◊job-location{Bloomington, IN}
+  ◊company{Indiana University College of Optometry}◊job-location{Bloomington, IN}
   ◊job-dates{May 2009 - December 2009}
   ◊job-title{Research Assistant}
   ◊job-descs{
