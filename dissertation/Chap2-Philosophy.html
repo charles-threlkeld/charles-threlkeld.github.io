@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-14 Tue 09:47 -->
+<!-- 2023-02-24 Fri 13:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -221,31 +221,36 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4915275">1. The Origins of Speech Act Theory</a></li>
-<li><a href="#org82f7b6b">2. Conversation Analysis and Conversational Organization</a></li>
-<li><a href="#org28b06b7">3. Computability of Conversational Organization</a>
+<li><a href="#org69de1b3">1. Chapter 2</a></li>
+<li><a href="#org4915275">2. The Origins of Speech Act Theory</a></li>
+<li><a href="#org82f7b6b">3. Conversation Analysis and Conversational Organization</a></li>
+<li><a href="#org28b06b7">4. Computability of Conversational Organization</a>
 <ul>
-<li><a href="#org0a9a25c">3.1. Definitions of terms</a></li>
-<li><a href="#org235f3d0">3.2. Finite State Machine</a></li>
-<li><a href="#org4f357cf">3.3. </a></li>
+<li><a href="#org0a9a25c">4.1. Definitions of terms</a></li>
+<li><a href="#org235f3d0">4.2. Finite State Machine</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<p>
-What problem do Speech Acts solve?
-</p>
-
-<div id="outline-container-org4915275" class="outline-2">
-<h2 id="org4915275"><span class="section-number-2">1.</span> The Origins of Speech Act Theory</h2>
+<div id="outline-container-org69de1b3" class="outline-2">
+<h2 id="org69de1b3"><span class="section-number-2">1.</span> Chapter 2</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-In the early 20th century, philosophers of language (working from Wittgenstein's <i>Tractatus Logicio-Philisophicus</i>) posited that language is the vehicle we use to make claims on the world. The important part of language is that it creates propositions, which are either true or false regarding the way the world is. Wittgenstein thought that if a sentence is neither true or false, then it is nonsense, and cannot be used in philosophical reasoning. Wittgenstein's purpose in making this distinction is to delineate what can or cannot be done with philosophy. Working in this framework, many previously important philosophical debates are immediately categorized as nonsense. What is the purpose of life? What is justice? These types of questions have no truth or falsehood in the world, and so debate on them can be thrown in the nonsense bin. Wittgenstein's <i>Tractatus</i> has been roundly rejected on a few different points by many philosophers over the years (including Wittgenstein himself), but it helps us set the stage for the entrance of Speech Act Theory.
+The goal of this paper is to extend speech act theory to account for observable local context of the conversation in order to account for conversational organization. In this chapter, I look at the origins of speech act theory to find the problem that it attempts to solve in philosophy of language. Then, I look at the sociological approach of conversation analysis, which moves reorients the focus from what <i>could</i> be done in conversation to what <i>is</i> done. Finally, I look at the implications of conversation analytic findings for computational aspects of pragmatics. I conclude that conversation analysis provides structure to utterance units that are crucial to understading the organization of conversation that speech acts alone cannot provide.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4915275" class="outline-2">
+<h2 id="org4915275"><span class="section-number-2">2.</span> The Origins of Speech Act Theory</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+In the early 20th century, philosophers of language (working from Wittgenstein's <i>Tractatus Logicio-Philisophicus</i> <a href="&amp;wittgenstein2013tractatus">&amp;wittgenstein2013tractatus</a>) posited that language is the vehicle people use to make claims on the world. The important part of language is that it creates propositions, which are either true or false regarding the way the world is. Wittgenstein thought that if a sentence is neither true or false, then it is nonsense, and cannot be used in philosophical reasoning. Wittgenstein's purpose in making this distinction is to delineate what can or cannot be done with philosophy. Working in this framework, many previously important philosophical debates are immediately categorized as nonsense. What is the purpose of life? What is justice? These types of questions have no truth or falsehood in the world, and so debate on them can be thrown in the nonsense bin. Wittgenstein's <i>Tractatus</i> has been roundly rejected on a few different points by many philosophers over the years (including Wittgenstein himself, cf. <a href="&amp;wittgenstein2010philosophical">&amp;wittgenstein2010philosophical</a>), but it helps set the stage for the entrance of Speech Act Theory.
 </p>
 
 <p>
-JL Austin was concerned that there are many things we do with language that are not necessarily true or false, but instead change parts of the world through their utterance. In his series of lectures <i>Doing Things With Words</i>, Austin first explored how certain utterances change the nature of their propositions through the act of utterance and the Speech Act was born. In Wittgenstein's terms, a sentence like `the boat is named the Queen Elizabeth' is certainly a true or false statement about the world. It is therefore permissible to reason about. Austin first concerned himself with what he termed <i>explicit performatives</i> such as `I name this boat the Queen Elizabeth.' What Austin found interesting about these types of sentences is that the proposition that they posit (i.e., that the boat is named Queen Elizabeth) is false before the utterance and true afterward, and the truth is based on the fact that someone has named the boat<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>. In this way, the speech (i.e., an utterance) performs an action (i.e., changes the state of the world).
+JL Austin was concerned that there are many things people do with language that are not necessarily true or false, but instead change parts of the world through their utterance. In his series of lectures <i>Doing Things With Words</i>, Austin first explored how certain utterances change the nature of their propositions through the act of utterance and the Speech Act was born. In Wittgenstein's terms, a sentence like `the boat is named the Queen Elizabeth' is certainly a true or false statement about the world. It is therefore permissible to reason about. Austin first concerned himself with what he termed <i>explicit performatives</i> such as `I name this boat the Queen Elizabeth.' What Austin found interesting about these types of sentences is that the proposition that they posit (i.e., that the boat is named Queen Elizabeth) is false before the utterance and true afterward, and the truth is based on the fact that someone has named the boat<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>. In this way, the speech (i.e., an utterance) performs an action (i.e., changes the state of the world).
 </p>
 
 <p>
@@ -257,27 +262,27 @@ So, Austin continues and searches for a pattern that demarcates this type of utt
 </p>
 
 <p>
-Note that implicit performatives can often be made explicit by changing the words of a sentence. `This boat is hereby named the Queen Elizabeth' and `I hereby name this boat the Queen Elizabeth' have the same speech act, namely that of <i>naming</i>. We can see that moving a sentence into a `that'-phrase can often allow us to transform sentence utterances from implicit to explicit performatives. `The cat is on the mat' may become `I know that the cat is on the mat,' `I warn you that the cat is on the mat,' or `I believe that the cat is on the mat.' Each of these transformations is a <i>construal</i> of the sentence `the cat is on the mat' when the sentence is uttered without the prefix and an explicit performative when uttered as a whole.
+Note that implicit performatives can often be made explicit by changing the words of a sentence. `This boat is hereby named the Queen Elizabeth' and `I hereby name this boat the Queen Elizabeth' have the same speech act, namely that of <i>naming</i>. Moving a sentence into a `that'-phrase can allows transforming sentences from implicit to explicit performatives. `The cat is on the mat' may become `I know that the cat is on the mat,' `I warn you that the cat is on the mat,' or `I believe that the cat is on the mat.' Each of these transformations is a <i>construal</i> of the sentence `the cat is on the mat' when the sentence is uttered without the prefix and an explicit performative when uttered as a whole.
 </p>
 
 <p>
-We see there is a difference between the words uttered and the speech act performed. Austin terms the words uttered the <i>locutionary</i> act and the speech act performed is the <i>illocutionary</i> act. The locutionary act is further broken down into the <i>phonetic</i>, <i>phatic</i>, and <i>rhetic</i> acts which mirror the phonemes spoken, the lexico-grammatical tokens (i.e., the words), and the sense and reference of the utterance. In the example of naming a boat, the locutionary act is different since the words are not the same, the illocutionary act is the identical<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>.
+There is a difference between the words uttered and the speech act performed. Austin terms the words uttered the <i>locutionary</i> act and the speech act performed is the <i>illocutionary</i> act. The locutionary act is further broken down into the <i>phonetic</i>, <i>phatic</i>, and <i>rhetic</i> acts which mirror the phonemes spoken, the lexico-grammatical tokens (i.e., the words), and the sense and reference of the utterance. In the example of naming a boat, the locutionary act is different since the words are not the same, the illocutionary act is the identical<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>.
 </p>
 
 <p>
-And so we can now see the important distinction between the words we say in an utterance and the act of saying them. Austin puts the two aspects of an utterance as the locutionary meaning (sense and reference) with a truth/falsehood dimension and the illocutionary force with a happiness/unhappiness dimension. The locutionary meaning with its truth and falsehood describes the propositional content of the utterance and what it says about the world. The illocutionary force describes the speech act of the utterance and whether or not is it is felicitous in performance. 
+The important distinction between the words people say in an utterance and the act of saying them. Austin puts the two aspects of an utterance as the locutionary meaning (sense and reference) with a truth/falsehood dimension and the illocutionary force with a happiness/unhappiness dimension. The locutionary meaning with its truth and falsehood describes the propositional content of the utterance and what it says about the world. The illocutionary force describes the speech act of the utterance and whether or not is it is felicitous in performance. 
 </p>
 
 <p>
-Finally, we will address the <i>perlocutionary</i> force of an utterance, which is the changing of thoughts and feelings of a speaker and audience in via an utterance. Consider `Austin makes important points about how language works.' The illocutionary force of this sentence is to argue. If my argument changes your mind and I convince you that Austin indeed <i>does</i> make good points, then the perlocutionary force is that of <i>convincing</i>. Neither the arguing for the proposition or convincing my audience are explicitly contained in the words of the sentence, but they are the forces that change the states of the world by virtue of being said.
+Finally: the <i>perlocutionary</i> force of an utterance is the changing of thoughts and feelings of a speaker and audience in via an utterance. Consider `Austin makes important points about how language works.' The illocutionary force of this sentence is to argue. If my argument changes your mind and I convince you that Austin indeed <i>does</i> make good points, then the perlocutionary force is that of <i>convincing</i>. Neither the arguing for the proposition or convincing my audience are explicitly contained in the words of the sentence, but they are the forces that change the states of the world by virtue of being said.
 </p>
 
 <p>
-I introduce the perlocutionary force for two reasons. First, the happiness or unhappiness of an utterance does not depend on its acceptance by the audience. I may still argue that Austin's points are important without convincing you of the same. Second, the coupling of illocutionary force by the speaker and perlocutionary force on the audience is a kernel into the notion of <i>sequence organization</i>. Austin does not discuss this point in detail, but it is a crucial aspect of the research in this paper, and will be discussed below. In short, a speech act such as <i>asking</i> invites a response, i.e., <i>answering</i>.
+I introduce the perlocutionary force for two reasons. First, the happiness or unhappiness of an utterance does not depend on its acceptance by the audience. I may still argue that Austin's points are important without convincing you of the same. Second, the coupling of illocutionary force by the speaker and perlocutionary force on the audience is a kernel into the notion of <i>sequence organization</i>. Austin does not discuss this point in detail, but it is a crucial aspect of the research in this paper, and is discussed below. In short, a speech act such as <i>asking</i> invites a response, i.e., <i>answering</i>.
 </p>
 
 <p>
-A note on perlocutions &#x2014; above our examples show that perlocutions often pair with illocutions, but this is not necessarily so. For example, there is no illocution for surprise, upset or humiliate <sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>. So Austin's framework allows intentions of illocution, sequence organization in normative responses, and also abnormal responses when unexpected perlocutions result from our actions. Note that Austin offers only a brief aside about the possibility of conversational organization and normative responses. We will bracket this point for now, to be taken up later in this chapter.
+A note on perlocutions &#x2014; above our examples show that perlocutions often pair with illocutions, but this is not necessarily so. For example, there is no illocution for surprise, upset or humiliate <sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>. So Austin's framework allows intentions of illocution, sequence organization in normative responses, and also abnormal responses when unexpected perlocutions result from our actions. Note that Austin offers only a brief aside about the possibility of conversational organization and normative responses. Bracket this point for now, to be taken up later in this chapter.
 </p>
 
 <p>
@@ -285,40 +290,40 @@ I have been speaking in general terms about speech acts, and attempting to label
 </p>
 
 <p>
-Austin himself notes that there may be on the order of \(10^3\) speech acts available in English. He gets this estimate from a brief survey of the dictionary, noting that this is the likely range for words that characterize the utterances we used. For example `he noted,' `she declared', `they estimated,' are some of the lexicalized speech acts in English. By virtue of being different words, Austin suggests that they may be meaningfully different actions.
+Austin himself notes that there may be on the order of \(10^3\) speech acts available in English. He gets this estimate from a brief survey of the dictionary, noting that this is the likely range for words that characterize utterances. For example `he noted,' `she declared', `they estimated,' are some of the lexicalized speech acts in English. By virtue of being different words, Austin suggests that they may be meaningfully different actions.
 </p>
 
 <p>
-In contrast to this high estimate, Austin also gives us a lower estimate of five families of speech act: verdictives, exercitives, comissives, behabitives, and expositives. These roughly correspond to judgements, exercising of powers, promises, social behaviors (e.g., <i>apologize</i>, <i>congratulate</i>, <i>curse</i>), and the acts within conversation (e.g., <i>reply</i>, <i>concede</i>, <i>assume</i>). Austin is clear that this is simply a sketch of a schematic, but his point is that speech acts may be more or less similar to each other based on the way in which they act upon the world with their illocutionary force. Promises are made by a person only on their own behalf. Exercitives, by contrast, are available only to those with vested power to use them. Rarely do we find these categories used in current research, but they are interesting as perhaps the original schematic by which we might classify speech acts.
+In contrast to this high estimate, Austin also gives a lower estimate of five families of speech act: verdictives, exercitives, comissives, behabitives, and expositives. These roughly correspond to judgements, exercising of powers, promises, social behaviors (e.g., <i>apologize</i>, <i>congratulate</i>, <i>curse</i>), and the acts within conversation (e.g., <i>reply</i>, <i>concede</i>, <i>assume</i>). Austin is clear that this is simply a sketch of a schematic, but his point is that speech acts may be more or less similar to each other based on the way in which they act upon the world with their illocutionary force. Promises are made by a person only on their own behalf. Exercitives, by contrast, are available only to those with vested power to use them. These categories are rarely used in modern research, but they are interesting as perhaps the original schematic which classify speech acts.
 </p>
 
 <p>
-But why should we want to classify speech acts? Philosophically, we want to classify speech acts in order to know how our utterance affects the state of the world. If we make a promise, what does that mean for the our beliefs and expectations about the future? And more to the point: what constitutes making a promise? Psychologically, speech acts are critical to understanding how language works between people. If we can label an utterance with an accurate speech act, then we know the purpose of the utterance, what purpose that speaker had in uttering it. Finally, we want to label speech acts in order to compute with them. If we label a set of speech acts, we can train a recognizer. The recognizer is not an end in itself but can be utilized to enable automated reasoning about utterances. A computational recognizer for promises means that promises can be tracked by software, enabling fuller understanding of natural language for use in many applications of natural language understanding and generation.
+But what purpose does classifying speech acts serve? Philosophically, classifcation of speech acts describes how utterance affect the state of the world. If one makes a promise, what does that mean for beliefs and expectations about the future? And more to the point: what constitutes making a promise? Psychologically, speech acts are critical to understanding how language works between people. Categorizing an utterance with an accurate speech act illuminates the purpose of the utterance that speaker had in uttering it. Finally, labeling speech acts allows computing with them. A set of labelled speech acts is a prerequisite for training a speech act recognizer. The recognizer is not an end in itself but can be utilized to enable automated reasoning about utterances. A computational recognizer for promises means that promises can be tracked by software, enabling fuller understanding of natural language for use in many applications of natural language understanding and generation.
 </p>
 
 <p>
-Is it possible to label speech acts? Criticism of explicit speech act labeling notes that we are both inflating and deflating the utterance when we label it as a single speech act. A single utterance may be labeled as a retort, reply, threat, muttering, or any number of arguably correct descriptions. But each of these is a <i>construal</i> rather than necessarily the (or an) intended action. Each locution that we produce is formed of words and their meaning, but if the words themselves are not explicit about the action, it is not clear that an <i>ex post facto</i> and <i>ex tempore</i> label will remain true to the  meaning <i>in tempore</i> or to the speaker at the time of utterance. This line of reasoning is taken Lakoff and Johnson (TODO: Cite page) in The Metaphors We Live By where they note that no two sentences have the same meaning, and that by adjusting even the word order, we change the focus of the sentence. Similarly, Goodman (TODO: citation and read original) notes that there are no synonyms since no two words have exactly the same meaning. Similarly, (TODO: cite) argue that no two illocutions have the same force.
+Is it possible to label speech acts? Criticism of explicit speech act labeling notes that the label adds structure where none necessarily exists, and at the same time flatten the meaning by construing only a single speech act. A single utterance may be labeled as a retort, reply, threat, muttering, or any number of arguably correct descriptions. But each of these is a <i>construal</i> rather than necessarily the (or an) intended action. Each locution is formed of words and their meaning, but if the words themselves are not explicit about the action, it is not clear that an <i>ex post facto</i> and <i>ex tempore</i> label remains true to the  meaning <i>in tempore</i> or to the speaker at the time of utterance. This line of reasoning is taken Lakoff and Johnson <a href="&amp;lakoff2008metaphors">&amp;lakoff2008metaphors</a> in <i>The Metaphors We Live By</i> where they note that no two sentences have the same meaning, and that by adjusting even the word order, the meaning sentence is changed as well. Sadock <a href="&amp;sadock1978testing">&amp;sadock1978testing</a> notes that true synonomy is immensely complicated by implicature (cf. <a href="&amp;Grice1975">&amp;Grice1975</a>). Enfield and Sidnell <a href="&amp;Enfield_2017">&amp;Enfield_2017</a> argue that no two illocutions have the same force, as the sentences which deliver and the context that constrains the force also modify it.
 </p>
 
 <p>
-I offer three arguments against these criticisms. The first is that classification does not imply identity. By classifying an utterance with a label, I do not make the claim that this is the only, best, ideal, or even a common way of performing the speech act label, only that it seems to be an instance of it. Promises can be made without uttering `I promise` just as threats can be made without specifying consequences (`or else&#x2026;'). Secondly, the lexicalization of speech acts suggests that there is a category well-known to English speakers for categorizing utterances in certain ways. If we weren't performing actions, such as `replying' or `denying,' how could we use these words in every day speech and be well understood? The final defense comes from Searle, who says that if our tests do not produce the results from regular use of language, the tests are wrong, not the language. Searle offers the phrase `eye doctor that is not an oculist.' This describes an eye doctor and not an oculist. This shows that the extensions of each can be different, breaking a property we expect of synonyms. Searle argues that if this property breaks, this is a fault in our test for synonyms rather than in synonymy itself. Likewise, it is my position that the same speech act can be performed with different utterances, and if our tests regarding speech acts fail, it is a problem with our tests, not with our ability to label.
+I offer three arguments against these criticisms. The first is that classification does not imply identity. By classifying an utterance with a label, I do not make the claim that this is the only, best, ideal, or even a common way of performing the speech act label, only that it seems to be an instance of it. Promises can be made without uttering `I promise` just as threats can be made without specifying consequences (`or else&#x2026;'). Secondly, the lexicalization of speech acts suggests that there is a category well-known to English speakers for categorizing utterances in certain ways. If people weren't performing actions, such as `replying' or `denying,' how could we use these words in every day speech and be well understood? The final defense comes from Searle, who says that if our tests do not produce the results from regular use of language, the tests are wrong, not the language. Searle offers the phrase `eye doctor that is not an oculist.' This describes an eye doctor and not an oculist. This shows that the extensions of each can be different, breaking a property expected of synonyms. Searle argues that if this property breaks, this is a fault in our test for synonyms rather than in synonymy itself. Likewise, it is my position that the same speech act can be performed with different utterances, and if our tests regarding speech acts fail, it is a problem with our tests, not with our ability to label.
 </p>
 </div>
 </div>
 
 <div id="outline-container-org82f7b6b" class="outline-2">
-<h2 id="org82f7b6b"><span class="section-number-2">2.</span> Conversation Analysis and Conversational Organization</h2>
-<div class="outline-text-2" id="text-2">
+<h2 id="org82f7b6b"><span class="section-number-2">3.</span> Conversation Analysis and Conversational Organization</h2>
+<div class="outline-text-2" id="text-3">
 <p>
-Now let us turn the bracketed question from above: how do speech acts relate to conversational organization. As noted above, Austin offers a brief aside, noting that (TODO: cite page 116) ``many illocutionary acts invite by convention a response or sequel.'' His intention here is to distinguish between a perlocutionary <i>goal</i> and a perlocutionary <i>effect</i>, noting that evidence of the effect can often be found in the response.
+Turning to the bracketed question from above: how do speech acts relate to conversational organization. As noted above, Austin offers a brief aside, noting that ``many illocutionary acts invite by convention a response or sequel.'' <a href="&amp;Austin1955">p. 116</a> His intention here is to distinguish between a perlocutionary <i>goal</i> and a perlocutionary <i>effect</i>, noting that evidence of the effect can often be found in the response.
 </p>
 
 <p>
-We now turn from the field of philosophy to the field of conversation analysis (CA<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>) to expand the topic of conversational organization. First, a definition of conversational organization. From Schegloff (2007) (TODO: cite page 19) <sup><a id="fnr.5" class="footref" href="#fn.5" role="doc-backlink">5</a></sup>: ``any sorts of general patterns or structures which [people] use to co-produce and track an orderly stretch of talk and other conduct in which some course of action gets initiated, worked through and brought to closure'' constitutes sequence organization.
+I now turn from the field of philosophy to the field of conversation analysis (CA<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>) to expand the topic of conversational organization. First, a definition of conversational organization. From Schegloff <a href="&amp;Schegloff2007">p. 19</a><sup><a id="fnr.5" class="footref" href="#fn.5" role="doc-backlink">5</a></sup>: ``any sorts of general patterns or structures which [people] use to co-produce and track an orderly stretch of talk and other conduct in which some course of action gets initiated, worked through and brought to closure'' constitutes sequence organization.
 </p>
 
 <p>
-In Austinian terms, performing a speech act to conclusion would be a single sequence of conversation, and in fact, this is Schegloff's (and CA's) jumping off point. CA posits that the first pair part (FPP) and second pair part (SPP) of <i>adjacency pairs</i> are the fundamental building blocks of conversational sequences (TODO cite Chapter 2). Examples of adjacency pairs are greeting-greeting, question-answer, or offer-accept/decline (cite p 13). The insight is that during certain parts of conversations, the issue at point includes an introduction of an issue by one speaker (the first pair part) and its resolution by the other speaker (the second pair part).
+In Austinian terms, performing a speech act to conclusion would be a single sequence of conversation, and in fact, this is Schegloff's (and CA's) jumping off point. CA posits that the first pair part (FPP) and second pair part (SPP) of <i>adjacency pairs</i> are the fundamental building blocks of conversational sequences <a href="&amp;Schegloff2007">Chapter 2</a>. Examples of adjacency pairs are greeting-greeting, question-answer, or offer-accept/decline <a href="&amp;Schegloff2007">p. 13</a>. The insight is that during certain parts of conversations, the issue at point includes an introduction of an issue by one speaker (the first pair part) and its resolution by the other speaker (the second pair part).
 </p>
 
 <p>
@@ -326,27 +331,27 @@ Crucially, Schegloff notes that:
 </p>
 <blockquote>
 <p>
-Instead of starting out from the outcome action (e.g., What would make a something a promise?), we start from an observation about how some bit of talk was done and ask: What could someone be doing by talking in this way? What does that bit of talk appear designed to do? What is the action that it is a practice for? We try to ground our answer to this sort of question by showing that it is <i>that</i> action which <i>co-participants in the interaction</i> took to be what was getting done, as revealed in/by the response they make to it. [&#x2026;] So, the first observation is that we start <i>not from the names of types of action</i>, not from <i>classes</i> of action, but from singular bits of data, each in its embedding context, and seek out what &#x2014; in that instance &#x2014; the speaker appeared to be doing, and what in the talk and other conduct underwrote or conveyed that that was what was being done. [&#x2026;] Second, proceeding in this way can lead us to discover actions that have no vernacular name, that speech act theory could not ordinarily undertake to analyze.<sup><a id="fnr.6" class="footref" href="#fn.6" role="doc-backlink">6</a></sup>
+Instead of starting out from the outcome action (e.g., What would make a something a promise?), we start from an observation about how some bit of talk was done and ask: What could someone be doing by talking in this way? What does that bit of talk appear designed to do? What is the action that it is a practice for? We try to ground our answer to this sort of question by showing that it is <i>that</i> action which <i>co-participants in the interaction</i> took to be what was getting done, as revealed in/by the response they make to it. [&#x2026;] So, the first observation is that we start <i>not from the names of types of action</i>, not from <i>classes</i> of action, but from singular bits of data, each in its embedding context, and seek out what &#x2014; in that instance &#x2014; the speaker appeared to be doing, and what in the talk and other conduct underwrote or conveyed that that was what was being done. [&#x2026;] Second, proceeding in this way can lead to discovery of actions that have no vernacular name, that speech act theory could not ordinarily undertake to analyze.<sup><a id="fnr.6" class="footref" href="#fn.6" role="doc-backlink">6</a></sup>
 </p>
 </blockquote>
 
 <p>
-Here, we have an approached markedly different from that of Austin. When Austin notes that the number of speech acts maps on to the words we have for describing them, he is explicitly taking the position that the object of inquiry is describable through known language. Schegloff, by contract, uses description (like question-answer) but notes that the description is meant to be a stand-in for classes of organization rather than a definition that obtains.
+Here, the approach is markedly different from that of Austin. When Austin notes that the number of speech acts maps on to the words used for describing them, he is explicitly taking the position that the object of inquiry is describable through known language. Schegloff, by contract, uses description (like question-answer) but notes that the description is meant to be a stand-in for classes of organization rather than a definition that obtains.
 </p>
 
 <p>
-With this as the basis of inquiry, Conversation Analysis never offers any list of adjacency pairs. There cannot be a closed set of <i>things we do</i> because the set is simply a convenience for discussion and inquiry, not a list of actions to choose from. Further, the adjacency pair is considered the <i>minimal unit</i>, and more elaborate sequences extend this minimal unit. Let us turn to several extensions in order of their presence within a sequence: pre-expansions, insert expansions, and post-expansions. Then, I will briefly describe preference organization. I will then briefly discuss sequences of sequences. Finally, I will show how the organization of conversation along these lines relates to its computability.
+With this as the basis of inquiry, Conversation Analysis never offers any list of adjacency pairs. There cannot be a closed set of <i>things utterances do</i> because the set is simply a convenience for discussion and inquiry, not a list of actions to choose from. Further, the adjacency pair is considered the <i>minimal unit</i>, and more elaborate sequences extend this minimal unit. There are several extensions to the minimal unit that are considered here in order of their presence within a sequence: pre-expansions, insert expansions, and post-expansions. Then, I briefly describe preference organization. I then briefly discuss sequences of sequences. Finally, I show how the organization of conversation along these lines relates to its computability.
 </p>
 
 <p>
 A <i>pre-sequence</i> is a sequence of conversation that is clearly leading up to an adjacency pair<sup><a id="fnr.7" class="footref" href="#fn.7" role="doc-backlink">7</a></sup>.
 </p>
 
-<p>
-(TODO Cite p 30)
-(TODO: monospace block)
-</p>
 <blockquote>
+<p>
+
+</p>
+
 <p>
 (4.01) JG 3:1 (Nelson is the caller; Clara is called to the phone)
 1  Cla:           Hello
@@ -368,13 +373,9 @@ In this segment, the base adjacency pair is an invitation-accept on lines 6 and 
 Pre-sequences may be more elaborate with <i>pre-pre-sequences</i>:
 </p>
 
-<p>
-(TODO Cite p 30)
-(TODO: monospace block)
-</p>
 <blockquote>
 <p>
-(4.18) ST (Schegloff, 1980:112)
+(4.18) ST <a href="&amp;schegloff1980preliminaries">p. 112</a>
 1  Fre: F<sub>pre</sub>-&gt; Oh by the way((sniff))I have a bi:g favor to ask ya.
 2  Lau: S<sub>pre</sub>-&gt; Sure, go'head.
 3  Fre: F<sub>pre</sub>-&gt; 'Member the blouse you made a couple weeks ago?
@@ -386,7 +387,7 @@ Pre-sequences may be more elaborate with <i>pre-pre-sequences</i>:
 </blockquote>
 
 <p>
-Here, lines 1 and 2 introduce the issue of asking for a favor. Lines 3 and 4 form a pre-sequence to introduce the topic of the dress, and not until line 5 do we get the substance of the favor and on line 6 its acceptance. For an example and discussion of multiple pre-expansions, see pages 53&#x2013;57.
+Here, lines 1 and 2 introduce the issue of asking for a favor. Lines 3 and 4 form a pre-sequence to introduce the topic of the dress, and not until line 5 is the substance of the favor shown and on line 6 its acceptance. For an example and discussion of multiple pre-expansions, see pages 53&#x2013;57.
 </p>
 
 <p>
@@ -427,38 +428,70 @@ A <i>post-expansion</i> falls after the base adjacency pair. As an example, in t
 </blockquote>
 
 <p>
-Here we see the supposition from Stan that `she' was not well behaved (line 2). However, Alan's response on line 6 does not accept this fact. In lines 7 and 8, we see a post-expansion where Stan re-evaluates his supposition based on Alan's testimony.
+Here the supposition from Stan that `she' was not well behaved (line 2). However, Alan's response on line 6 does not accept this fact. Lines 7 and 8 are a post-expansion where Stan re-evaluates his supposition based on Alan's testimony.
 </p>
 
 <p>
-According to CA, conversations are generally organized into adjacency pairs of two. A first pair part (of some type: pre-sequence, base-pair, insert-sequence, post-sequence) and an associated second pair part, each composed of a turn by different speakers. All of these adjacency pairs map on well to the Austinian terms of perlocutionary goals and effects. We see that in conversation, a first pair part generally has some objective and that objective is acknowledged in some way in the second pair part.
+According to CA, conversations are generally organized into adjacency pairs of two. A first pair part (of some type: pre-sequence, base-pair, insert-sequence, post-sequence) and an associated second pair part, each composed of a turn by different speakers. All of these adjacency pairs map on well to the Austinian terms of perlocutionary goals and effects. In conversation, a first pair part generally has some objective and that objective is acknowledged in some way in the second pair part.
 </p>
 
 <p>
-CA goes on to describe how second pair parts are chosen and formed based on certain <i>preferences</i> within conversation. Note that preference has a narrow meaning within CA. A speaker inviting a listener to an event may have a preference for their attending or not attending, and the listener may also have a preference one way or the other. However, these feelings to the substance of the issue are not under discussion when discussing preferences in conversational organization. Instead, we are looking at the way that turns reflect on one another.
+CA goes on to describe how second pair parts are chosen and formed based on certain <i>preferences</i> within conversation. Note that preference has a narrow meaning within CA. A speaker inviting a listener to an event may have a preference for their attending or not attending, and the listener may also have a preference one way or the other. However, these feelings to the substance of the issue are not under discussion when discussing preferences in conversational organization but, instead, the way that turns reflect on one another.
 </p>
 
 <p>
-To extend the example of an invitation, a speaker may <i>tilt</i> the invitation one way or another. ``Would you like to join us?'' and ``You wouldn't want to join us, would you?'' set up differing preferences for acceptance and rejection of the invitation. In the first, the preferred action is to accept the invitation and in the second it is to reject. We notice that often performing the preferred action is a minimal turn (e.g., ``sure'' or ``no thank you''), but a <i>dispreferred</i> turn will be accompanied by some expansion (e.g., ``I'd love to but I have to be somewhere'' or ``I do need to sit down for just a few minutes'').
+To extend the example of an invitation, a speaker may <i>tilt</i> the invitation one way or another. ``Would you like to join us?'' and ``You wouldn't want to join us, would you?'' set up differing preferences for acceptance and rejection of the invitation. In the first, the preferred action is to accept the invitation and in the second it is to reject. Often performing the preferred action is a minimal turn (e.g., ``sure'' or ``no thank you''), but a <i>dispreferred</i> turn is accompanied by some expansion (e.g., ``I'd love to but I have to be somewhere'' or ``I do need to sit down for just a few minutes'').
 </p>
 
 <p>
-TODO Sequences of Sequences
+Finally, within a conversation, there are mechanisms to pass from sequence to sequence. Once a first pair part has been answered with a matching second pair part and any post-expansion sequences have been concluded, a new (likely, but not necessarily related) sequence begins.
 </p>
 </div>
 </div>
 
 <div id="outline-container-org28b06b7" class="outline-2">
-<h2 id="org28b06b7"><span class="section-number-2">3.</span> Computability of Conversational Organization</h2>
-<div class="outline-text-2" id="text-3">
+<h2 id="org28b06b7"><span class="section-number-2">4.</span> Computability of Conversational Organization</h2>
+<div class="outline-text-2" id="text-4">
 <p>
-Let us turn to the computability of conversational organization. I will follow the template of Chomsky (1957) in which the author offers formalized definitions of sentences of a language and outlines the constraints for a grammar to compute sentences that are inside or outside of the language. My goal here is to similarly formalize sequences of utterances within a language that may or may not compose a conversation according to the conversational organization that we have outlined above. This will give us a sense of the difficulty of the problem that we are looking to solve.
+Can we generate a grammar of conversation using the conventions of conversation analysis? Making an analogy to Chomsky's definition of a grammar of a language as a machine that generates all and only acceptable sentences of the language <a href="&amp;chomsky2002syntactic">&amp;chomsky2002syntactic</a>, a grammar of conversation of a language is a machine that generates all and only the conversations of a language. In Chomsky's discussion of grammars at the syntactic level, the strings of a sentence are made up of the words (or morphemes) of the language. In our discussion below, I use utterances as the unit which builds up conversations. For now, a formal description of an utterance is left aside, except to say that it is a temporally whole unit during which a person contributes to a conversation.
+</p>
+
+<p>
+First, I must note that forming a grammar of conversation has historically fallen to the field of discourse analysis <sup><a id="fnr.8" class="footref" href="#fn.8" role="doc-backlink">8</a></sup>. However, Levinson <a href="&amp;Levinson1983">&amp;Levinson1983</a> argues that the fundamental approach of discourse analysis is ``fundamentally misconceived.'' There are two threads of discourse analysis: text grammarians and interactional theorists. Text grammarians are typified by the thesis that ``discourse can be treated as a single sentence in isolation by regarding sentence boundaries as sentential connectives'' <a href="&amp;katz1963structure">&amp;katz1963structure</a>. The problem here is that the speaker and hearer of any utterance are fundamental to understanding the utterance. Therefore, the sentential connectives are not strong enough to do the work of modeling conversation. Interactional theorists' fundamental claim is that ``obligatory sequencing is not to be found between utterances but between the actions that are being performed'' <a href="&amp;labov1977therapeutic">&amp;labov1977therapeutic</a>.
+</p>
+
+<p>
+Levinson argues that the interactional theorist problems stem from their basic assumptions (quoting from Levinson):
+</p>
+
+<ol class="org-ol">
+<li>There are unit acts &#x2014; <i>speech acts</i> or <i>moves</i> &#x2014; that are performed in speaking, which belong to a specifiable, delimited set.</li>
+<li>Utterances are segmentable into unit parts &#x2014; <i>utterance-units</i> &#x2014; each of which corresponds to (at least) one unit act.</li>
+<li>There is a <i>specifiable function</i>, and hopefully a a <i>procedure</i>, that will map utterance units from speech acts and vice versa.</li>
+<li>Conversational sequences are primarily regulated by a set of <i>sequencing rules</i> stated over speech act (or move) types.</li>
+</ol>
+
+<p>
+Levinson finds fault with assumption (1) enforcing a single act per utterance and responses being relevant to perlocutions rather than illocutions, when perhaps several have occurred, with (2) on account of non-verbal behavior and possible clausal segmentations of utterances performing distinct acts, with (3) for a lack of theory for utterance segmentation or utterance-to-action mapping and lack of possible function since the inputs are ill-defined. Levinson claims that these criticisms, when taken together, create unfalsifiable claims by discourse analysis. Finally, Levinson notes that if the theory where to hold to this point, the production of sequences of acts as either grammatical or not could not be tested, since there is no procedure to design utterances from acts.
+</p>
+
+<p>
+<a id="orgf034dbb"></a>
+</p>
+
+
+<p>
+Levinson's critiques do not necessarily hold for all types of discourse analysis, however. Assigning a single speech act to any utterance is often a criticism (see also, 
+</p>
+
+<p>
+Turning to the computability of conversational organization. I follow the template of Chomsky (1957) in which the author offers formalized definitions of sentences of a language and outlines the constraints for a grammar to compute sentences that are inside or outside of the language. My goal here is to similarly formalize sequences of utterances within a language that may or may not compose a conversation according to the conversational organization that outlined above. The goal is sense of the computational difficulty of the problem at hand.
 </p>
 </div>
 
 <div id="outline-container-org0a9a25c" class="outline-3">
-<h3 id="org0a9a25c"><span class="section-number-3">3.1.</span> Definitions of terms</h3>
-<div class="outline-text-3" id="text-3-1">
+<h3 id="org0a9a25c"><span class="section-number-3">4.1.</span> Definitions of terms</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 First a few definitions. Let \(L\) be a language. $L is a set composed of possible conversations in that language. For any conversation \(C\), it is defined as a fully-ordered, finite set of sequences $\{S<sub>1\ldots</sub>{S<sub>n</sub>}\} for a conversation of length \(n\). Each sequence \(S\) is minimally composed of a first pair part \(f_b\) and a second pair part \(s_b\). A conversational grammar \(G\) decides whether a conversation \(C\) is admissible in language \(L\).
 </p>
@@ -466,13 +499,11 @@ First a few definitions. Let \(L\) be a language. $L is a set composed of possib
 </div>
 
 <div id="outline-container-org235f3d0" class="outline-3">
-<h3 id="org235f3d0"><span class="section-number-3">3.2.</span> Finite State Machine</h3>
-<div class="outline-text-3" id="text-3-2">
+<h3 id="org235f3d0"><span class="section-number-3">4.2.</span> Finite State Machine</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 First consider the Type-3 grammar or regular grammar of the Chomsky hierarchy. This type of grammar can be decide a regular language and only admits either left-regular or right-regular introduction rules.
 </p>
-
-
 
 <p>
 At first look, a minimal grammar composed only of base adjacency pairs \(f_b\) and \(s_b\).
@@ -487,7 +518,7 @@ Let \(N=\{C,S\}\), \(\Sigma=\{f_b,s_b\}\), then \(P\):
 </p>
 
 <p>
-In words, a conversation is composed of a sequence of sequences. Each sequence is composed of an adjacency pair followed by one or more sequences, or the end token. However, this does not account for pre- and post-expansion sequences. Let us add these rules:
+In words, a conversation is composed of a sequence of sequences. Each sequence is composed of an adjacency pair followed by one or more sequences, or the end token. However, this does not account for pre- and post-expansion sequences. Add these rules:
 </p>
 
 <p>
@@ -517,7 +548,7 @@ In this (fabricated) conversation, lines 1 and 2 are a pre-expansion of a projec
 </p>
 
 <p>
-Next we will add rules for insert sequences. Note that pre-sequences, post-sequences, and base adjacency pairs all need appropriate places for insert sequences, as well as insert sequences themselves.
+Next, add rules for insert sequences. Note that pre-sequences, post-sequences, and base adjacency pairs all need appropriate places for insert sequences, as well as insert sequences themselves.
 </p>
 
 <p>
@@ -531,22 +562,92 @@ Next we will add rules for insert sequences. Note that pre-sequences, post-seque
 </p>
 
 <p>
-This accounts for <i>serial</i> insert sequences, but what we cannot do in regular language is to add insert sequences of insert sequences. The problem is that this relies on a stack of known height in order to unpack the conversation before continuing. Finite State Automata lack the necessary memory for unpacking a stack. For example
+This accounts for <i>serial</i> insert sequences, but regular languages are not powerful enough to add insert sequences of insert sequences<sup><a id="fnr.9" class="footref" href="#fn.9" role="doc-backlink">9</a></sup>. The problem is that this relies on a stack of known height in order to unpack the conversation before continuing. Finite State Automata lack the necessary memory for unpacking a stack. For example
 </p>
 
 <blockquote>
 <p>
-1 A: Would you like to go to lunch?
-2 B: Where?
-3 A: What time would we go?
-4 B: 12:30
-5 A: The Ethiopian place
-6 B: Yeah that sounds great
+Schegloff 2007
+1 S: Conservatives like to shoot people and (liberals don't)
+     (2.0)
+2 D: Conservatives like what?
+3 S: Wha:t?
+4 D: What did you say about conservatives?
+5 S: Conservatives like to shoot people en liberals don't
+6 M: N::no:
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+Merritt 1976:331
+  S: Next
+0 C: Roast beef on rye
+1 S: Mustard or mayonnaise?
+2 C: Excuse me?
+3 S: What?
+3 C: Excuse me, I didn't hear what you said
+1 S: Do you want mustard or mayonnaise?
+  C: Mustard please
+0  S: ((provides))
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+Levinson 1983:305
+1  C: I ordered some paint &#x2026; some vermillion
+2     And I wanted to order some more, the name's Boyd
+</p>
+
+<p>
+3  R: Yes how many tubes would you like sir?
+</p>
+
+<p>
+4  C: What's the price now with VAT?
+</p>
+
+<p>
+5  R: I'll just work that out for you
+</p>
+
+<p>
+6  C: Thanks
+</p>
+
+<p>
+7     (10.0)
+8  R: Three pounds nineteen a tube sir
+</p>
+
+<p>
+9  C: Three nineteen is it=
+</p>
+
+<p>
+10 R: Yeah
+</p>
+
+<p>
+11 C: That's for the large tube?
+</p>
+
+<p>
+12 R: Well yeah it's the 37ccs
+</p>
+
+<p>
+13 C: I'll just eh ring you back I have to work out how many I'll need
+</p>
+
+<p>
+15 ((call-back with order and acceptance))
 </p>
 </blockquote>
 
 <p>
-In this case, attending lunch is contingent on location, but the location is contingent upon the time. A regular language cannot account for the stack-type structure of this conversation. This is an application of the pumping lemma for regular languages. In this case, we are pumping insert sequences, showing that the grammar of conversation is not regular.
+In this case, we have a 3-layer embedding. <a id="org295b081"></a>
 </p>
 
 <p>
@@ -557,11 +658,6 @@ Moving up the Chomsky hierarchy, is \(C\) context-free?
 Let \(w\in{C}\) such that \(w=uvxyz\) such that \(\forall{i}\geq{0}, uv^ixy^iz\in{L}\), \(|vy|\geq{1}\), and \(|vxy|\leq{p}\)
 </p>
 </div>
-</div>
-
-
-<div id="outline-container-org4f357cf" class="outline-3">
-<h3 id="org4f357cf"><span class="section-number-3">3.3.</span> </h3>
 </div>
 </div>
 <div id="footnotes">
@@ -581,7 +677,7 @@ These are Austin's examples on the basis that we cannot say `I surprise you that
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4" role="doc-backlink">4</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
-The field of Conversation Analysis was originally developed by Harvey Sacks, Emanuel Schegloff, and Gail Jefferson. Here, we are mainly working from Schegloff's 2007 book <i>Sequence Organization in Interaction: A Primer in Conversation Analysis</i>, which lays out the foundations of the approach. Within this text are, of course, hundreds of other papers for methodology and findings. These will be cited where findings are appropriate, and the book is the main resource for methodology. Since the methodology is largely contained in this volume with a single author, we will attribute it to this author and also this field.
+The field of Conversation Analysis was originally developed by Harvey Sacks, Emanuel Schegloff, and Gail Jefferson. Here, we are mainly working from Schegloff's 2007 book <i>Sequence Organization in Interaction: A Primer in Conversation Analysis</i>, which lays out the foundations of the approach. Within this text are, of course, hundreds of other papers for methodology and findings. These are cited where findings are appropriate, and the book is the main resource for methodology. Since the methodology is largely contained in this volume with a single author, we attribute it to this author and also this field.
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5" role="doc-backlink">5</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
@@ -596,12 +692,20 @@ Here, we are treating the organizational interrogation of Conversation Analysis 
 A note on Conversation Analysis style transcripts. In CA, the actual talk is of the utmost importance, not a gloss of the talk. Therefore, rather than transcribing a sequence of words as understood by a transcriber, the transcriber seeks to transcribe the sounds that the participants make, including markup for many verbal cues that may be relevant to that portion of conversation, or to the angle of inquiry. This is why words are occasionally spelled roughly phonetically rather than by the book. Further, some markup such as `((sniff))' are included where the parentheses denote a non-verbal sound. The `F' and `S' markers in the transcripts show first and second pair parts, respectively, with subscripts for different expansions and `b' subscripts for base adjacency pairs.
 </p></div></div>
 
+<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8" role="doc-backlink">8</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+See <a href="&amp;de1981introduction">&amp;de1981introduction</a> for a text grammarian approach and <a href="&amp;coulthard2014introduction">&amp;coulthard2014introduction</a> or <a href="&amp;longacre1996grammar">&amp;longacre1996grammar</a> for a speech act-based approach.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.9" class="footnum" href="#fnr.9" role="doc-backlink">9</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+More formally, the language \(L=(i_f)^n(i_s)^n\) where each \(i_f\) is a first pair part of an insert sequence and \(i_s\) is a second pair part is not expressible in a regular language. For a known upper bound on \(n\), a regular language <i>is</i> sufficient, but if we allow unbounded recursion, it is not.
+</p></div></div>
+
 
 </div>
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Chas Threlkeld</p>
-<p class="date">Created: 2023-02-14 Tue 09:47</p>
+<p class="date">Created: 2023-02-24 Fri 13:16</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

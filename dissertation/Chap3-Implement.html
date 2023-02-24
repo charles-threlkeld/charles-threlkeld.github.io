@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-14 Tue 09:47 -->
+<!-- 2023-02-24 Fri 13:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -193,6 +193,27 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content" class="content">
@@ -202,9 +223,13 @@
 <ul>
 <li><a href="#org3337175">1. Chapter 3 &#x2014; Implementing and Using Speech Acts</a>
 <ul>
-<li><a href="#org41fe606">1.1. Fields Employing Speech Acts</a></li>
+<li><a href="#org1ca75e5">1.1. Employing Speech Acts in Systems</a>
+<ul>
+<li><a href="#org9ed391e">1.1.1. Chatbot aside</a></li>
+</ul>
+</li>
 <li><a href="#orgebc07ad">1.2. Mismatch of Speech Act Logic and Conversational Organization</a></li>
-<li><a href="#org1e2ce06">1.3. Building a Speech Act Schema from Data</a></li>
+<li><a href="#org0c121ab">1.3. Building a Schema from Data for Conversation Organization</a></li>
 </ul>
 </li>
 </ul>
@@ -216,14 +241,121 @@
 <p>
 Computer scientists are interested in conversation for a number of different fields, but Speech Act Theory has only led to incremental improvements. According to the critique here, the logical structure of Speech Act Theory is usually used rather than the organization structure of Conversation Analysis. However, Conversation Analysis limits itself to noticing patterns, rather than establishing a formal structure of conversation, as would be needed in a symbolic approach to dialogue. This necessary formalization motivates the work of this document.
 </p>
+
+<p>
+Computer scientists have been interested in speech acts for decades for use in conversational agents. Programming an agent to behave appropriately has turned out to be a tricky task. Developers realized that assuming that the literal words that people say is also what they mean leads to errors. Similarly, there are many ambiguities within language, and the speech act is one of these. A common approach to solving this problem is to create large corpuses of linguistic interactions tagged for speech acts. This leads to problems of which tag-set to use. DAMSL, ISO, SWBD<sub>DAMSL</sub>, Matthias's Big 5, Rhetorical Structure Theory and others have proposed to be solutions to speech act problems in agents, but each has fallen short in its own way, showing a disconnect between the motivation and the implementation of these projects.
+</p>
 </div>
 
-<div id="outline-container-org41fe606" class="outline-3">
-<h3 id="org41fe606"><span class="section-number-3">1.1.</span> Fields Employing Speech Acts</h3>
+
+<div id="outline-container-org1ca75e5" class="outline-3">
+<h3 id="org1ca75e5"><span class="section-number-3">1.1.</span> Employing Speech Acts in Systems</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-Speech Act Theory has been employed in many subfields of computer science. These include building dialogue agents, dialogue structure, corpus tagging, summarization techniques, planning, and others. Within these topics, there are often disparate goals such as small talk, problem solving, human-robot teaming, or telephonic agents. Each task has often argued for specialized logics for its domain, and specialized logics beg specialized speech acts, fragmenting the computational speech act literature.
+Speech Act Theory has not been stagnant since Austin's 1955 lectures, of course. The first formalization of the theory is Searle's famous essay, the aptly titled ``Speech Acts''<a href="&amp;searle1969speech">&amp;searle1969speech</a>. Searle went on to offer an early taxonomy of speech acts in <a href="&amp;searle1975taxonomy">&amp;searle1975taxonomy</a>. I won't belabor the points Searle makes, but the essay does set the direction for the field, especially in the logical framework it provides for understanding speech acts, and so I provide here a brief introduction.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
 </p>
+
+<p>
+Searle's chief insight is that we can assign a speech act to certain utterances in accordance to the committments that they attribute to the speaker or listener. This taxonomy is likely the most famous in speech act theory, and so I will enumerate and discuss these acts in order to show how other taxnonomies may have been derived. To quote Searle on his own motivation<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>:
+</p>
+
+<blockquote>
+<p>
+The primary purpose of this paper is to develop a reasoned classification of illocutionary acts into certain basic categories or types. It is to answer the question: How many kinds of illocutionary acts are there?
+</p>
+</blockquote>
+
+<p>
+Searle enumerates the acts in the following table:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Speech Act</th>
+<th scope="col" class="org-left">Associated Symbolism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Assertive</td>
+<td class="org-left">\(\vdash{\downarrow{B(p)}}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">Directive</td>
+<td class="org-left">\(!\uparrow{W(H\text{ does }A)}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">Commissive</td>
+<td class="org-left">\(C\uparrow{I(S\text{ does }A)}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">Expressive</td>
+<td class="org-left">\(E\varnothing{(P)(S/H+\text{ property})}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">Declaration</td>
+<td class="org-left">\(D\updownarrow{\varnothing{(p)}}\) or \(D_a\downarrow{\updownarrow{B(p)}}\)</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+The reader is welcome to examine the exact meanings of each associated symbolism (pp. 12&#x2013;20)<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>, but the exact meanings are not at issue here, only the motivation and direction of research &#x2014; each speech act has an associated, formal semantics. Searle intends for this taxonomy to be useful in explicating the logic of utterances in conversation. Note that logic in conversation here is meant more in the early Wittgensteinian sense &#x2014; the propositions that have meaning and are applied to the world around us. A taxonomy of speech acts allows us to lift the utterances out of `meaninglessness' and see that their descriptions do have proper propositional content.
+</p>
+
+<p>
+Searle's taxonomy planted a seed in the field of Speech Act Theory: If we can describe speech acts in truth-functional terms, then we can implement them in a computational system.
+</p>
+
+<p>
+So, for the past fifty years or so, one driver of dialogue system logic has been organization around recognizing and acting upon speech acts. Speech Act Theory has been employed in many subfields of computer science. These include building dialogue agents, dialogue structure, corpus tagging, summarization techniques, planning, and others.
+</p>
+
+<p>
+Enfield and Sidnell warn that ``[a]nyone who has attempted to work through a conversational transcript and exhaustively `identify the action' in every line knows that it is a hopeless task'' <a href="&amp;Enfield_2017">&amp;Enfield_2017</a>. But that certainly has not stopped many researchers (including the author, see Section 4.1) from doing so. The benefit of doing so is clear if Searlian assumptions about speech acts hold: If we have a robust corpus of well-tagged speech acts, we can plausibly map new utterances to their speech acts and derive a robust language understanding model from the data.
+</p>
+
+<p>
+The first task at hand is to define a set of speech acts. Some researchers begin by limiting themselves to a certain context, with the hope that this constraint will allow them to build a system for one domain that can later be extended to other domains. For example, the `Blocks world' <a href="&amp;perera2018situated;&amp;briggs2017enabling">&amp;perera2018situated;&amp;briggs2017enabling</a>, travel agent <a href="&amp;bobrow1977gus;&amp;traum1996conversational">&amp;bobrow1977gus;&amp;traum1996conversational</a>, or drink server <a href="&amp;Williams_2018">&amp;Williams_2018</a> are common, simple tasks. They have the advantage of having well-defined success or failure conditions (e.g., being served the correct drink) while maintaining some pragmatic ambiguity for study (e.g., is `I would like a lemonade' a request or a statement?). Generally, these systems constrain themselves to small taxonomies of speech acts with some reasoning abilities for assigning one or another.
+</p>
+
+<p>
+On the other hand, some researchers cast their nets more broadly and hope to account for speech acts in human dialogue, which can then be later implemented in systems. <a href="&amp;core1997coding">&amp;core1997coding</a> seeks to annotated based on a several-dimensional view of utterances (similar to Austin), though when it was implemented in a large study, this was flattened <a href="&amp;Stolcke_2000">&amp;Stolcke_2000</a>. The effort behind <a href="&amp;bunt2009dit++">&amp;bunt2009dit++</a> was largely rolled into the ISO standards in <a href="&amp;Bunt_2016">&amp;Bunt_2016</a> and <a href="&amp;bunt2017revisiting">&amp;bunt2017revisiting</a>, with the hope to end the speech act taxonomy debate via standardization. <a href="&amp;chowdhury2016transfer">&amp;chowdhury2016transfer</a> finds that this effort is fruitful in an Italian corpus of human conversation, but <a href="&amp;fang2012annotation">&amp;fang2012annotation</a> shows that this is not always the case and that in some cases large amounts of information will be lost in the transfer. Other efforts (e.g., <a href="&amp;musi2018multi;&amp;saha2022ap;&amp;hewett2019utility">&amp;musi2018multi;&amp;saha2022ap;&amp;hewett2019utility</a>) are focused closer on discourse analysis (cf. Section 2.3).  
+</p>
+
+<p>
+In each case of annotation, the next step is to train a model for automatic annotation. The problems with building these models are subtle. What are the important factors? To what are the annotators orienting in conversation? Is inter-annotator agreement high enough for this to work? <a href="&amp;Stolcke_2000">&amp;Stolcke_2000</a> found that n-gram (for \(n=1,2,3\)) models were somewhat successful at speech act recognition for within-set learning, topping out at about 71\%. This suggests that there is some merit in Austin's note that certain speech acts fit together (cf. Section 2.1). However, 71\% is a far cry from 100\% and can certainly be improved upon since inter-annotator agreement was 84\% (\(\kappa{}=0.8\)).  <a href="&amp;Liu_2017">&amp;Liu_2017</a> showed improvement up to nearly 80\% accuracy using a DNN. <a href="&amp;Li_2019">&amp;Li_2019</a> achieved over 82\% accuracy with a hierarchical RNN. Recently, <a href="&amp;raheja2019dialogue">&amp;raheja2019dialogue</a> achieved about 83\% accuracy with context-aware self-attention models. These are promising results, given that they are achieving near human expert level annotation results.
+</p>
+
+<p>
+Once dialogue acts can be consistently recognized, they can be implemented in a system, utilizing their ontology of utterances. Many systems use pragmatic logical inference to generate agent plans, which are then implemented by the agent for the task at hand <a href="&amp;cohen1979elements;&amp;rieser2009natural;&amp;steedman2007planning">&amp;cohen1979elements;&amp;rieser2009natural;&amp;steedman2007planning</a>. Others treat dialogue as a vector for collaboration and teaming between artificial agents and humans <a href="&amp;galescu2018cogent;&amp;gervits2018shared">&amp;galescu2018cogent;&amp;gervits2018shared</a>. When not in teams, the agent may perform a task for a human <a href="&amp;briggs2017enabling;&amp;williams2015going">&amp;briggs2017enabling;&amp;williams2015going</a>, this can be viewed as a conversational interface with a system <a href="&amp;McTear2002">&amp;McTear2002</a>. Dialogue systems may also be part of larger systems and the dialogue can be used for epistemic knowledge <a href="&amp;bolander2017gentle;&amp;baral2017epistemic">&amp;bolander2017gentle;&amp;baral2017epistemic</a> or to ground knowledge between parties <a href="&amp;traum1992speechacts">&amp;traum1992speechacts</a>.
+</p>
+
+<p>
+From this brief survey, we can see that the engineering complexity and necessary data-driven background of a dialogue system is immense. Speech acts must be studied, codified, tagged, recognized, grounded in a logic, and implemented. Each step is extremely difficult, but in the next section I discuss how the enterprise may miss the mark if the goal is natural, human-like conversation.
+</p>
+</div>
+
+<div id="outline-container-org9ed391e" class="outline-4">
+<h4 id="org9ed391e"><span class="section-number-4">1.1.1.</span> Chatbot aside</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Since roughly November 2022, the elephant in the room of conversational agents has been ChatGPT, and soon after, the integration into the Bing search engine. This has been written about extensively elsewhere, and so I do not wish to rehash those arguments, but the driving difference between a chatbot and the conversational systems that we are discussing here is some relation to truth-functional a model of the world. ChatGPT (and chatbots in general) are simply <i>afactual</i>. They may stumble onto true utterances or produce convincing falsehoods, but they wither under any interrogation of the truth or falsity of their claims. This is not new to ChatGPT and was pointed out several years earlier by <a href="&amp;cohen2018back">&amp;cohen2018back</a>. Therefore, I am setting aside chatbot text-generators and assuming that both humans and interesting conversational agents must produce language that adheres to truth.
+</p>
+</div>
 </div>
 </div>
 
@@ -231,13 +363,61 @@ Speech Act Theory has been employed in many subfields of computer science. These
 <h3 id="orgebc07ad"><span class="section-number-3">1.2.</span> Mismatch of Speech Act Logic and Conversational Organization</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
+Now that we have established the scientific pipeline for speech act theory within computer science, we can see some obstacles that it needs to overcome in order to meet the goal of building natural, realistic conversational agents. In this section, I want to look at how this field may miss the mark by ignoring some aspects of conversational organization.
+</p>
+
+<p>
+The models in the previous section inherit many of the same pitfalls discussed in Section 2.3 about discourse analysis. First, the focus on <i>speech acts</i> rather than conversational <i>moves</i> 
+</p>
+
+<p>
+only by listening and orienting ourselves to what natural, realistic conversation sounds like will we be able to build mechanisms for implementing it in an artificial agent. Speech acts will be useful in this endeavor, but in this section I want to explore the ways that using speech acts as construed above, is may fall short <sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>.
+</p>
+
+
+
+<p>
+Speech acts are difficult to ground in logic (Baral &amp; Bolander)
+</p>
+
+<p>
+Speech acts do not account for moves that we know (e.g. pre-sequences)
+</p>
+
+<p>
+Speech acts have difficulty with ISAs (Searle, Briggs, Williams) and context
+</p>
+
+<p>
+Speech acts have other ambiguity problems (Stolcke w/ agreement vs backchannel, Matthias vs 'no, I agree')
+</p>
+
+<p>
+Speech acts need mental models of other participants (Galescu &amp; Gervits)
+</p>
+
+<p>
+Human  vs robot style in HRI &#x2014; Conversational agents may limit our modeling of human language.
+<a href="&amp;lukin2018consequences">&amp;lukin2018consequences</a>
+</p>
+
+
+<p>
 Speech Act Theory in computational settings often orients to the logics of conversation, making decisions about <i>what</i> to say. However, the <i>what</i> has been subservient to the <i>when</i> and <i>how</i>, which are examined with Conversation Analytics. Using Conversational Organization as a resource for computations about conversation will give us a naturalistic and realistic lens.
+</p>
+
+
+
+<p>
+Taxonomy Questions
+<a href="&amp;traum200020">&amp;traum200020</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1e2ce06" class="outline-3">
-<h3 id="org1e2ce06"><span class="section-number-3">1.3.</span> Building a Speech Act Schema from Data</h3>
+
+<div id="outline-container-org0c121ab" class="outline-3">
+<h3 id="org0c121ab"><span class="section-number-3">1.3.</span> Building a Schema from Data for Conversation Organization</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Speech Act Theory has taken many approaches to creating schemas and taxonomies of speech acts. Each of these has its own motivations, from Austin's locution, illocution, perlocution distinctions to Bunt's ISO standardization. The problem with each of them is that they make compromises to the data in some way. Labeling with any taxonomy is difficult, and so rather than build a taxonomy based on observations and construal, we propose and build two different models of speech acts. In the first, we take sentence syntax as our inspiration. We find that sentences have their <i>direct</i> meaning more often than we suspect, but that this taxonomy is lacking in several ways. In the second approach, we use the basic outline of a conversation, removed from details of semantics, to cluster utterances into categories in order to take a data-first approach.
@@ -245,10 +425,40 @@ Speech Act Theory has taken many approaches to creating schemas and taxonomies o
 </div>
 </div>
 </div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Our primary source will be the aforementioned Speech Acts (1969), which is often cited in lockstep with Austin. However, Austin died in 1960, and his lectures were published posthumously. Therefore the <i>How to Do Things With Words</i> lectures are the primary account of Austin's thinking (though cf. <a href="&amp;austin1970performative">&amp;austin1970performative</a> and <a href="&amp;austin1963performative">&amp;austin1963performative</a>). Searle's thinking, however, did change through time (for example, cf. <a href="&amp;searle1979expression">&amp;searle1979expression</a> and <a href="&amp;searle1986meaning">&amp;searle1986meaning</a>). For an analysis of the state of the field in philosophy in general &#x2014; particularly with reference to the Literal Force Hypothesis (see Section 4.1) &#x2014; see <a href="&amp;meibauer2019indirect">&amp;meibauer2019indirect</a>.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+It is worth keeping in mind that these acts are strictly <i>illocutionary</i>, which causes several problems that we will discuss in Section 3.2, but also contrasts with Austin's more holistic account in 2.1 where the illocutionary act is only one aspect of the total action of an utterance, and also the Conversation Analysis account in section 2.2 where the intention of the speaker (i.e., the illocutionary act) is secondary to the orientation of the conversation as a whole.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Roughly:
+</p>
+<ul class="org-ul">
+<li>\(\vdash{\downarrow{B(p)}}\): The psychological state of belief that <i>p</i> is directed the word-to-world.</li>
+<li>\(!\uparrow{W(H\text{ does }A)}\): The proposition that the speaker wants (<i>W</i>) hearer <i>H</i> to do action <i>A</i> is directed world-to-words.</li>
+<li>\(C\uparrow{I(S\text{ does }A)}\): The proposition that the speaker <i>S</i> intends (<i>I</i>) to do action <i>A</i> is directed world-to&#x2013;words.</li>
+<li>\(E\varnothing{(P)(S/H+\text{ property})}\): The speaker <i>S</i> or hearer <i>H</i> expressed (<i>E</i>) some property abouth propositon <i>P</i> has no direction of fit.</li>
+<li>\(D\updownarrow{\varnothing{(p)}}\): Proposition <i>p</i> is declared (<i>D</i>) to be the case with world-to-words and words-to-world fit.</li>
+<li>\(D_a\downarrow{\updownarrow{B(p)}}\): Assertion <i>a</i> is declared <i>D</i> of proposition <i>p</i> to be believed <i>B</i> both word-to-world and bi-directionally (i.e., assertively and declaratively).</li>
+</ul></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4" role="doc-backlink">4</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+My purpose here is not to denigrate the studies cited above, but to explore the shortcomings they may have toward designing a conversational agent that behaves in a human-like way.
+</p></div></div>
+
+
 </div>
+</div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Chas Threlkeld</p>
-<p class="date">Created: 2023-02-14 Tue 09:47</p>
+<p class="date">Created: 2023-02-24 Fri 13:16</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
