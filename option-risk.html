@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Options Pricing: Charles Threlkeld</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+  </head>
+  <body>
+    <root>
+      <h1>Options Pricing</h1>      
+      <br/>
+      This data is <a href="https://www.cmegroup.com/notices/clearing/2023/09/Chadv23-272.html">no longer</a> as readily available. The <a href="https://www.cmegroup.com/daily_bulletin/current/Section57_Soybean_Soymeal_Soyoil_SoybeanCrush_wheat_Options.pdf">new format</a> gives some sense of how the original data looked in a text file available via ftp.
+
+      <h4>The Problem</h4>
+
+      <p>Using financial instruments is inherently risky,as their price fluctuates, not only daily, but often by the second. In order to understand those risks, we rely on pricing models which take in assumptions about the market (e.g., current price, market volatility, time to expiration) and output the profit or loss a client would expect in those conditions compared to current market conditions.</p>
+
+      <p>Off-the-shelf risk modeling software tends to be very expensive, as they must build very flexible programs to accommodate the many disperate needs of their own clients. However, if I know the needs of my own clients, I can create relatively simple software that is tailored to our needs. By building the software in-house, I gain a greater understanding of the pricing models that we are using, which I can explain to the clients, and the clients can ask for bespoke analyses, accessible by tweaking our models to their requests.</p>
+
+      <h4>The Goal</h4>
+
+      <p>I automated the process of analyzing the daily risk for our clients and present it in an easy-to-understand way.</p>
+
+      <p>At the end of each trading day, I wanted to update their positions, then programmatically retrieve settlement prices, process the data to infer the risk metrics, and output a PDF with numerical and graphical representations of possible profit and loss.</p>
+
+      <h4>Background</h4>
+      
+      <p>Basic option risk assessment requires knowing the following factors:
+        <ul>
+          <li>\(S_t\) is the price of the underlying instrument.</li>
+          <li>\(K\) is strike price of the option.</li>
+          <li>\(\tau\) is the time in years until maturity; \(\tau=T-t\)</li>
+          <li>\(r\) is the risk-free continuously compounding interest rate</li>
+          <li>\(\sigma\) is the standard deviation of the returns on the underlying (i.e., a measure of volatility).</li>
+        </ul>
+      </p>
+
+      <p>The grandfather of options pricing models is Black-Scholes, which assumes that the underlying asset follows a random-walk pattern, and so its final price at expiration can be described using a Gaussian normal distribution. From there, we need two insights: First, the value of the option should have a value equal to how far past the underlying asset is beyond the strike price, plus some premium for the flexibility of the time before expiration. Second, buying a call and selling a put should be equivalent in risk to owning the underlying asset.</p>
+
+      <p>This produces the following equations:
+        \[C(S_t,t)=N(d_{+})S_t-N(d_{-})Ke^{-r(T-t)}\]
+      \[P(S_t,t)=N(-d_{-})Ke^{-r(T-t)}-N(-d_{+})S_t\]
+      \[d_{+}=\frac{1}{\sigma\sqrt{T-t}}\left[ \ln{\left( \frac{S_t}{K}\right)}+\frac{1}{2}\sigma^2r\right]\]
+      \[d_{-}=d_{+}-\sigma\sqrt{T-t}\]
+      </p>
+
+      <ul>
+        <li>\(d_{+}\) calculates movement for the option will expire in-the-money (i.e., it will pay out to exercise the option at expiration.)</li>
+        <li>\(d_{-}\) similarly calcualtes movement for the option will expire out-of-the-money, and will not pay out at expiration.</li>
+        <li>\(N(\pm{d_{\pm}})\) transforms the $\pm{d_{\pm}}$ calculation into a Gaussian normal probability.</li>
+        <li>\(Ke^{-r(T-t)}\) is a premium calculation for the time-value of money, given the time remaining before expiration and the current risk-free interest rate.</li>
+      </ul>
+
+      <p>Note that of these parameters, \(K\) and \(t\) are given as specifications in the option contract, \(S_t\), \(C(S_t, t)\), and \(P(S_t, t)\) are given as settlement prices in the data, \(r\) can be inferred from other settlement prices (e.g., treasury bonds) or added by-hand as the Federal Reserve adjusts it.</p>
+
+      <p>This leaves only \(\sigma\) unaccounted for. Unfortunately, there is no closed-form solution for \(\sigma\), and so I had to use an equation solver. For this project, this was likely the bottleneck for computation time, but it was still possible. Once \(\sigma\) was inferred from settlement prices, I created what-if scenarios keeping some parameters constant, while varying others to show risk to clients. In the deliverables, I often showed price skewing up and down two limits and equity for today, 7 days out, and 14 days out. Bespoke calculations were also available.</p>
+
+      <p>In addition to these calculations, I also included a run-down of "the Greeks" which characterize the risks of a position with respect to each of the inputs above. Each of these is well-defined, and I omit the formulae here. As noted above, once I had the implied volatility, I could calculate what-if scenarios for each of the greeks for different market conditions.</p>
+
+      <table>
+        <tr>
+          <th>Delta</th>
+          <th>\(\frac{\delta{V}}{\delta{S}}\)</th>
+          <th>Change in price of option as price of underlying changes</th>
+        </tr>
+        <tr>
+          <th>Gamma</th>
+          <th>\(\frac{\delta^2{V}}{\delta{S^2}}\)</th>
+          <th>Change in Delta as price of underlying changes</th>
+        </tr>
+        <tr>
+          <th>Vega</th>
+          <th>\(\frac{\delta{V}}{\delta{\sigma}}\)</th>
+          <th>Change in price of option as volatility changes</th>
+        </tr>
+        <tr>
+          <th>Theta</th>
+          <th>\(\frac{\delta{V}}{\delta{t}}\)</th>
+          <th>Change in price of option as time goes on</th>
+        </tr>
+        <tr>
+          <th>Rho</th>
+          <th>\(\frac{\delta{V}}{\delta{r}}\)</th>
+          <th>Change in price of option as interest rate changes</th>
+        </tr>
+      </table>
+
+      <h4>The Approach</h4>
+
+      <ol>
+	  <li>Download Settlement Data</li>
+	  <li>Parse the Settlements into Data Structures</li>
+	  <li>Calculate Implied Volatility for Options</li>
+	  <li>Calculate What-If Scenarios</li>
+	  <li>Graph What-If Scenarios</li>
+	  <li>Create PDF with Results</li>
+      </ol>
+
+      <h5>Downloading Settlement Data</h5>
+      <pre><code>
+print("Hello World")
+      </code></pre>
+      <h5>Parse the Settlements into Data Structures</h5>
+      <pre><code>
+print("Hello World")
+      </code></pre>
+      <h5>Calculate Imph5ed Volatih5ty for Options</h5>
+      <pre><code>
+print("Hello World")
+      </code></pre>
+      <h5>Calculate What-If Scenarios</h5>
+      <pre><code>
+print("Hello World")
+      </code></pre>
+      <h5>Graph What-If Scenarios</h5>
+      <pre><code>
+print("Hello World")
+      </code></pre>
+      <h5>Create PDF with Results</h5>
+      <pre><code>
+print("Hello World")
+      </code></pre>
+      
+      <h4>The Details</h4>
+      <h4>The Results</h4>
+      
+    </root>
+  </body>
+</html>
