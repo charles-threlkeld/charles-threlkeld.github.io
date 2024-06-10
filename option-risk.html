@@ -105,7 +105,24 @@
       </ol>
 
       <h5>Downloading Settlement Data</h5>
-      <pre><code class="lang-py">print("Hello World")</code></pre>
+      <p>Getting the data was relatively straightforward (when the CME released a basic text file):</p>
+      <pre><code class="lang-py">import urllib.request
+
+today = datetime.datetime.now()
+file_name = "{0}_{1}_{2}_{3}_settlements.txt".format(today.day, today.month,
+                                                     today.year, exchange)
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+dest_dir = os.path.join(script_dir, "Settlements")
+if not os.path.exists(dest_dir):
+    os.mkdir(dest_dir)
+
+file_path = os.path.join(dest_dir, file_name)
+
+if not os.path.isfile(file_path):
+    url = "ftp://ftp.cmegroup.com/pub/settle/stl{0}".format(exchange)
+    urllib.request.urlretrieve(url, file_path)</code></pre>
+      <p>This gives us a nice, flat text file at the destination we've chosen with <code>file_path<code></p>
       <h5>Parse the Settlements into Data Structures</h5>
       <pre><code class="lang-py">print("Hello World")</code></pre>
       <h5>Calculate Implied Volatility for Options</h5>
