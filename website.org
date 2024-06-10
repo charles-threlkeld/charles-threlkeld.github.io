@@ -1,0 +1,113 @@
+* Resume
+* [[./speech-acts.html][Data-Driven Speech Act Schemas]] [2/6]
+- [X] The Problem
+- [X] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./algorithms.html][Notes on Algorithms]] [2/6]
+- [X] The Problem
+- [X] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./models.html][Notes on Computational Models]] [0/6]
+- [ ] The Problem
+- [ ] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./alan.html][ALAN: ANother Language Analyzer]] [0/6]
+- [ ] The Problem
+- [ ] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./fitness.html][Fitness Analysis via Strava API]] [2/6]
+- [X] The Problem
+- [X] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./ftos.html][Transition Duration and Turn Taking]] [0/6]
+- [ ] The Problem
+- [ ] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[turn-duration.html][Turn Duration as a Signal for Turn End]] [0/6]
+- [ ] The Problem
+- [ ] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./cognitive-isas.html][Cognitive Load of Indirect Speech Acts]] [0/6]
+- [ ] The Problem
+- [ ] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./literal-force.html][The Literal Force Hypothesis]] [0/6]
+- [ ] The Problem
+- [ ] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./chatbot.html][Chatbot for Studying Timing in Conversation]] [0/6]
+- [ ] The Problem
+- [ ] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[clan-mode.html][clan-mode: emacs Major Mode for CHAT Transcriptions]] [0/6]
+- [ ] The Problem
+- [ ] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./robot-speech-acts.html][Speech Acts for Robots]] [0/6]
+- [ ] The Problem
+- [ ] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./john-company.html][John Company Development]] [0/6]
+- [ ] The Problem
+- [ ] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./triathlon-racing.html][Triathlon Racing Finisher Time Analysis]] [0/6]
+- [ ] The Problem
+- [ ] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./options-futures-price.html][Long Term Options/Futures Pricing Analysis]] [0/6]
+- [ ] The Problem
+- [ ] The Goal
+- [ ] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
+* [[./option-risk.html][CME Commodity Options Analysis]]  [3/6]
+- [X] The Problem
+- [X] The Goal
+- [X] The Background
+- [ ] The Approach
+- [ ] The Details
+- [ ] The Results
