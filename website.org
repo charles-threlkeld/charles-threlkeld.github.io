@@ -20,9 +20,9 @@
 - [ ] The Approach
 - [ ] The Details
 - [ ] The Results
-* [[./alan.html][ALAN: ANother Language Analyzer]] [0/6]
-- [ ] The Problem
-- [ ] The Goal
+* [[./alan.html][ALAN: ANother Language Analyzer]] [2/6]
+- [X] The Problem
+- [X] The Goal
 - [ ] The Background
 - [ ] The Approach
 - [ ] The Details
