@@ -12,8 +12,9 @@
   </head>
   <body>
     <root>
-      <h1>Fitness Analysis via Strava API</h1>
-      </br>
+        <h1>Fitness Analysis via Strava API</h1>
+
+        <p><a href="calendar.html">Click here</a> to see the results of this project.</p>
       <h4>The Problem</h4>
 
       <p>In 2021, I was training for a marathon. I had written up a training schedule for myself, but I wanted a dashboard to show how well I was meeting my goals.</p>
@@ -24,9 +25,15 @@
       
       <h4>The Background</h4>
 
-      <p>In the past, I have used Training Peaks for triathlon training, but the analysis and modeling that Training Peaks does is not too complicated. The recording comes from the smart watch, which basically tracks time-stamped GPS coordinates, plus other parameters if they are connected, e.g., heart rate, power (cycling), cadence (running or cycling).</p>
+        <p>In the past, I have used Training Peaks for triathlon training, but the analysis and modeling that Training Peaks does is not too complicated. The recording comes from the smart watch, which basically tracks time-stamped GPS coordinates, plus other parameters if they are connected, e.g., heart rate, power (cycling), cadence (running or cycling). However, Training Peaks (or Strava or other analysis platforms) charge a montly fee for what is, at heart, a little bit of math and a little bit of graphics. I can do both of these things on my own.</p>
+
+        <p>The first step was on paper: I created a training plan for myself that would take me from running very little (about 2 hours per week) all the way up to nearly 7 hour per week in the time I had available: 24 weeks. I used two basic parameters for creating this schedule. First, I wanted to reach about eight hours in the longest week. This is about twice the time of my marathon goal, and is what I often use as a rule of thumb for endurance goals. Second, I only wanted to add about 10% per week. Adding relatively slowly should help prevent injury from overtraining, though it didn't help this time! With the training calendar created, I whipped up a quick HTML table to serve as the landing page, and with that I was ready for the computer programming part of the project.</p>
       
-      <h4>The Approach</h4>
+        <h4>The Approach</h4>
+
+        <p>Since I had my goals all written up, the project approach was to poll the Strava API daily to get my new activities. For each activity, check for the length of time running and walking. Then, check to see if the running time met my goals. The calendar should update to reflect three states: days in the future, days I met my goals, and days I missed my goal. So the basic analysis will simply require getting recent activites and summing up the time that I was above some threshold pace (i.e., running).</p>
+
+        <p>Secondly, I wanted to visualize how well the run went. This involves a bit more work.</p>
       <h4>The Details</h4>
       <h4>The Results</h4>
   </body>
